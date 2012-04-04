@@ -1,0 +1,799 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     width="672px"
+     height="671.495568685377px"
+     version="1.0"><g transform="translate(0, 671.495568685377)  scale(1, -1)">
+  <g id="gridSVG"  fill="none" stroke="rgb(0,0,0)" stroke-dasharray="none" stroke-width="1.33398982438864px" font-size="16.02px" font-family="Helvetica, Arial, FreeSans, Liberation Sans, Nimbus Sans L, sans-serif" opacity="1" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-opacity="1" fill-opacity="0">
+    <g id="plot_01.background" onmousemove="showTooltip(evt, 'plot_01.background')" onmouseout="hideTooltip()" >
+    <rect id="plot_01.background.1" x="0" y="0" width="672" height="671.5"  fill="none" stroke="none" stroke-opacity="0" fill-opacity="0" />
+    </g>
+    <g id="plot_01.toplevel.vp.1"  font-size="16.01px">
+      <g id="plot_01.xlab.vp.1"  >
+        <g id="plot_01.xlab" onmousemove="showTooltip(evt, 'plot_01.xlab')" onmouseout="hideTooltip()" >
+        <g id="plot_01.xlab.1"  stroke-width=".1" transform="translate(342, 22.01) ">
+<g transform="scale(1, -1)">
+<text x="0" y="0" text-anchor="middle" opacity="1" stroke="rgb(0,0,0)" stroke-opacity="1" fill="rgb(0,0,0)" fill-opacity="1" font-size="16.01px" font-weight="normal" font-style="normal" >
+<tspan dy="6" x="0">height</tspan></text>
+</g>
+</g>
+        </g>
+      </g>
+      <g id="plot_01.ylab.vp.1"  >
+        <g id="plot_01.ylab" onmousemove="showTooltip(evt, 'plot_01.ylab')" onmouseout="hideTooltip()" >
+        <g id="plot_01.ylab.1"  stroke-width=".1" transform="translate(14.01, 332.15) ">
+<g transform="scale(1, -1)">
+<text x="0" y="0" transform="rotate(-90)" text-anchor="middle" opacity="1" stroke="rgb(0,0,0)" stroke-opacity="1" fill="rgb(0,0,0)" fill-opacity="1" font-size="16.01px" font-weight="normal" font-style="normal" >
+<tspan dy="6" x="0">Prozent der Gesamtheit</tspan></text>
+</g>
+</g>
+        </g>
+      </g>
+      <g id="plot_01.figure.vp.1"  >
+      </g>
+    <defs>
+      <clipPath id="plot_01.panel.1.1.vp.1.clipPath">
+        <rect x="64.7050713934022" y="67.715657311669" width="184.866239947481" height="163.481585425899" style="fill: none; stroke: none;" />
+      </clipPath>
+    </defs>
+    <g id="plot_01.panel.1.1.vp.1"  clip-path="url(#plot_01.panel.1.1.vp.1.clipPath)" >
+    </g>
+    <g id="plot_01.strip.1.1.off.vp.1"  >
+    </g>
+    <g id="plot_01.strip.left.1.1.off.vp.1"  >
+      <g id="plot_01.ticks.left.panel.1.1" onmousemove="showTooltip(evt, 'plot_01.ticks.left.panel.1.1')" onmouseout="hideTooltip()" >
+      <polyline id="plot_01.ticks.left.panel.1.1.1" points="64.71,77.75 57.14,77.75"  stroke="rgb(0,0,0)" opacity="1" stroke-dasharray="none" stroke-width="1.33398982438864px" stroke-opacity="1" fill="none" />
+      <polyline id="plot_01.ticks.left.panel.1.1.2" points="64.71,110.02 57.14,110.02"  stroke="rgb(0,0,0)" opacity="1" stroke-dasharray="none" stroke-width="1.33398982438864px" stroke-opacity="1" fill="none" />
+      <polyline id="plot_01.ticks.left.panel.1.1.3" points="64.71,142.29 57.14,142.29"  stroke="rgb(0,0,0)" opacity="1" stroke-dasharray="none" stroke-width="1.33398982438864px" stroke-opacity="1" fill="none" />
+      <polyline id="plot_01.ticks.left.panel.1.1.4" points="64.71,174.55 57.14,174.55"  stroke="rgb(0,0,0)" opacity="1" stroke-dasharray="none" stroke-width="1.33398982438864px" stroke-opacity="1" fill="none" />
+      <polyline id="plot_01.ticks.left.panel.1.1.5" points="64.71,206.82 57.14,206.82"  stroke="rgb(0,0,0)" opacity="1" stroke-dasharray="none" stroke-width="1.33398982438864px" stroke-opacity="1" fill="none" />
+      </g>
+      <g id="plot_01.ticklabels.left.panel.1.1" onmousemove="showTooltip(evt, 'plot_01.ticklabels.left.panel.1.1')" onmouseout="hideTooltip()" >
+      <g id="plot_01.ticklabels.left.panel.1.1.1"  stroke-width=".1" transform="translate(49.58, 77.75) ">
+<g transform="scale(1, -1)">
+<text x="0" y="0" text-anchor="end" stroke="rgb(0,0,0)" opacity="1" stroke-opacity="1" fill="rgb(0,0,0)" fill-opacity="1" font-size="12.81px" font-weight="normal" font-style="normal" >
+<tspan dy="4.5" x="0">0</tspan></text>
+</g>
+</g>
+      <g id="plot_01.ticklabels.left.panel.1.1.2"  stroke-width=".1" transform="translate(49.58, 110.02) ">
+<g transform="scale(1, -1)">
+<text x="0" y="0" text-anchor="end" stroke="rgb(0,0,0)" opacity="1" stroke-opacity="1" fill="rgb(0,0,0)" fill-opacity="1" font-size="12.81px" font-weight="normal" font-style="normal" >
+<tspan dy="4.5" x="0">10</tspan></text>
+</g>
+</g>
+      <g id="plot_01.ticklabels.left.panel.1.1.3"  stroke-width=".1" transform="translate(49.58, 142.29) ">
+<g transform="scale(1, -1)">
+<text x="0" y="0" text-anchor="end" stroke="rgb(0,0,0)" opacity="1" stroke-opacity="1" fill="rgb(0,0,0)" fill-opacity="1" font-size="12.81px" font-weight="normal" font-style="normal" >
+<tspan dy="4.5" x="0">20</tspan></text>
+</g>
+</g>
+      <g id="plot_01.ticklabels.left.panel.1.1.4"  stroke-width=".1" transform="translate(49.58, 174.55) ">
+<g transform="scale(1, -1)">
+<text x="0" y="0" text-anchor="end" stroke="rgb(0,0,0)" opacity="1" stroke-opacity="1" fill="rgb(0,0,0)" fill-opacity="1" font-size="12.81px" font-weight="normal" font-style="normal" >
+<tspan dy="4.5" x="0">30</tspan></text>
+</g>
+</g>
+      <g id="plot_01.ticklabels.left.panel.1.1.5"  stroke-width=".1" transform="translate(49.58, 206.82) ">
+<g transform="scale(1, -1)">
+<text x="0" y="0" text-anchor="end" stroke="rgb(0,0,0)" opacity="1" stroke-opacity="1" fill="rgb(0,0,0)" fill-opacity="1" font-size="12.81px" font-weight="normal" font-style="normal" >
+<tspan dy="4.5" x="0">40</tspan></text>
+</g>
+</g>
+      </g>
+    </g>
+    <g id="plot_01.panel.1.1.off.vp.1"  >
+      <g id="plot_01.ticks.bottom.panel.1.1" onmousemove="showTooltip(evt, 'plot_01.ticks.bottom.panel.1.1')" onmouseout="hideTooltip()" >
+      <polyline id="plot_01.ticks.bottom.panel.1.1.1" points="82.06,67.72 82.06,60.15"  stroke="rgb(0,0,0)" opacity="1" stroke-dasharray="none" stroke-width="1.33398982438864px" stroke-opacity="1" fill="none" />
+      <polyline id="plot_01.ticks.bottom.panel.1.1.2" points="128.98,67.72 128.98,60.15"  stroke="rgb(0,0,0)" opacity="1" stroke-dasharray="none" stroke-width="1.33398982438864px" stroke-opacity="1" fill="none" />
+      <polyline id="plot_01.ticks.bottom.panel.1.1.3" points="175.91,67.72 175.91,60.15"  stroke="rgb(0,0,0)" opacity="1" stroke-dasharray="none" stroke-width="1.33398982438864px" stroke-opacity="1" fill="none" />
+      <polyline id="plot_01.ticks.bottom.panel.1.1.4" points="222.83,67.72 222.83,60.15"  stroke="rgb(0,0,0)" opacity="1" stroke-dasharray="none" stroke-width="1.33398982438864px" stroke-opacity="1" fill="none" />
+      </g>
+      <g id="plot_01.ticklabels.bottom.panel.1.1" onmousemove="showTooltip(evt, 'plot_01.ticklabels.bottom.panel.1.1')" onmouseout="hideTooltip()" >
+      <g id="plot_01.ticklabels.bottom.panel.1.1.1"  stroke-width=".1" transform="translate(82.06, 52.59) ">
+<g transform="scale(1, -1)">
+<text x="0" y="0" text-anchor="middle" stroke="rgb(0,0,0)" opacity="1" stroke-opacity="1" fill="rgb(0,0,0)" fill-opacity="1" font-size="12.81px" font-weight="normal" font-style="normal" >
+<tspan dy="9.01" x="0">60</tspan></text>
+</g>
+</g>
+      <g id="plot_01.ticklabels.bottom.panel.1.1.2"  stroke-width=".1" transform="translate(128.98, 52.59) ">
+<g transform="scale(1, -1)">
+<text x="0" y="0" text-anchor="middle" stroke="rgb(0,0,0)" opacity="1" stroke-opacity="1" fill="rgb(0,0,0)" fill-opacity="1" font-size="12.81px" font-weight="normal" font-style="normal" >
+<tspan dy="9.01" x="0">65</tspan></text>
+</g>
+</g>
+      <g id="plot_01.ticklabels.bottom.panel.1.1.3"  stroke-width=".1" transform="translate(175.91, 52.59) ">
+<g transform="scale(1, -1)">
+<text x="0" y="0" text-anchor="middle" stroke="rgb(0,0,0)" opacity="1" stroke-opacity="1" fill="rgb(0,0,0)" fill-opacity="1" font-size="12.81px" font-weight="normal" font-style="normal" >
+<tspan dy="9.01" x="0">70</tspan></text>
+</g>
+</g>
+      <g id="plot_01.ticklabels.bottom.panel.1.1.4"  stroke-width=".1" transform="translate(222.83, 52.59) ">
+<g transform="scale(1, -1)">
+<text x="0" y="0" text-anchor="middle" stroke="rgb(0,0,0)" opacity="1" stroke-opacity="1" fill="rgb(0,0,0)" fill-opacity="1" font-size="12.81px" font-weight="normal" font-style="normal" >
+<tspan dy="9.01" x="0">75</tspan></text>
+</g>
+</g>
+      </g>
+    </g>
+  <defs>
+    <clipPath id="plot_01.panel.1.1.vp.2.clipPath">
+      <rect x="64.7050713934022" y="67.715657311669" width="184.866239947481" height="163.481585425899" style="fill: none; stroke: none;" />
+    </clipPath>
+  </defs>
+  <g id="plot_01.panel.1.1.vp.2"  clip-path="url(#plot_01.panel.1.1.vp.2.clipPath)" >
+    <g id="plot_01.histogram.baseline.lines.panel.1.1" onmousemove="showTooltip(evt, 'plot_01.histogram.baseline.lines.panel.1.1')" onmouseout="hideTooltip()" >
+    <polyline id="plot_01.histogram.baseline.lines.panel.1.1.1" points="73.95,77.75 240.33,77.75"  stroke-dasharray="none" stroke="rgb(0,0,0)" stroke-width="1.33398982438864px" opacity="1" stroke-opacity="1" fill="none" />
+    </g>
+    <g id="plot_01.histogram.rect.panel.1.1" onmousemove="showTooltip(evt, 'plot_01.histogram.rect.panel.1.1')" onmouseout="hideTooltip()" >
+    <rect id="plot_01.histogram.rect.panel.1.1.1" x="76.06" y="77.75" width="18.02" height="0"  fill="rgb(0,255,255)" stroke="rgb(0,0,0)" stroke-dasharray="none" stroke-width="1.33398982438864px" opacity="1" stroke-opacity="1" fill-opacity="1" />
+    <rect id="plot_01.histogram.rect.panel.1.1.2" x="94.07" y="77.75" width="18.02" height="0"  fill="rgb(0,255,255)" stroke="rgb(0,0,0)" stroke-dasharray="none" stroke-width="1.33398982438864px" opacity="1" stroke-opacity="1" fill-opacity="1" />
+    <rect id="plot_01.histogram.rect.panel.1.1.3" x="112.09" y="77.75" width="18.02" height="0"  fill="rgb(0,255,255)" stroke="rgb(0,0,0)" stroke-dasharray="none" stroke-width="1.33398982438864px" opacity="1" stroke-opacity="1" fill-opacity="1" />
+    <rect id="plot_01.histogram.rect.panel.1.1.4" x="130.11" y="77.75" width="18.02" height="37.23"  fill="rgb(0,255,255)" stroke="rgb(0,0,0)" stroke-dasharray="none" stroke-width="1.33398982438864px" opacity="1" stroke-opacity="1" fill-opacity="1" />
+    <rect id="plot_01.histogram.rect.panel.1.1.5" x="148.13" y="77.75" width="18.02" height="24.82"  fill="rgb(0,255,255)" stroke="rgb(0,0,0)" stroke-dasharray="none" stroke-width="1.33398982438864px" opacity="1" stroke-opacity="1" fill-opacity="1" />
+    <rect id="plot_01.histogram.rect.panel.1.1.6" x="166.15" y="77.75" width="18.02" height="62.05"  fill="rgb(0,255,255)" stroke="rgb(0,0,0)" stroke-dasharray="none" stroke-width="1.33398982438864px" opacity="1" stroke-opacity="1" fill-opacity="1" />
+    <rect id="plot_01.histogram.rect.panel.1.1.7" x="184.17" y="77.75" width="18.02" height="99.28"  fill="rgb(0,255,255)" stroke="rgb(0,0,0)" stroke-dasharray="none" stroke-width="1.33398982438864px" opacity="1" stroke-opacity="1" fill-opacity="1" />
+    <rect id="plot_01.histogram.rect.panel.1.1.8" x="202.18" y="77.75" width="18.02" height="49.64"  fill="rgb(0,255,255)" stroke="rgb(0,0,0)" stroke-dasharray="none" stroke-width="1.33398982438864px" opacity="1" stroke-opacity="1" fill-opacity="1" />
+    <rect id="plot_01.histogram.rect.panel.1.1.9" x="220.2" y="77.75" width="18.02" height="49.64"  fill="rgb(0,255,255)" stroke="rgb(0,0,0)" stroke-dasharray="none" stroke-width="1.33398982438864px" opacity="1" stroke-opacity="1" fill-opacity="1" />
+    </g>
+  </g>
+  <g id="plot_01.panel.1.1.off.vp.2"  >
+    <g id="plot_01.border.panel.1.1" onmousemove="showTooltip(evt, 'plot_01.border.panel.1.1')" onmouseout="hideTooltip()" >
+    <rect id="plot_01.border.panel.1.1.1" x="64.71" y="67.72" width="184.87" height="163.48"  stroke="rgb(0,0,0)" stroke-dasharray="none" stroke-width="1.33398982438864px" opacity="1" fill="none" stroke-opacity="1" fill-opacity="0" />
+    </g>
+  </g>
+  <g id="plot_01.strip.1.1.vp.1"  >
+  <defs>
+    <clipPath id="plot_01.strip.default.1.1.clipPath">
+      <rect x="64.7050713934022" y="231.197242737568" width="184.866239947481" height="19.2094534711965" style="fill: none; stroke: none;" />
+    </clipPath>
+  </defs>
+  <g id="plot_01.strip.default.1.1"  clip-path="url(#plot_01.strip.default.1.1.clipPath)" >
+    <g id="plot_01.bg.strip.1.1" onmousemove="showTooltip(evt, 'plot_01.bg.strip.1.1')" onmouseout="hideTooltip()" >
+    <rect id="plot_01.bg.strip.1.1.1" x="64.71" y="231.2" width="184.87" height="19.21"  fill="rgb(255,229,204)" stroke="rgb(255,229,204)" stroke-opacity="1" fill-opacity="1" />
+    </g>
+    <g id="plot_01.textr.strip.1.1" onmousemove="showTooltip(evt, 'plot_01.textr.strip.1.1')" onmouseout="hideTooltip()" >
+    <g id="plot_01.textr.strip.1.1.1"  stroke-width=".1" transform="translate(132.64, 240.8) ">
+<g transform="scale(1, -1)">
+<text x="0" y="0" text-anchor="start" stroke="rgb(0,0,0)" opacity="1" stroke-opacity="1" fill="rgb(0,0,0)" fill-opacity="1" font-size="16.01px" font-weight="normal" font-style="normal" >
+<tspan dy="6" x="0">Bass 2</tspan></text>
+</g>
+</g>
+    </g>
+  </g>
+  <g id="plot_01.strip.default.off.1.1"  >
+    <g id="plot_01.border.strip.1.1" onmousemove="showTooltip(evt, 'plot_01.border.strip.1.1')" onmouseout="hideTooltip()" >
+    <rect id="plot_01.border.strip.1.1.1" x="64.71" y="231.2" width="184.87" height="19.21"  stroke="rgb(0,0,0)" stroke-dasharray="none" stroke-width="1.33398982438864px" opacity="1" fill="none" stroke-opacity="1" fill-opacity="0" />
+    </g>
+  </g>
+</g>
+<defs>
+  <clipPath id="plot_01.panel.2.1.vp.1.clipPath">
+    <rect x="249.571311340883" y="67.715657311669" width="184.866239947481" height="163.481585425899" style="fill: none; stroke: none;" />
+  </clipPath>
+</defs>
+  <g id="plot_01.panel.2.1.vp.1"  clip-path="url(#plot_01.panel.2.1.vp.1.clipPath)" >
+  </g>
+  <g id="plot_01.strip.2.1.off.vp.1"  >
+  </g>
+  <g id="plot_01.strip.left.2.1.off.vp.1"  >
+  </g>
+  <g id="plot_01.panel.2.1.off.vp.1"  >
+    <g id="plot_01.ticks.bottom.panel.2.1" onmousemove="showTooltip(evt, 'plot_01.ticks.bottom.panel.2.1')" onmouseout="hideTooltip()" >
+    <polyline id="plot_01.ticks.bottom.panel.2.1.1" points="266.93,67.72 266.93,60.15"  stroke="rgb(0,0,0)" opacity="1" stroke-dasharray="none" stroke-width="1.33398982438864px" stroke-opacity="1" fill="none" />
+    <polyline id="plot_01.ticks.bottom.panel.2.1.2" points="313.85,67.72 313.85,60.15"  stroke="rgb(0,0,0)" opacity="1" stroke-dasharray="none" stroke-width="1.33398982438864px" stroke-opacity="1" fill="none" />
+    <polyline id="plot_01.ticks.bottom.panel.2.1.3" points="360.77,67.72 360.77,60.15"  stroke="rgb(0,0,0)" opacity="1" stroke-dasharray="none" stroke-width="1.33398982438864px" stroke-opacity="1" fill="none" />
+    <polyline id="plot_01.ticks.bottom.panel.2.1.4" points="407.7,67.72 407.7,60.15"  stroke="rgb(0,0,0)" opacity="1" stroke-dasharray="none" stroke-width="1.33398982438864px" stroke-opacity="1" fill="none" />
+    </g>
+  </g>
+<defs>
+  <clipPath id="plot_01.panel.2.1.vp.2.clipPath">
+    <rect x="249.571311340883" y="67.715657311669" width="184.866239947481" height="163.481585425899" style="fill: none; stroke: none;" />
+  </clipPath>
+</defs>
+  <g id="plot_01.panel.2.1.vp.2"  clip-path="url(#plot_01.panel.2.1.vp.2.clipPath)" >
+    <g id="plot_01.histogram.baseline.lines.panel.2.1" onmousemove="showTooltip(evt, 'plot_01.histogram.baseline.lines.panel.2.1')" onmouseout="hideTooltip()" >
+    <polyline id="plot_01.histogram.baseline.lines.panel.2.1.1" points="258.81,77.75 425.19,77.75"  stroke-dasharray="none" stroke="rgb(0,0,0)" stroke-width="1.33398982438864px" opacity="1" stroke-opacity="1" fill="none" />
+    </g>
+    <g id="plot_01.histogram.rect.panel.2.1" onmousemove="showTooltip(evt, 'plot_01.histogram.rect.panel.2.1')" onmouseout="hideTooltip()" >
+    <rect id="plot_01.histogram.rect.panel.2.1.1" x="260.92" y="77.75" width="18.02" height="0"  fill="rgb(0,255,255)" stroke="rgb(0,0,0)" stroke-dasharray="none" stroke-width="1.33398982438864px" opacity="1" stroke-opacity="1" fill-opacity="1" />
+    <rect id="plot_01.histogram.rect.panel.2.1.2" x="278.94" y="77.75" width="18.02" height="0"  fill="rgb(0,255,255)" stroke="rgb(0,0,0)" stroke-dasharray="none" stroke-width="1.33398982438864px" opacity="1" stroke-opacity="1" fill-opacity="1" />
+    <rect id="plot_01.histogram.rect.panel.2.1.3" x="296.96" y="77.75" width="18.02" height="0"  fill="rgb(0,255,255)" stroke="rgb(0,0,0)" stroke-dasharray="none" stroke-width="1.33398982438864px" opacity="1" stroke-opacity="1" fill-opacity="1" />
+    <rect id="plot_01.histogram.rect.panel.2.1.4" x="314.98" y="77.75" width="18.02" height="16.55"  fill="rgb(0,255,255)" stroke="rgb(0,0,0)" stroke-dasharray="none" stroke-width="1.33398982438864px" opacity="1" stroke-opacity="1" fill-opacity="1" />
+    <rect id="plot_01.histogram.rect.panel.2.1.5" x="333" y="77.75" width="18.02" height="49.64"  fill="rgb(0,255,255)" stroke="rgb(0,0,0)" stroke-dasharray="none" stroke-width="1.33398982438864px" opacity="1" stroke-opacity="1" fill-opacity="1" />
+    <rect id="plot_01.histogram.rect.panel.2.1.6" x="351.01" y="77.75" width="18.02" height="91.01"  fill="rgb(0,255,255)" stroke="rgb(0,0,0)" stroke-dasharray="none" stroke-width="1.33398982438864px" opacity="1" stroke-opacity="1" fill-opacity="1" />
+    <rect id="plot_01.histogram.rect.panel.2.1.7" x="369.03" y="77.75" width="18.02" height="99.28"  fill="rgb(0,255,255)" stroke="rgb(0,0,0)" stroke-dasharray="none" stroke-width="1.33398982438864px" opacity="1" stroke-opacity="1" fill-opacity="1" />
+    <rect id="plot_01.histogram.rect.panel.2.1.8" x="387.05" y="77.75" width="18.02" height="33.09"  fill="rgb(0,255,255)" stroke="rgb(0,0,0)" stroke-dasharray="none" stroke-width="1.33398982438864px" opacity="1" stroke-opacity="1" fill-opacity="1" />
+    <rect id="plot_01.histogram.rect.panel.2.1.9" x="405.07" y="77.75" width="18.02" height="33.09"  fill="rgb(0,255,255)" stroke="rgb(0,0,0)" stroke-dasharray="none" stroke-width="1.33398982438864px" opacity="1" stroke-opacity="1" fill-opacity="1" />
+    </g>
+  </g>
+  <g id="plot_01.panel.2.1.off.vp.2"  >
+    <g id="plot_01.border.panel.2.1" onmousemove="showTooltip(evt, 'plot_01.border.panel.2.1')" onmouseout="hideTooltip()" >
+    <rect id="plot_01.border.panel.2.1.1" x="249.57" y="67.72" width="184.87" height="163.48"  stroke="rgb(0,0,0)" stroke-dasharray="none" stroke-width="1.33398982438864px" opacity="1" fill="none" stroke-opacity="1" fill-opacity="0" />
+    </g>
+  </g>
+  <g id="plot_01.strip.2.1.vp.1"  >
+  <defs>
+    <clipPath id="plot_01.strip.default.1.2.clipPath">
+      <rect x="249.571311340883" y="231.197242737568" width="184.866239947481" height="19.2094534711965" style="fill: none; stroke: none;" />
+    </clipPath>
+  </defs>
+  <g id="plot_01.strip.default.1.2"  clip-path="url(#plot_01.strip.default.1.2.clipPath)" >
+    <g id="plot_01.bg.strip.2.1" onmousemove="showTooltip(evt, 'plot_01.bg.strip.2.1')" onmouseout="hideTooltip()" >
+    <rect id="plot_01.bg.strip.2.1.1" x="249.57" y="231.2" width="184.87" height="19.21"  fill="rgb(255,229,204)" stroke="rgb(255,229,204)" stroke-opacity="1" fill-opacity="1" />
+    </g>
+    <g id="plot_01.textr.strip.2.1" onmousemove="showTooltip(evt, 'plot_01.textr.strip.2.1')" onmouseout="hideTooltip()" >
+    <g id="plot_01.textr.strip.2.1.1"  stroke-width=".1" transform="translate(317.5, 240.8) ">
+<g transform="scale(1, -1)">
+<text x="0" y="0" text-anchor="start" stroke="rgb(0,0,0)" opacity="1" stroke-opacity="1" fill="rgb(0,0,0)" fill-opacity="1" font-size="16.01px" font-weight="normal" font-style="normal" >
+<tspan dy="6" x="0">Bass 1</tspan></text>
+</g>
+</g>
+    </g>
+  </g>
+  <g id="plot_01.strip.default.off.1.2"  >
+    <g id="plot_01.border.strip.2.1" onmousemove="showTooltip(evt, 'plot_01.border.strip.2.1')" onmouseout="hideTooltip()" >
+    <rect id="plot_01.border.strip.2.1.1" x="249.57" y="231.2" width="184.87" height="19.21"  stroke="rgb(0,0,0)" stroke-dasharray="none" stroke-width="1.33398982438864px" opacity="1" fill="none" stroke-opacity="1" fill-opacity="0" />
+    </g>
+  </g>
+</g>
+<defs>
+  <clipPath id="plot_01.panel.3.1.vp.1.clipPath">
+    <rect x="434.437551288364" y="67.715657311669" width="184.866239947481" height="163.481585425899" style="fill: none; stroke: none;" />
+  </clipPath>
+</defs>
+  <g id="plot_01.panel.3.1.vp.1"  clip-path="url(#plot_01.panel.3.1.vp.1.clipPath)" >
+  </g>
+  <g id="plot_01.strip.3.1.off.vp.1"  >
+  </g>
+  <g id="plot_01.strip.left.3.1.off.vp.1"  >
+  </g>
+  <g id="plot_01.panel.3.1.off.vp.1"  >
+    <g id="plot_01.ticks.bottom.panel.3.1" onmousemove="showTooltip(evt, 'plot_01.ticks.bottom.panel.3.1')" onmouseout="hideTooltip()" >
+    <polyline id="plot_01.ticks.bottom.panel.3.1.1" points="451.8,67.72 451.8,60.15"  stroke="rgb(0,0,0)" opacity="1" stroke-dasharray="none" stroke-width="1.33398982438864px" stroke-opacity="1" fill="none" />
+    <polyline id="plot_01.ticks.bottom.panel.3.1.2" points="498.72,67.72 498.72,60.15"  stroke="rgb(0,0,0)" opacity="1" stroke-dasharray="none" stroke-width="1.33398982438864px" stroke-opacity="1" fill="none" />
+    <polyline id="plot_01.ticks.bottom.panel.3.1.3" points="545.64,67.72 545.64,60.15"  stroke="rgb(0,0,0)" opacity="1" stroke-dasharray="none" stroke-width="1.33398982438864px" stroke-opacity="1" fill="none" />
+    <polyline id="plot_01.ticks.bottom.panel.3.1.4" points="592.56,67.72 592.56,60.15"  stroke="rgb(0,0,0)" opacity="1" stroke-dasharray="none" stroke-width="1.33398982438864px" stroke-opacity="1" fill="none" />
+    </g>
+    <g id="plot_01.ticklabels.bottom.panel.3.1" onmousemove="showTooltip(evt, 'plot_01.ticklabels.bottom.panel.3.1')" onmouseout="hideTooltip()" >
+    <g id="plot_01.ticklabels.bottom.panel.3.1.1"  stroke-width=".1" transform="translate(451.8, 52.59) ">
+<g transform="scale(1, -1)">
+<text x="0" y="0" text-anchor="middle" stroke="rgb(0,0,0)" opacity="1" stroke-opacity="1" fill="rgb(0,0,0)" fill-opacity="1" font-size="12.81px" font-weight="normal" font-style="normal" >
+<tspan dy="9.01" x="0">60</tspan></text>
+</g>
+</g>
+    <g id="plot_01.ticklabels.bottom.panel.3.1.2"  stroke-width=".1" transform="translate(498.72, 52.59) ">
+<g transform="scale(1, -1)">
+<text x="0" y="0" text-anchor="middle" stroke="rgb(0,0,0)" opacity="1" stroke-opacity="1" fill="rgb(0,0,0)" fill-opacity="1" font-size="12.81px" font-weight="normal" font-style="normal" >
+<tspan dy="9.01" x="0">65</tspan></text>
+</g>
+</g>
+    <g id="plot_01.ticklabels.bottom.panel.3.1.3"  stroke-width=".1" transform="translate(545.64, 52.59) ">
+<g transform="scale(1, -1)">
+<text x="0" y="0" text-anchor="middle" stroke="rgb(0,0,0)" opacity="1" stroke-opacity="1" fill="rgb(0,0,0)" fill-opacity="1" font-size="12.81px" font-weight="normal" font-style="normal" >
+<tspan dy="9.01" x="0">70</tspan></text>
+</g>
+</g>
+    <g id="plot_01.ticklabels.bottom.panel.3.1.4"  stroke-width=".1" transform="translate(592.56, 52.59) ">
+<g transform="scale(1, -1)">
+<text x="0" y="0" text-anchor="middle" stroke="rgb(0,0,0)" opacity="1" stroke-opacity="1" fill="rgb(0,0,0)" fill-opacity="1" font-size="12.81px" font-weight="normal" font-style="normal" >
+<tspan dy="9.01" x="0">75</tspan></text>
+</g>
+</g>
+    </g>
+    <g id="plot_01.ticks.right.panel.3.1" onmousemove="showTooltip(evt, 'plot_01.ticks.right.panel.3.1')" onmouseout="hideTooltip()" >
+    <polyline id="plot_01.ticks.right.panel.3.1.1" points="619.3,77.75 626.87,77.75"  stroke="rgb(0,0,0)" opacity="1" stroke-dasharray="none" stroke-width="1.33398982438864px" stroke-opacity="1" fill="none" />
+    <polyline id="plot_01.ticks.right.panel.3.1.2" points="619.3,110.02 626.87,110.02"  stroke="rgb(0,0,0)" opacity="1" stroke-dasharray="none" stroke-width="1.33398982438864px" stroke-opacity="1" fill="none" />
+    <polyline id="plot_01.ticks.right.panel.3.1.3" points="619.3,142.29 626.87,142.29"  stroke="rgb(0,0,0)" opacity="1" stroke-dasharray="none" stroke-width="1.33398982438864px" stroke-opacity="1" fill="none" />
+    <polyline id="plot_01.ticks.right.panel.3.1.4" points="619.3,174.55 626.87,174.55"  stroke="rgb(0,0,0)" opacity="1" stroke-dasharray="none" stroke-width="1.33398982438864px" stroke-opacity="1" fill="none" />
+    <polyline id="plot_01.ticks.right.panel.3.1.5" points="619.3,206.82 626.87,206.82"  stroke="rgb(0,0,0)" opacity="1" stroke-dasharray="none" stroke-width="1.33398982438864px" stroke-opacity="1" fill="none" />
+    </g>
+  </g>
+<defs>
+  <clipPath id="plot_01.panel.3.1.vp.2.clipPath">
+    <rect x="434.437551288364" y="67.715657311669" width="184.866239947481" height="163.481585425899" style="fill: none; stroke: none;" />
+  </clipPath>
+</defs>
+  <g id="plot_01.panel.3.1.vp.2"  clip-path="url(#plot_01.panel.3.1.vp.2.clipPath)" >
+    <g id="plot_01.histogram.baseline.lines.panel.3.1" onmousemove="showTooltip(evt, 'plot_01.histogram.baseline.lines.panel.3.1')" onmouseout="hideTooltip()" >
+    <polyline id="plot_01.histogram.baseline.lines.panel.3.1.1" points="443.68,77.75 610.06,77.75"  stroke-dasharray="none" stroke="rgb(0,0,0)" stroke-width="1.33398982438864px" opacity="1" stroke-opacity="1" fill="none" />
+    </g>
+    <g id="plot_01.histogram.rect.panel.3.1" onmousemove="showTooltip(evt, 'plot_01.histogram.rect.panel.3.1')" onmouseout="hideTooltip()" >
+    <rect id="plot_01.histogram.rect.panel.3.1.1" x="445.79" y="77.75" width="18.02" height="0"  fill="rgb(0,255,255)" stroke="rgb(0,0,0)" stroke-dasharray="none" stroke-width="1.33398982438864px" opacity="1" stroke-opacity="1" fill-opacity="1" />
+    <rect id="plot_01.histogram.rect.panel.3.1.2" x="463.81" y="77.75" width="18.02" height="0"  fill="rgb(0,255,255)" stroke="rgb(0,0,0)" stroke-dasharray="none" stroke-width="1.33398982438864px" opacity="1" stroke-opacity="1" fill-opacity="1" />
+    <rect id="plot_01.histogram.rect.panel.3.1.3" x="481.83" y="77.75" width="18.02" height="0"  fill="rgb(0,255,255)" stroke="rgb(0,0,0)" stroke-dasharray="none" stroke-width="1.33398982438864px" opacity="1" stroke-opacity="1" fill-opacity="1" />
+    <rect id="plot_01.histogram.rect.panel.3.1.4" x="499.84" y="77.75" width="18.02" height="15.36"  fill="rgb(0,255,255)" stroke="rgb(0,0,0)" stroke-dasharray="none" stroke-width="1.33398982438864px" opacity="1" stroke-opacity="1" fill-opacity="1" />
+    <rect id="plot_01.histogram.rect.panel.3.1.5" x="517.86" y="77.75" width="18.02" height="46.09"  fill="rgb(0,255,255)" stroke="rgb(0,0,0)" stroke-dasharray="none" stroke-width="1.33398982438864px" opacity="1" stroke-opacity="1" fill-opacity="1" />
+    <rect id="plot_01.histogram.rect.panel.3.1.6" x="535.88" y="77.75" width="18.02" height="138.28"  fill="rgb(0,255,255)" stroke="rgb(0,0,0)" stroke-dasharray="none" stroke-width="1.33398982438864px" opacity="1" stroke-opacity="1" fill-opacity="1" />
+    <rect id="plot_01.histogram.rect.panel.3.1.7" x="553.9" y="77.75" width="18.02" height="92.19"  fill="rgb(0,255,255)" stroke="rgb(0,0,0)" stroke-dasharray="none" stroke-width="1.33398982438864px" opacity="1" stroke-opacity="1" fill-opacity="1" />
+    <rect id="plot_01.histogram.rect.panel.3.1.8" x="571.92" y="77.75" width="18.02" height="15.36"  fill="rgb(0,255,255)" stroke="rgb(0,0,0)" stroke-dasharray="none" stroke-width="1.33398982438864px" opacity="1" stroke-opacity="1" fill-opacity="1" />
+    <rect id="plot_01.histogram.rect.panel.3.1.9" x="589.93" y="77.75" width="18.02" height="15.36"  fill="rgb(0,255,255)" stroke="rgb(0,0,0)" stroke-dasharray="none" stroke-width="1.33398982438864px" opacity="1" stroke-opacity="1" fill-opacity="1" />
+    </g>
+  </g>
+  <g id="plot_01.panel.3.1.off.vp.2"  >
+    <g id="plot_01.border.panel.3.1" onmousemove="showTooltip(evt, 'plot_01.border.panel.3.1')" onmouseout="hideTooltip()" >
+    <rect id="plot_01.border.panel.3.1.1" x="434.44" y="67.72" width="184.87" height="163.48"  stroke="rgb(0,0,0)" stroke-dasharray="none" stroke-width="1.33398982438864px" opacity="1" fill="none" stroke-opacity="1" fill-opacity="0" />
+    </g>
+  </g>
+  <g id="plot_01.strip.3.1.vp.1"  >
+  <defs>
+    <clipPath id="plot_01.strip.default.1.3.clipPath">
+      <rect x="434.437551288364" y="231.197242737568" width="184.866239947481" height="19.2094534711965" style="fill: none; stroke: none;" />
+    </clipPath>
+  </defs>
+  <g id="plot_01.strip.default.1.3"  clip-path="url(#plot_01.strip.default.1.3.clipPath)" >
+    <g id="plot_01.bg.strip.3.1" onmousemove="showTooltip(evt, 'plot_01.bg.strip.3.1')" onmouseout="hideTooltip()" >
+    <rect id="plot_01.bg.strip.3.1.1" x="434.44" y="231.2" width="184.87" height="19.21"  fill="rgb(255,229,204)" stroke="rgb(255,229,204)" stroke-opacity="1" fill-opacity="1" />
+    </g>
+    <g id="plot_01.textr.strip.3.1" onmousemove="showTooltip(evt, 'plot_01.textr.strip.3.1')" onmouseout="hideTooltip()" >
+    <g id="plot_01.textr.strip.3.1.1"  stroke-width=".1" transform="translate(499.37, 240.8) ">
+<g transform="scale(1, -1)">
+<text x="0" y="0" text-anchor="start" stroke="rgb(0,0,0)" opacity="1" stroke-opacity="1" fill="rgb(0,0,0)" fill-opacity="1" font-size="16.01px" font-weight="normal" font-style="normal" >
+<tspan dy="6" x="0">Tenor 2</tspan></text>
+</g>
+</g>
+    </g>
+  </g>
+  <g id="plot_01.strip.default.off.1.3"  >
+    <g id="plot_01.border.strip.3.1" onmousemove="showTooltip(evt, 'plot_01.border.strip.3.1')" onmouseout="hideTooltip()" >
+    <rect id="plot_01.border.strip.3.1.1" x="434.44" y="231.2" width="184.87" height="19.21"  stroke="rgb(0,0,0)" stroke-dasharray="none" stroke-width="1.33398982438864px" opacity="1" fill="none" stroke-opacity="1" fill-opacity="0" />
+    </g>
+  </g>
+</g>
+<defs>
+  <clipPath id="plot_01.panel.1.2.vp.1.clipPath">
+    <rect x="64.7050713934022" y="250.406696208764" width="184.866239947481" height="163.481585425899" style="fill: none; stroke: none;" />
+  </clipPath>
+</defs>
+  <g id="plot_01.panel.1.2.vp.1"  clip-path="url(#plot_01.panel.1.2.vp.1.clipPath)" >
+  </g>
+  <g id="plot_01.strip.1.2.off.vp.1"  >
+  </g>
+  <g id="plot_01.strip.left.1.2.off.vp.1"  >
+    <g id="plot_01.ticks.left.panel.1.2" onmousemove="showTooltip(evt, 'plot_01.ticks.left.panel.1.2')" onmouseout="hideTooltip()" >
+    <polyline id="plot_01.ticks.left.panel.1.2.1" points="64.71,260.45 57.14,260.45"  stroke="rgb(0,0,0)" opacity="1" stroke-dasharray="none" stroke-width="1.33398982438864px" stroke-opacity="1" fill="none" />
+    <polyline id="plot_01.ticks.left.panel.1.2.2" points="64.71,292.71 57.14,292.71"  stroke="rgb(0,0,0)" opacity="1" stroke-dasharray="none" stroke-width="1.33398982438864px" stroke-opacity="1" fill="none" />
+    <polyline id="plot_01.ticks.left.panel.1.2.3" points="64.71,324.98 57.14,324.98"  stroke="rgb(0,0,0)" opacity="1" stroke-dasharray="none" stroke-width="1.33398982438864px" stroke-opacity="1" fill="none" />
+    <polyline id="plot_01.ticks.left.panel.1.2.4" points="64.71,357.24 57.14,357.24"  stroke="rgb(0,0,0)" opacity="1" stroke-dasharray="none" stroke-width="1.33398982438864px" stroke-opacity="1" fill="none" />
+    <polyline id="plot_01.ticks.left.panel.1.2.5" points="64.71,389.51 57.14,389.51"  stroke="rgb(0,0,0)" opacity="1" stroke-dasharray="none" stroke-width="1.33398982438864px" stroke-opacity="1" fill="none" />
+    </g>
+  </g>
+  <g id="plot_01.panel.1.2.off.vp.1"  >
+  </g>
+<defs>
+  <clipPath id="plot_01.panel.1.2.vp.2.clipPath">
+    <rect x="64.7050713934022" y="250.406696208764" width="184.866239947481" height="163.481585425899" style="fill: none; stroke: none;" />
+  </clipPath>
+</defs>
+  <g id="plot_01.panel.1.2.vp.2"  clip-path="url(#plot_01.panel.1.2.vp.2.clipPath)" >
+    <g id="plot_01.histogram.baseline.lines.panel.1.2" onmousemove="showTooltip(evt, 'plot_01.histogram.baseline.lines.panel.1.2')" onmouseout="hideTooltip()" >
+    <polyline id="plot_01.histogram.baseline.lines.panel.1.2.1" points="73.95,260.45 240.33,260.45"  stroke-dasharray="none" stroke="rgb(0,0,0)" stroke-width="1.33398982438864px" opacity="1" stroke-opacity="1" fill="none" />
+    </g>
+    <g id="plot_01.histogram.rect.panel.1.2" onmousemove="showTooltip(evt, 'plot_01.histogram.rect.panel.1.2')" onmouseout="hideTooltip()" >
+    <rect id="plot_01.histogram.rect.panel.1.2.1" x="76.06" y="260.45" width="18.02" height="0"  fill="rgb(0,255,255)" stroke="rgb(0,0,0)" stroke-dasharray="none" stroke-width="1.33398982438864px" opacity="1" stroke-opacity="1" fill-opacity="1" />
+    <rect id="plot_01.histogram.rect.panel.1.2.2" x="94.07" y="260.45" width="18.02" height="0"  fill="rgb(0,255,255)" stroke="rgb(0,0,0)" stroke-dasharray="none" stroke-width="1.33398982438864px" opacity="1" stroke-opacity="1" fill-opacity="1" />
+    <rect id="plot_01.histogram.rect.panel.1.2.3" x="112.09" y="260.45" width="18.02" height="46.09"  fill="rgb(0,255,255)" stroke="rgb(0,0,0)" stroke-dasharray="none" stroke-width="1.33398982438864px" opacity="1" stroke-opacity="1" fill-opacity="1" />
+    <rect id="plot_01.histogram.rect.panel.1.2.4" x="130.11" y="260.45" width="18.02" height="76.82"  fill="rgb(0,255,255)" stroke="rgb(0,0,0)" stroke-dasharray="none" stroke-width="1.33398982438864px" opacity="1" stroke-opacity="1" fill-opacity="1" />
+    <rect id="plot_01.histogram.rect.panel.1.2.5" x="148.13" y="260.45" width="18.02" height="46.09"  fill="rgb(0,255,255)" stroke="rgb(0,0,0)" stroke-dasharray="none" stroke-width="1.33398982438864px" opacity="1" stroke-opacity="1" fill-opacity="1" />
+    <rect id="plot_01.histogram.rect.panel.1.2.6" x="166.15" y="260.45" width="18.02" height="46.09"  fill="rgb(0,255,255)" stroke="rgb(0,0,0)" stroke-dasharray="none" stroke-width="1.33398982438864px" opacity="1" stroke-opacity="1" fill-opacity="1" />
+    <rect id="plot_01.histogram.rect.panel.1.2.7" x="184.17" y="260.45" width="18.02" height="61.46"  fill="rgb(0,255,255)" stroke="rgb(0,0,0)" stroke-dasharray="none" stroke-width="1.33398982438864px" opacity="1" stroke-opacity="1" fill-opacity="1" />
+    <rect id="plot_01.histogram.rect.panel.1.2.8" x="202.18" y="260.45" width="18.02" height="30.73"  fill="rgb(0,255,255)" stroke="rgb(0,0,0)" stroke-dasharray="none" stroke-width="1.33398982438864px" opacity="1" stroke-opacity="1" fill-opacity="1" />
+    <rect id="plot_01.histogram.rect.panel.1.2.9" x="220.2" y="260.45" width="18.02" height="15.36"  fill="rgb(0,255,255)" stroke="rgb(0,0,0)" stroke-dasharray="none" stroke-width="1.33398982438864px" opacity="1" stroke-opacity="1" fill-opacity="1" />
+    </g>
+  </g>
+  <g id="plot_01.panel.1.2.off.vp.2"  >
+    <g id="plot_01.border.panel.1.2" onmousemove="showTooltip(evt, 'plot_01.border.panel.1.2')" onmouseout="hideTooltip()" >
+    <rect id="plot_01.border.panel.1.2.1" x="64.71" y="250.41" width="184.87" height="163.48"  stroke="rgb(0,0,0)" stroke-dasharray="none" stroke-width="1.33398982438864px" opacity="1" fill="none" stroke-opacity="1" fill-opacity="0" />
+    </g>
+  </g>
+  <g id="plot_01.strip.1.2.vp.1"  >
+  <defs>
+    <clipPath id="plot_01.strip.default.1.4.clipPath">
+      <rect x="64.7050713934022" y="413.888281634663" width="184.866239947481" height="19.2094534711965" style="fill: none; stroke: none;" />
+    </clipPath>
+  </defs>
+  <g id="plot_01.strip.default.1.4"  clip-path="url(#plot_01.strip.default.1.4.clipPath)" >
+    <g id="plot_01.bg.strip.1.2" onmousemove="showTooltip(evt, 'plot_01.bg.strip.1.2')" onmouseout="hideTooltip()" >
+    <rect id="plot_01.bg.strip.1.2.1" x="64.71" y="413.89" width="184.87" height="19.21"  fill="rgb(255,229,204)" stroke="rgb(255,229,204)" stroke-opacity="1" fill-opacity="1" />
+    </g>
+    <g id="plot_01.textr.strip.1.2" onmousemove="showTooltip(evt, 'plot_01.textr.strip.1.2')" onmouseout="hideTooltip()" >
+    <g id="plot_01.textr.strip.1.2.1"  stroke-width=".1" transform="translate(129.64, 423.49) ">
+<g transform="scale(1, -1)">
+<text x="0" y="0" text-anchor="start" stroke="rgb(0,0,0)" opacity="1" stroke-opacity="1" fill="rgb(0,0,0)" fill-opacity="1" font-size="16.01px" font-weight="normal" font-style="normal" >
+<tspan dy="6" x="0">Tenor 1</tspan></text>
+</g>
+</g>
+    </g>
+  </g>
+  <g id="plot_01.strip.default.off.1.4"  >
+    <g id="plot_01.border.strip.1.2" onmousemove="showTooltip(evt, 'plot_01.border.strip.1.2')" onmouseout="hideTooltip()" >
+    <rect id="plot_01.border.strip.1.2.1" x="64.71" y="413.89" width="184.87" height="19.21"  stroke="rgb(0,0,0)" stroke-dasharray="none" stroke-width="1.33398982438864px" opacity="1" fill="none" stroke-opacity="1" fill-opacity="0" />
+    </g>
+  </g>
+</g>
+<defs>
+  <clipPath id="plot_01.panel.2.2.vp.1.clipPath">
+    <rect x="249.571311340883" y="250.406696208764" width="184.866239947481" height="163.481585425899" style="fill: none; stroke: none;" />
+  </clipPath>
+</defs>
+  <g id="plot_01.panel.2.2.vp.1"  clip-path="url(#plot_01.panel.2.2.vp.1.clipPath)" >
+  </g>
+  <g id="plot_01.strip.2.2.off.vp.1"  >
+  </g>
+  <g id="plot_01.strip.left.2.2.off.vp.1"  >
+  </g>
+  <g id="plot_01.panel.2.2.off.vp.1"  >
+  </g>
+<defs>
+  <clipPath id="plot_01.panel.2.2.vp.2.clipPath">
+    <rect x="249.571311340883" y="250.406696208764" width="184.866239947481" height="163.481585425899" style="fill: none; stroke: none;" />
+  </clipPath>
+</defs>
+  <g id="plot_01.panel.2.2.vp.2"  clip-path="url(#plot_01.panel.2.2.vp.2.clipPath)" >
+    <g id="plot_01.histogram.baseline.lines.panel.2.2" onmousemove="showTooltip(evt, 'plot_01.histogram.baseline.lines.panel.2.2')" onmouseout="hideTooltip()" >
+    <polyline id="plot_01.histogram.baseline.lines.panel.2.2.1" points="258.81,260.45 425.19,260.45"  stroke-dasharray="none" stroke="rgb(0,0,0)" stroke-width="1.33398982438864px" opacity="1" stroke-opacity="1" fill="none" />
+    </g>
+    <g id="plot_01.histogram.rect.panel.2.2" onmousemove="showTooltip(evt, 'plot_01.histogram.rect.panel.2.2')" onmouseout="hideTooltip()" >
+    <rect id="plot_01.histogram.rect.panel.2.2.1" x="260.92" y="260.45" width="18.02" height="0"  fill="rgb(0,255,255)" stroke="rgb(0,0,0)" stroke-dasharray="none" stroke-width="1.33398982438864px" opacity="1" stroke-opacity="1" fill-opacity="1" />
+    <rect id="plot_01.histogram.rect.panel.2.2.2" x="278.94" y="260.45" width="18.02" height="35.85"  fill="rgb(0,255,255)" stroke="rgb(0,0,0)" stroke-dasharray="none" stroke-width="1.33398982438864px" opacity="1" stroke-opacity="1" fill-opacity="1" />
+    <rect id="plot_01.histogram.rect.panel.2.2.3" x="296.96" y="260.45" width="18.02" height="119.5"  fill="rgb(0,255,255)" stroke="rgb(0,0,0)" stroke-dasharray="none" stroke-width="1.33398982438864px" opacity="1" stroke-opacity="1" fill-opacity="1" />
+    <rect id="plot_01.histogram.rect.panel.2.2.4" x="314.98" y="260.45" width="18.02" height="95.6"  fill="rgb(0,255,255)" stroke="rgb(0,0,0)" stroke-dasharray="none" stroke-width="1.33398982438864px" opacity="1" stroke-opacity="1" fill-opacity="1" />
+    <rect id="plot_01.histogram.rect.panel.2.2.5" x="333" y="260.45" width="18.02" height="0"  fill="rgb(0,255,255)" stroke="rgb(0,0,0)" stroke-dasharray="none" stroke-width="1.33398982438864px" opacity="1" stroke-opacity="1" fill-opacity="1" />
+    <rect id="plot_01.histogram.rect.panel.2.2.6" x="351.01" y="260.45" width="18.02" height="71.7"  fill="rgb(0,255,255)" stroke="rgb(0,0,0)" stroke-dasharray="none" stroke-width="1.33398982438864px" opacity="1" stroke-opacity="1" fill-opacity="1" />
+    <rect id="plot_01.histogram.rect.panel.2.2.7" x="369.03" y="260.45" width="18.02" height="0"  fill="rgb(0,255,255)" stroke="rgb(0,0,0)" stroke-dasharray="none" stroke-width="1.33398982438864px" opacity="1" stroke-opacity="1" fill-opacity="1" />
+    <rect id="plot_01.histogram.rect.panel.2.2.8" x="387.05" y="260.45" width="18.02" height="0"  fill="rgb(0,255,255)" stroke="rgb(0,0,0)" stroke-dasharray="none" stroke-width="1.33398982438864px" opacity="1" stroke-opacity="1" fill-opacity="1" />
+    <rect id="plot_01.histogram.rect.panel.2.2.9" x="405.07" y="260.45" width="18.02" height="0"  fill="rgb(0,255,255)" stroke="rgb(0,0,0)" stroke-dasharray="none" stroke-width="1.33398982438864px" opacity="1" stroke-opacity="1" fill-opacity="1" />
+    </g>
+  </g>
+  <g id="plot_01.panel.2.2.off.vp.2"  >
+    <g id="plot_01.border.panel.2.2" onmousemove="showTooltip(evt, 'plot_01.border.panel.2.2')" onmouseout="hideTooltip()" >
+    <rect id="plot_01.border.panel.2.2.1" x="249.57" y="250.41" width="184.87" height="163.48"  stroke="rgb(0,0,0)" stroke-dasharray="none" stroke-width="1.33398982438864px" opacity="1" fill="none" stroke-opacity="1" fill-opacity="0" />
+    </g>
+  </g>
+  <g id="plot_01.strip.2.2.vp.1"  >
+  <defs>
+    <clipPath id="plot_01.strip.default.1.5.clipPath">
+      <rect x="249.571311340883" y="413.888281634663" width="184.866239947481" height="19.2094534711965" style="fill: none; stroke: none;" />
+    </clipPath>
+  </defs>
+  <g id="plot_01.strip.default.1.5"  clip-path="url(#plot_01.strip.default.1.5.clipPath)" >
+    <g id="plot_01.bg.strip.2.2" onmousemove="showTooltip(evt, 'plot_01.bg.strip.2.2')" onmouseout="hideTooltip()" >
+    <rect id="plot_01.bg.strip.2.2.1" x="249.57" y="413.89" width="184.87" height="19.21"  fill="rgb(255,229,204)" stroke="rgb(255,229,204)" stroke-opacity="1" fill-opacity="1" />
+    </g>
+    <g id="plot_01.textr.strip.2.2" onmousemove="showTooltip(evt, 'plot_01.textr.strip.2.2')" onmouseout="hideTooltip()" >
+    <g id="plot_01.textr.strip.2.2.1"  stroke-width=".1" transform="translate(321.5, 423.49) ">
+<g transform="scale(1, -1)">
+<text x="0" y="0" text-anchor="start" stroke="rgb(0,0,0)" opacity="1" stroke-opacity="1" fill="rgb(0,0,0)" fill-opacity="1" font-size="16.01px" font-weight="normal" font-style="normal" >
+<tspan dy="6" x="0">Alto 2</tspan></text>
+</g>
+</g>
+    </g>
+  </g>
+  <g id="plot_01.strip.default.off.1.5"  >
+    <g id="plot_01.border.strip.2.2" onmousemove="showTooltip(evt, 'plot_01.border.strip.2.2')" onmouseout="hideTooltip()" >
+    <rect id="plot_01.border.strip.2.2.1" x="249.57" y="413.89" width="184.87" height="19.21"  stroke="rgb(0,0,0)" stroke-dasharray="none" stroke-width="1.33398982438864px" opacity="1" fill="none" stroke-opacity="1" fill-opacity="0" />
+    </g>
+  </g>
+</g>
+<defs>
+  <clipPath id="plot_01.panel.3.2.vp.1.clipPath">
+    <rect x="434.437551288364" y="250.406696208764" width="184.866239947481" height="163.481585425899" style="fill: none; stroke: none;" />
+  </clipPath>
+</defs>
+  <g id="plot_01.panel.3.2.vp.1"  clip-path="url(#plot_01.panel.3.2.vp.1.clipPath)" >
+  </g>
+  <g id="plot_01.strip.3.2.off.vp.1"  >
+  </g>
+  <g id="plot_01.strip.left.3.2.off.vp.1"  >
+  </g>
+  <g id="plot_01.panel.3.2.off.vp.1"  >
+    <g id="plot_01.ticks.right.panel.3.2" onmousemove="showTooltip(evt, 'plot_01.ticks.right.panel.3.2')" onmouseout="hideTooltip()" >
+    <polyline id="plot_01.ticks.right.panel.3.2.1" points="619.3,260.45 626.87,260.45"  stroke="rgb(0,0,0)" opacity="1" stroke-dasharray="none" stroke-width="1.33398982438864px" stroke-opacity="1" fill="none" />
+    <polyline id="plot_01.ticks.right.panel.3.2.2" points="619.3,292.71 626.87,292.71"  stroke="rgb(0,0,0)" opacity="1" stroke-dasharray="none" stroke-width="1.33398982438864px" stroke-opacity="1" fill="none" />
+    <polyline id="plot_01.ticks.right.panel.3.2.3" points="619.3,324.98 626.87,324.98"  stroke="rgb(0,0,0)" opacity="1" stroke-dasharray="none" stroke-width="1.33398982438864px" stroke-opacity="1" fill="none" />
+    <polyline id="plot_01.ticks.right.panel.3.2.4" points="619.3,357.24 626.87,357.24"  stroke="rgb(0,0,0)" opacity="1" stroke-dasharray="none" stroke-width="1.33398982438864px" stroke-opacity="1" fill="none" />
+    <polyline id="plot_01.ticks.right.panel.3.2.5" points="619.3,389.51 626.87,389.51"  stroke="rgb(0,0,0)" opacity="1" stroke-dasharray="none" stroke-width="1.33398982438864px" stroke-opacity="1" fill="none" />
+    </g>
+    <g id="plot_01.ticklabels.right.panel.3.2" onmousemove="showTooltip(evt, 'plot_01.ticklabels.right.panel.3.2')" onmouseout="hideTooltip()" >
+    <g id="plot_01.ticklabels.right.panel.3.2.1"  stroke-width=".1" transform="translate(634.43, 260.45) ">
+<g transform="scale(1, -1)">
+<text x="0" y="0" text-anchor="start" stroke="rgb(0,0,0)" opacity="1" stroke-opacity="1" fill="rgb(0,0,0)" fill-opacity="1" font-size="12.81px" font-weight="normal" font-style="normal" >
+<tspan dy="4.5" x="0">0</tspan></text>
+</g>
+</g>
+    <g id="plot_01.ticklabels.right.panel.3.2.2"  stroke-width=".1" transform="translate(634.43, 292.71) ">
+<g transform="scale(1, -1)">
+<text x="0" y="0" text-anchor="start" stroke="rgb(0,0,0)" opacity="1" stroke-opacity="1" fill="rgb(0,0,0)" fill-opacity="1" font-size="12.81px" font-weight="normal" font-style="normal" >
+<tspan dy="4.5" x="0">10</tspan></text>
+</g>
+</g>
+    <g id="plot_01.ticklabels.right.panel.3.2.3"  stroke-width=".1" transform="translate(634.43, 324.98) ">
+<g transform="scale(1, -1)">
+<text x="0" y="0" text-anchor="start" stroke="rgb(0,0,0)" opacity="1" stroke-opacity="1" fill="rgb(0,0,0)" fill-opacity="1" font-size="12.81px" font-weight="normal" font-style="normal" >
+<tspan dy="4.5" x="0">20</tspan></text>
+</g>
+</g>
+    <g id="plot_01.ticklabels.right.panel.3.2.4"  stroke-width=".1" transform="translate(634.43, 357.24) ">
+<g transform="scale(1, -1)">
+<text x="0" y="0" text-anchor="start" stroke="rgb(0,0,0)" opacity="1" stroke-opacity="1" fill="rgb(0,0,0)" fill-opacity="1" font-size="12.81px" font-weight="normal" font-style="normal" >
+<tspan dy="4.5" x="0">30</tspan></text>
+</g>
+</g>
+    <g id="plot_01.ticklabels.right.panel.3.2.5"  stroke-width=".1" transform="translate(634.43, 389.51) ">
+<g transform="scale(1, -1)">
+<text x="0" y="0" text-anchor="start" stroke="rgb(0,0,0)" opacity="1" stroke-opacity="1" fill="rgb(0,0,0)" fill-opacity="1" font-size="12.81px" font-weight="normal" font-style="normal" >
+<tspan dy="4.5" x="0">40</tspan></text>
+</g>
+</g>
+    </g>
+  </g>
+<defs>
+  <clipPath id="plot_01.panel.3.2.vp.2.clipPath">
+    <rect x="434.437551288364" y="250.406696208764" width="184.866239947481" height="163.481585425899" style="fill: none; stroke: none;" />
+  </clipPath>
+</defs>
+  <g id="plot_01.panel.3.2.vp.2"  clip-path="url(#plot_01.panel.3.2.vp.2.clipPath)" >
+    <g id="plot_01.histogram.baseline.lines.panel.3.2" onmousemove="showTooltip(evt, 'plot_01.histogram.baseline.lines.panel.3.2')" onmouseout="hideTooltip()" >
+    <polyline id="plot_01.histogram.baseline.lines.panel.3.2.1" points="443.68,260.45 610.06,260.45"  stroke-dasharray="none" stroke="rgb(0,0,0)" stroke-width="1.33398982438864px" opacity="1" stroke-opacity="1" fill="none" />
+    </g>
+    <g id="plot_01.histogram.rect.panel.3.2" onmousemove="showTooltip(evt, 'plot_01.histogram.rect.panel.3.2')" onmouseout="hideTooltip()" >
+    <rect id="plot_01.histogram.rect.panel.3.2.1" x="445.79" y="260.45" width="18.02" height="46.09"  fill="rgb(0,255,255)" stroke="rgb(0,0,0)" stroke-dasharray="none" stroke-width="1.33398982438864px" opacity="1" stroke-opacity="1" fill-opacity="1" />
+    <rect id="plot_01.histogram.rect.panel.3.2.2" x="463.81" y="260.45" width="18.02" height="64.53"  fill="rgb(0,255,255)" stroke="rgb(0,0,0)" stroke-dasharray="none" stroke-width="1.33398982438864px" opacity="1" stroke-opacity="1" fill-opacity="1" />
+    <rect id="plot_01.histogram.rect.panel.3.2.3" x="481.83" y="260.45" width="18.02" height="64.53"  fill="rgb(0,255,255)" stroke="rgb(0,0,0)" stroke-dasharray="none" stroke-width="1.33398982438864px" opacity="1" stroke-opacity="1" fill-opacity="1" />
+    <rect id="plot_01.histogram.rect.panel.3.2.4" x="499.84" y="260.45" width="18.02" height="101.41"  fill="rgb(0,255,255)" stroke="rgb(0,0,0)" stroke-dasharray="none" stroke-width="1.33398982438864px" opacity="1" stroke-opacity="1" fill-opacity="1" />
+    <rect id="plot_01.histogram.rect.panel.3.2.5" x="517.86" y="260.45" width="18.02" height="18.44"  fill="rgb(0,255,255)" stroke="rgb(0,0,0)" stroke-dasharray="none" stroke-width="1.33398982438864px" opacity="1" stroke-opacity="1" fill-opacity="1" />
+    <rect id="plot_01.histogram.rect.panel.3.2.6" x="535.88" y="260.45" width="18.02" height="18.44"  fill="rgb(0,255,255)" stroke="rgb(0,0,0)" stroke-dasharray="none" stroke-width="1.33398982438864px" opacity="1" stroke-opacity="1" fill-opacity="1" />
+    <rect id="plot_01.histogram.rect.panel.3.2.7" x="553.9" y="260.45" width="18.02" height="9.22"  fill="rgb(0,255,255)" stroke="rgb(0,0,0)" stroke-dasharray="none" stroke-width="1.33398982438864px" opacity="1" stroke-opacity="1" fill-opacity="1" />
+    <rect id="plot_01.histogram.rect.panel.3.2.8" x="571.92" y="260.45" width="18.02" height="0"  fill="rgb(0,255,255)" stroke="rgb(0,0,0)" stroke-dasharray="none" stroke-width="1.33398982438864px" opacity="1" stroke-opacity="1" fill-opacity="1" />
+    <rect id="plot_01.histogram.rect.panel.3.2.9" x="589.93" y="260.45" width="18.02" height="0"  fill="rgb(0,255,255)" stroke="rgb(0,0,0)" stroke-dasharray="none" stroke-width="1.33398982438864px" opacity="1" stroke-opacity="1" fill-opacity="1" />
+    </g>
+  </g>
+  <g id="plot_01.panel.3.2.off.vp.2"  >
+    <g id="plot_01.border.panel.3.2" onmousemove="showTooltip(evt, 'plot_01.border.panel.3.2')" onmouseout="hideTooltip()" >
+    <rect id="plot_01.border.panel.3.2.1" x="434.44" y="250.41" width="184.87" height="163.48"  stroke="rgb(0,0,0)" stroke-dasharray="none" stroke-width="1.33398982438864px" opacity="1" fill="none" stroke-opacity="1" fill-opacity="0" />
+    </g>
+  </g>
+  <g id="plot_01.strip.3.2.vp.1"  >
+  <defs>
+    <clipPath id="plot_01.strip.default.1.6.clipPath">
+      <rect x="434.437551288364" y="413.888281634663" width="184.866239947481" height="19.2094534711965" style="fill: none; stroke: none;" />
+    </clipPath>
+  </defs>
+  <g id="plot_01.strip.default.1.6"  clip-path="url(#plot_01.strip.default.1.6.clipPath)" >
+    <g id="plot_01.bg.strip.3.2" onmousemove="showTooltip(evt, 'plot_01.bg.strip.3.2')" onmouseout="hideTooltip()" >
+    <rect id="plot_01.bg.strip.3.2.1" x="434.44" y="413.89" width="184.87" height="19.21"  fill="rgb(255,229,204)" stroke="rgb(255,229,204)" stroke-opacity="1" fill-opacity="1" />
+    </g>
+    <g id="plot_01.textr.strip.3.2" onmousemove="showTooltip(evt, 'plot_01.textr.strip.3.2')" onmouseout="hideTooltip()" >
+    <g id="plot_01.textr.strip.3.2.1"  stroke-width=".1" transform="translate(506.37, 423.49) ">
+<g transform="scale(1, -1)">
+<text x="0" y="0" text-anchor="start" stroke="rgb(0,0,0)" opacity="1" stroke-opacity="1" fill="rgb(0,0,0)" fill-opacity="1" font-size="16.01px" font-weight="normal" font-style="normal" >
+<tspan dy="6" x="0">Alto 1</tspan></text>
+</g>
+</g>
+    </g>
+  </g>
+  <g id="plot_01.strip.default.off.1.6"  >
+    <g id="plot_01.border.strip.3.2" onmousemove="showTooltip(evt, 'plot_01.border.strip.3.2')" onmouseout="hideTooltip()" >
+    <rect id="plot_01.border.strip.3.2.1" x="434.44" y="413.89" width="184.87" height="19.21"  stroke="rgb(0,0,0)" stroke-dasharray="none" stroke-width="1.33398982438864px" opacity="1" fill="none" stroke-opacity="1" fill-opacity="0" />
+    </g>
+  </g>
+</g>
+<defs>
+  <clipPath id="plot_01.panel.1.3.vp.1.clipPath">
+    <rect x="64.7050713934022" y="433.097735105859" width="184.866239947481" height="163.481585425899" style="fill: none; stroke: none;" />
+  </clipPath>
+</defs>
+  <g id="plot_01.panel.1.3.vp.1"  clip-path="url(#plot_01.panel.1.3.vp.1.clipPath)" >
+  </g>
+  <g id="plot_01.strip.1.3.off.vp.1"  >
+    <g id="plot_01.ticks.top.panel.1.3" onmousemove="showTooltip(evt, 'plot_01.ticks.top.panel.1.3')" onmouseout="hideTooltip()" >
+    <polyline id="plot_01.ticks.top.panel.1.3.1" points="82.06,615.79 82.06,623.35"  stroke="rgb(0,0,0)" opacity="1" stroke-dasharray="none" stroke-width="1.33398982438864px" stroke-opacity="1" fill="none" />
+    <polyline id="plot_01.ticks.top.panel.1.3.2" points="128.98,615.79 128.98,623.35"  stroke="rgb(0,0,0)" opacity="1" stroke-dasharray="none" stroke-width="1.33398982438864px" stroke-opacity="1" fill="none" />
+    <polyline id="plot_01.ticks.top.panel.1.3.3" points="175.91,615.79 175.91,623.35"  stroke="rgb(0,0,0)" opacity="1" stroke-dasharray="none" stroke-width="1.33398982438864px" stroke-opacity="1" fill="none" />
+    <polyline id="plot_01.ticks.top.panel.1.3.4" points="222.83,615.79 222.83,623.35"  stroke="rgb(0,0,0)" opacity="1" stroke-dasharray="none" stroke-width="1.33398982438864px" stroke-opacity="1" fill="none" />
+    </g>
+  </g>
+  <g id="plot_01.strip.left.1.3.off.vp.1"  >
+    <g id="plot_01.ticks.left.panel.1.3" onmousemove="showTooltip(evt, 'plot_01.ticks.left.panel.1.3')" onmouseout="hideTooltip()" >
+    <polyline id="plot_01.ticks.left.panel.1.3.1" points="64.71,443.14 57.14,443.14"  stroke="rgb(0,0,0)" opacity="1" stroke-dasharray="none" stroke-width="1.33398982438864px" stroke-opacity="1" fill="none" />
+    <polyline id="plot_01.ticks.left.panel.1.3.2" points="64.71,475.4 57.14,475.4"  stroke="rgb(0,0,0)" opacity="1" stroke-dasharray="none" stroke-width="1.33398982438864px" stroke-opacity="1" fill="none" />
+    <polyline id="plot_01.ticks.left.panel.1.3.3" points="64.71,507.67 57.14,507.67"  stroke="rgb(0,0,0)" opacity="1" stroke-dasharray="none" stroke-width="1.33398982438864px" stroke-opacity="1" fill="none" />
+    <polyline id="plot_01.ticks.left.panel.1.3.4" points="64.71,539.93 57.14,539.93"  stroke="rgb(0,0,0)" opacity="1" stroke-dasharray="none" stroke-width="1.33398982438864px" stroke-opacity="1" fill="none" />
+    <polyline id="plot_01.ticks.left.panel.1.3.5" points="64.71,572.2 57.14,572.2"  stroke="rgb(0,0,0)" opacity="1" stroke-dasharray="none" stroke-width="1.33398982438864px" stroke-opacity="1" fill="none" />
+    </g>
+    <g id="plot_01.ticklabels.left.panel.1.3" onmousemove="showTooltip(evt, 'plot_01.ticklabels.left.panel.1.3')" onmouseout="hideTooltip()" >
+    <g id="plot_01.ticklabels.left.panel.1.3.1"  stroke-width=".1" transform="translate(49.58, 443.14) ">
+<g transform="scale(1, -1)">
+<text x="0" y="0" text-anchor="end" stroke="rgb(0,0,0)" opacity="1" stroke-opacity="1" fill="rgb(0,0,0)" fill-opacity="1" font-size="12.81px" font-weight="normal" font-style="normal" >
+<tspan dy="4.5" x="0">0</tspan></text>
+</g>
+</g>
+    <g id="plot_01.ticklabels.left.panel.1.3.2"  stroke-width=".1" transform="translate(49.58, 475.4) ">
+<g transform="scale(1, -1)">
+<text x="0" y="0" text-anchor="end" stroke="rgb(0,0,0)" opacity="1" stroke-opacity="1" fill="rgb(0,0,0)" fill-opacity="1" font-size="12.81px" font-weight="normal" font-style="normal" >
+<tspan dy="4.5" x="0">10</tspan></text>
+</g>
+</g>
+    <g id="plot_01.ticklabels.left.panel.1.3.3"  stroke-width=".1" transform="translate(49.58, 507.67) ">
+<g transform="scale(1, -1)">
+<text x="0" y="0" text-anchor="end" stroke="rgb(0,0,0)" opacity="1" stroke-opacity="1" fill="rgb(0,0,0)" fill-opacity="1" font-size="12.81px" font-weight="normal" font-style="normal" >
+<tspan dy="4.5" x="0">20</tspan></text>
+</g>
+</g>
+    <g id="plot_01.ticklabels.left.panel.1.3.4"  stroke-width=".1" transform="translate(49.58, 539.93) ">
+<g transform="scale(1, -1)">
+<text x="0" y="0" text-anchor="end" stroke="rgb(0,0,0)" opacity="1" stroke-opacity="1" fill="rgb(0,0,0)" fill-opacity="1" font-size="12.81px" font-weight="normal" font-style="normal" >
+<tspan dy="4.5" x="0">30</tspan></text>
+</g>
+</g>
+    <g id="plot_01.ticklabels.left.panel.1.3.5"  stroke-width=".1" transform="translate(49.58, 572.2) ">
+<g transform="scale(1, -1)">
+<text x="0" y="0" text-anchor="end" stroke="rgb(0,0,0)" opacity="1" stroke-opacity="1" fill="rgb(0,0,0)" fill-opacity="1" font-size="12.81px" font-weight="normal" font-style="normal" >
+<tspan dy="4.5" x="0">40</tspan></text>
+</g>
+</g>
+    </g>
+  </g>
+  <g id="plot_01.panel.1.3.off.vp.1"  >
+  </g>
+<defs>
+  <clipPath id="plot_01.panel.1.3.vp.2.clipPath">
+    <rect x="64.7050713934022" y="433.097735105859" width="184.866239947481" height="163.481585425899" style="fill: none; stroke: none;" />
+  </clipPath>
+</defs>
+  <g id="plot_01.panel.1.3.vp.2"  clip-path="url(#plot_01.panel.1.3.vp.2.clipPath)" >
+    <g id="plot_01.histogram.baseline.lines.panel.1.3" onmousemove="showTooltip(evt, 'plot_01.histogram.baseline.lines.panel.1.3')" onmouseout="hideTooltip()" >
+    <polyline id="plot_01.histogram.baseline.lines.panel.1.3.1" points="73.95,443.14 240.33,443.14"  stroke-dasharray="none" stroke="rgb(0,0,0)" stroke-width="1.33398982438864px" opacity="1" stroke-opacity="1" fill="none" />
+    </g>
+    <g id="plot_01.histogram.rect.panel.1.3" onmousemove="showTooltip(evt, 'plot_01.histogram.rect.panel.1.3')" onmouseout="hideTooltip()" >
+    <rect id="plot_01.histogram.rect.panel.1.3.1" x="76.06" y="443.14" width="18.02" height="53.78"  fill="rgb(0,255,255)" stroke="rgb(0,0,0)" stroke-dasharray="none" stroke-width="1.33398982438864px" opacity="1" stroke-opacity="1" fill-opacity="1" />
+    <rect id="plot_01.histogram.rect.panel.1.3.2" x="94.07" y="443.14" width="18.02" height="86.04"  fill="rgb(0,255,255)" stroke="rgb(0,0,0)" stroke-dasharray="none" stroke-width="1.33398982438864px" opacity="1" stroke-opacity="1" fill-opacity="1" />
+    <rect id="plot_01.histogram.rect.panel.1.3.3" x="112.09" y="443.14" width="18.02" height="96.8"  fill="rgb(0,255,255)" stroke="rgb(0,0,0)" stroke-dasharray="none" stroke-width="1.33398982438864px" opacity="1" stroke-opacity="1" fill-opacity="1" />
+    <rect id="plot_01.histogram.rect.panel.1.3.4" x="130.11" y="443.14" width="18.02" height="64.53"  fill="rgb(0,255,255)" stroke="rgb(0,0,0)" stroke-dasharray="none" stroke-width="1.33398982438864px" opacity="1" stroke-opacity="1" fill-opacity="1" />
+    <rect id="plot_01.histogram.rect.panel.1.3.5" x="148.13" y="443.14" width="18.02" height="10.76"  fill="rgb(0,255,255)" stroke="rgb(0,0,0)" stroke-dasharray="none" stroke-width="1.33398982438864px" opacity="1" stroke-opacity="1" fill-opacity="1" />
+    <rect id="plot_01.histogram.rect.panel.1.3.6" x="166.15" y="443.14" width="18.02" height="10.76"  fill="rgb(0,255,255)" stroke="rgb(0,0,0)" stroke-dasharray="none" stroke-width="1.33398982438864px" opacity="1" stroke-opacity="1" fill-opacity="1" />
+    <rect id="plot_01.histogram.rect.panel.1.3.7" x="184.17" y="443.14" width="18.02" height="0"  fill="rgb(0,255,255)" stroke="rgb(0,0,0)" stroke-dasharray="none" stroke-width="1.33398982438864px" opacity="1" stroke-opacity="1" fill-opacity="1" />
+    <rect id="plot_01.histogram.rect.panel.1.3.8" x="202.18" y="443.14" width="18.02" height="0"  fill="rgb(0,255,255)" stroke="rgb(0,0,0)" stroke-dasharray="none" stroke-width="1.33398982438864px" opacity="1" stroke-opacity="1" fill-opacity="1" />
+    <rect id="plot_01.histogram.rect.panel.1.3.9" x="220.2" y="443.14" width="18.02" height="0"  fill="rgb(0,255,255)" stroke="rgb(0,0,0)" stroke-dasharray="none" stroke-width="1.33398982438864px" opacity="1" stroke-opacity="1" fill-opacity="1" />
+    </g>
+  </g>
+  <g id="plot_01.panel.1.3.off.vp.2"  >
+    <g id="plot_01.border.panel.1.3" onmousemove="showTooltip(evt, 'plot_01.border.panel.1.3')" onmouseout="hideTooltip()" >
+    <rect id="plot_01.border.panel.1.3.1" x="64.71" y="433.1" width="184.87" height="163.48"  stroke="rgb(0,0,0)" stroke-dasharray="none" stroke-width="1.33398982438864px" opacity="1" fill="none" stroke-opacity="1" fill-opacity="0" />
+    </g>
+  </g>
+  <g id="plot_01.strip.1.3.vp.1"  >
+  <defs>
+    <clipPath id="plot_01.strip.default.1.7.clipPath">
+      <rect x="64.7050713934022" y="596.579320531758" width="184.866239947481" height="19.2094534711965" style="fill: none; stroke: none;" />
+    </clipPath>
+  </defs>
+  <g id="plot_01.strip.default.1.7"  clip-path="url(#plot_01.strip.default.1.7.clipPath)" >
+    <g id="plot_01.bg.strip.1.3" onmousemove="showTooltip(evt, 'plot_01.bg.strip.1.3')" onmouseout="hideTooltip()" >
+    <rect id="plot_01.bg.strip.1.3.1" x="64.71" y="596.58" width="184.87" height="19.21"  fill="rgb(255,229,204)" stroke="rgb(255,229,204)" stroke-opacity="1" fill-opacity="1" />
+    </g>
+    <g id="plot_01.textr.strip.1.3" onmousemove="showTooltip(evt, 'plot_01.textr.strip.1.3')" onmouseout="hideTooltip()" >
+    <g id="plot_01.textr.strip.1.3.1"  stroke-width=".1" transform="translate(120.14, 606.18) ">
+<g transform="scale(1, -1)">
+<text x="0" y="0" text-anchor="start" stroke="rgb(0,0,0)" opacity="1" stroke-opacity="1" fill="rgb(0,0,0)" fill-opacity="1" font-size="16.01px" font-weight="normal" font-style="normal" >
+<tspan dy="6" x="0">Soprano 2</tspan></text>
+</g>
+</g>
+    </g>
+  </g>
+  <g id="plot_01.strip.default.off.1.7"  >
+    <g id="plot_01.border.strip.1.3" onmousemove="showTooltip(evt, 'plot_01.border.strip.1.3')" onmouseout="hideTooltip()" >
+    <rect id="plot_01.border.strip.1.3.1" x="64.71" y="596.58" width="184.87" height="19.21"  stroke="rgb(0,0,0)" stroke-dasharray="none" stroke-width="1.33398982438864px" opacity="1" fill="none" stroke-opacity="1" fill-opacity="0" />
+    </g>
+  </g>
+</g>
+<defs>
+  <clipPath id="plot_01.panel.2.3.vp.1.clipPath">
+    <rect x="249.571311340883" y="433.097735105859" width="184.866239947481" height="163.481585425899" style="fill: none; stroke: none;" />
+  </clipPath>
+</defs>
+  <g id="plot_01.panel.2.3.vp.1"  clip-path="url(#plot_01.panel.2.3.vp.1.clipPath)" >
+  </g>
+  <g id="plot_01.strip.2.3.off.vp.1"  >
+    <g id="plot_01.ticks.top.panel.2.3" onmousemove="showTooltip(evt, 'plot_01.ticks.top.panel.2.3')" onmouseout="hideTooltip()" >
+    <polyline id="plot_01.ticks.top.panel.2.3.1" points="266.93,615.79 266.93,623.35"  stroke="rgb(0,0,0)" opacity="1" stroke-dasharray="none" stroke-width="1.33398982438864px" stroke-opacity="1" fill="none" />
+    <polyline id="plot_01.ticks.top.panel.2.3.2" points="313.85,615.79 313.85,623.35"  stroke="rgb(0,0,0)" opacity="1" stroke-dasharray="none" stroke-width="1.33398982438864px" stroke-opacity="1" fill="none" />
+    <polyline id="plot_01.ticks.top.panel.2.3.3" points="360.77,615.79 360.77,623.35"  stroke="rgb(0,0,0)" opacity="1" stroke-dasharray="none" stroke-width="1.33398982438864px" stroke-opacity="1" fill="none" />
+    <polyline id="plot_01.ticks.top.panel.2.3.4" points="407.7,615.79 407.7,623.35"  stroke="rgb(0,0,0)" opacity="1" stroke-dasharray="none" stroke-width="1.33398982438864px" stroke-opacity="1" fill="none" />
+    </g>
+    <g id="plot_01.ticklabels.top.panel.2.3" onmousemove="showTooltip(evt, 'plot_01.ticklabels.top.panel.2.3')" onmouseout="hideTooltip()" >
+    <g id="plot_01.ticklabels.top.panel.2.3.1"  stroke-width=".1" transform="translate(266.93, 630.91) ">
+<g transform="scale(1, -1)">
+<text x="0" y="0" text-anchor="middle" stroke="rgb(0,0,0)" opacity="1" stroke-opacity="1" fill="rgb(0,0,0)" fill-opacity="1" font-size="12.81px" font-weight="normal" font-style="normal" >
+<tspan dy="0" x="0">60</tspan></text>
+</g>
+</g>
+    <g id="plot_01.ticklabels.top.panel.2.3.2"  stroke-width=".1" transform="translate(313.85, 630.91) ">
+<g transform="scale(1, -1)">
+<text x="0" y="0" text-anchor="middle" stroke="rgb(0,0,0)" opacity="1" stroke-opacity="1" fill="rgb(0,0,0)" fill-opacity="1" font-size="12.81px" font-weight="normal" font-style="normal" >
+<tspan dy="0" x="0">65</tspan></text>
+</g>
+</g>
+    <g id="plot_01.ticklabels.top.panel.2.3.3"  stroke-width=".1" transform="translate(360.77, 630.91) ">
+<g transform="scale(1, -1)">
+<text x="0" y="0" text-anchor="middle" stroke="rgb(0,0,0)" opacity="1" stroke-opacity="1" fill="rgb(0,0,0)" fill-opacity="1" font-size="12.81px" font-weight="normal" font-style="normal" >
+<tspan dy="0" x="0">70</tspan></text>
+</g>
+</g>
+    <g id="plot_01.ticklabels.top.panel.2.3.4"  stroke-width=".1" transform="translate(407.7, 630.91) ">
+<g transform="scale(1, -1)">
+<text x="0" y="0" text-anchor="middle" stroke="rgb(0,0,0)" opacity="1" stroke-opacity="1" fill="rgb(0,0,0)" fill-opacity="1" font-size="12.81px" font-weight="normal" font-style="normal" >
+<tspan dy="0" x="0">75</tspan></text>
+</g>
+</g>
+    </g>
+  </g>
+  <g id="plot_01.strip.left.2.3.off.vp.1"  >
+  </g>
+  <g id="plot_01.panel.2.3.off.vp.1"  >
+    <g id="plot_01.ticks.right.panel.2.3" onmousemove="showTooltip(evt, 'plot_01.ticks.right.panel.2.3')" onmouseout="hideTooltip()" >
+    <polyline id="plot_01.ticks.right.panel.2.3.1" points="434.44,443.14 442,443.14"  stroke="rgb(0,0,0)" opacity="1" stroke-dasharray="none" stroke-width="1.33398982438864px" stroke-opacity="1" fill="none" />
+    <polyline id="plot_01.ticks.right.panel.2.3.2" points="434.44,475.4 442,475.4"  stroke="rgb(0,0,0)" opacity="1" stroke-dasharray="none" stroke-width="1.33398982438864px" stroke-opacity="1" fill="none" />
+    <polyline id="plot_01.ticks.right.panel.2.3.3" points="434.44,507.67 442,507.67"  stroke="rgb(0,0,0)" opacity="1" stroke-dasharray="none" stroke-width="1.33398982438864px" stroke-opacity="1" fill="none" />
+    <polyline id="plot_01.ticks.right.panel.2.3.4" points="434.44,539.93 442,539.93"  stroke="rgb(0,0,0)" opacity="1" stroke-dasharray="none" stroke-width="1.33398982438864px" stroke-opacity="1" fill="none" />
+    <polyline id="plot_01.ticks.right.panel.2.3.5" points="434.44,572.2 442,572.2"  stroke="rgb(0,0,0)" opacity="1" stroke-dasharray="none" stroke-width="1.33398982438864px" stroke-opacity="1" fill="none" />
+    </g>
+  </g>
+<defs>
+  <clipPath id="plot_01.panel.2.3.vp.2.clipPath">
+    <rect x="249.571311340883" y="433.097735105859" width="184.866239947481" height="163.481585425899" style="fill: none; stroke: none;" />
+  </clipPath>
+</defs>
+  <g id="plot_01.panel.2.3.vp.2"  clip-path="url(#plot_01.panel.2.3.vp.2.clipPath)" >
+    <g id="plot_01.histogram.baseline.lines.panel.2.3" onmousemove="showTooltip(evt, 'plot_01.histogram.baseline.lines.panel.2.3')" onmouseout="hideTooltip()" >
+    <polyline id="plot_01.histogram.baseline.lines.panel.2.3.1" points="258.81,443.14 425.19,443.14"  stroke-dasharray="none" stroke="rgb(0,0,0)" stroke-width="1.33398982438864px" opacity="1" stroke-opacity="1" fill="none" />
+    </g>
+    <g id="plot_01.histogram.rect.panel.2.3" onmousemove="showTooltip(evt, 'plot_01.histogram.rect.panel.2.3')" onmouseout="hideTooltip()" >
+    <rect id="plot_01.histogram.rect.panel.2.3.1" x="260.92" y="443.14" width="18.02" height="26.89"  fill="rgb(0,255,255)" stroke="rgb(0,0,0)" stroke-dasharray="none" stroke-width="1.33398982438864px" opacity="1" stroke-opacity="1" fill-opacity="1" />
+    <rect id="plot_01.histogram.rect.panel.2.3.2" x="278.94" y="443.14" width="18.02" height="80.67"  fill="rgb(0,255,255)" stroke="rgb(0,0,0)" stroke-dasharray="none" stroke-width="1.33398982438864px" opacity="1" stroke-opacity="1" fill-opacity="1" />
+    <rect id="plot_01.histogram.rect.panel.2.3.3" x="296.96" y="443.14" width="18.02" height="143.4"  fill="rgb(0,255,255)" stroke="rgb(0,0,0)" stroke-dasharray="none" stroke-width="1.33398982438864px" opacity="1" stroke-opacity="1" fill-opacity="1" />
+    <rect id="plot_01.histogram.rect.panel.2.3.4" x="314.98" y="443.14" width="18.02" height="62.74"  fill="rgb(0,255,255)" stroke="rgb(0,0,0)" stroke-dasharray="none" stroke-width="1.33398982438864px" opacity="1" stroke-opacity="1" fill-opacity="1" />
+    <rect id="plot_01.histogram.rect.panel.2.3.5" x="333" y="443.14" width="18.02" height="8.96"  fill="rgb(0,255,255)" stroke="rgb(0,0,0)" stroke-dasharray="none" stroke-width="1.33398982438864px" opacity="1" stroke-opacity="1" fill-opacity="1" />
+    <rect id="plot_01.histogram.rect.panel.2.3.6" x="351.01" y="443.14" width="18.02" height="0"  fill="rgb(0,255,255)" stroke="rgb(0,0,0)" stroke-dasharray="none" stroke-width="1.33398982438864px" opacity="1" stroke-opacity="1" fill-opacity="1" />
+    <rect id="plot_01.histogram.rect.panel.2.3.7" x="369.03" y="443.14" width="18.02" height="0"  fill="rgb(0,255,255)" stroke="rgb(0,0,0)" stroke-dasharray="none" stroke-width="1.33398982438864px" opacity="1" stroke-opacity="1" fill-opacity="1" />
+    <rect id="plot_01.histogram.rect.panel.2.3.8" x="387.05" y="443.14" width="18.02" height="0"  fill="rgb(0,255,255)" stroke="rgb(0,0,0)" stroke-dasharray="none" stroke-width="1.33398982438864px" opacity="1" stroke-opacity="1" fill-opacity="1" />
+    <rect id="plot_01.histogram.rect.panel.2.3.9" x="405.07" y="443.14" width="18.02" height="0"  fill="rgb(0,255,255)" stroke="rgb(0,0,0)" stroke-dasharray="none" stroke-width="1.33398982438864px" opacity="1" stroke-opacity="1" fill-opacity="1" />
+    </g>
+  </g>
+  <g id="plot_01.panel.2.3.off.vp.2"  >
+    <g id="plot_01.border.panel.2.3" onmousemove="showTooltip(evt, 'plot_01.border.panel.2.3')" onmouseout="hideTooltip()" >
+    <rect id="plot_01.border.panel.2.3.1" x="249.57" y="433.1" width="184.87" height="163.48"  stroke="rgb(0,0,0)" stroke-dasharray="none" stroke-width="1.33398982438864px" opacity="1" fill="none" stroke-opacity="1" fill-opacity="0" />
+    </g>
+  </g>
+  <g id="plot_01.strip.2.3.vp.1"  >
+  <defs>
+    <clipPath id="plot_01.strip.default.1.8.clipPath">
+      <rect x="249.571311340883" y="596.579320531758" width="184.866239947481" height="19.2094534711965" style="fill: none; stroke: none;" />
+    </clipPath>
+  </defs>
+  <g id="plot_01.strip.default.1.8"  clip-path="url(#plot_01.strip.default.1.8.clipPath)" >
+    <g id="plot_01.bg.strip.2.3" onmousemove="showTooltip(evt, 'plot_01.bg.strip.2.3')" onmouseout="hideTooltip()" >
+    <rect id="plot_01.bg.strip.2.3.1" x="249.57" y="596.58" width="184.87" height="19.21"  fill="rgb(255,229,204)" stroke="rgb(255,229,204)" stroke-opacity="1" fill-opacity="1" />
+    </g>
+    <g id="plot_01.textr.strip.2.3" onmousemove="showTooltip(evt, 'plot_01.textr.strip.2.3')" onmouseout="hideTooltip()" >
+    <g id="plot_01.textr.strip.2.3.1"  stroke-width=".1" transform="translate(305, 606.18) ">
+<g transform="scale(1, -1)">
+<text x="0" y="0" text-anchor="start" stroke="rgb(0,0,0)" opacity="1" stroke-opacity="1" fill="rgb(0,0,0)" fill-opacity="1" font-size="16.01px" font-weight="normal" font-style="normal" >
+<tspan dy="6" x="0">Soprano 1</tspan></text>
+</g>
+</g>
+    </g>
+  </g>
+  <g id="plot_01.strip.default.off.1.8"  >
+    <g id="plot_01.border.strip.2.3" onmousemove="showTooltip(evt, 'plot_01.border.strip.2.3')" onmouseout="hideTooltip()" >
+    <rect id="plot_01.border.strip.2.3.1" x="249.57" y="596.58" width="184.87" height="19.21"  stroke="rgb(0,0,0)" stroke-dasharray="none" stroke-width="1.33398982438864px" opacity="1" fill="none" stroke-opacity="1" fill-opacity="0" />
+    </g>
+  </g>
+</g>
+  <g id="plot_01..1"  >
+  </g>
+</g>
+<script type="text/ecmascript" id="GRID.script.grob.37680" xlink:href="tooltip.js" >
+</script>
+</g>
+</g>
+</svg>
