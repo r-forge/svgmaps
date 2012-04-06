@@ -1,15 +1,15 @@
 
 # MAKE THIS MORE PRETTY
 spatialPointsDataFrame_long <- function(sp_points_df, vars){
-  df_long<- cbind(sp_points_df@data, coordinates(sp_points_df))
-  df_long_sub <- df_long[c("x", "y", vars)]
-  df_long_sub <- rename(df_long_sub, c(x="lon", y="lat"))
-  df_long_sub$order <- seq_len(nrow(df_long_sub))
-  df_long_sub_melt <- melt(df_long_sub, id.vars=c("lon", "lat"))
-  df_long_sub_melt$geom <- "point"
-  df_long_sub_melt$element_id <- seq_len(nrow(df_long_sub_melt))
-  df_long_sub_melt$point_id <- seq_len(nrow(df_long_sub_melt))
-  df_long_sub_melt
+  df <- cbind(sp_points_df@data, coordinates(sp_points_df))
+  df_sub <- df[c("x", "y", vars)]
+  df_sub <- rename(df_sub, c(x="lon", y="lat"))
+  df_sub$order <- seq_len(nrow(df_sub))
+  df_melted <- melt(df_sub, id.vars=c("lon", "lat"))
+  df_melted$geom <- "point"
+  df_melted$element_id <- seq_len(nrow(df_melted))
+  df_melted$point_id <- df_melted$element_id
+  df_melted
 }
 
 

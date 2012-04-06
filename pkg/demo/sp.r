@@ -2,6 +2,8 @@
 
 #################   test SpatialPointsDataFrame
 library(sp)
+library(reshape)
+library(ggplot2)
 data(meuse)
 meuse2 <- meuse
 coordinates(meuse2) <- c("x","y")
@@ -10,6 +12,9 @@ spplot(meuse2)
 
 test <- spatialPointsDataFrame_long(meuse2, c("elev", "cadmium"))
 head(test)
+
+class(meuse)
+ggplot() + geom_map(map=meuse2, aes(colour="cadmium"))
 
 
 ################  test SpatialLinesDataFrame
@@ -31,6 +36,7 @@ df = data.frame(z = c(1,2,3), row.names=sapply(slot(Sl, "lines"), function(x) sl
 Sldf = SpatialLinesDataFrame(Sl, data = df)
 summary(Sldf)
 
+ggplot() + geom_map(map=Sldf)
 # coordinates
 coordinates(Sldf)
 

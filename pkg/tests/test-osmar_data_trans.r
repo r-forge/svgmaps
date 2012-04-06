@@ -6,7 +6,7 @@ library(testthat)
 context("osmar data transformation")
 
 load("../data/home.rda")
-source("../R/osmarDataTransform.R")
+source("../R/osmar-transform.R")
 
 
 # some test functions 
@@ -32,33 +32,33 @@ df_has_names <- function(namez){
   }
 }
 
-test_that("does osmar_attrs_to_tags work?",{
+test_that("does melt_attrs work?",{
 
   # does attribute to tags work fine?
-  expect_is(osmar_attrs_to_tags(home$lines$attrs, "shop"), "data.frame")
-  expect_is(osmar_attrs_to_tags(home$nodes$attrs, "shop"), "data.frame")
-  expect_is(osmar_attrs_to_tags(home$relations$attrs, "shop"), "data.frame")
+  expect_is(melt_attrs(home$lines$attrs, "shop"), "data.frame")
+  expect_is(melt_attrs(home$nodes$attrs, "shop"), "data.frame")
+  expect_is(melt_attrs(home$relations$attrs, "shop"), "data.frame")
 
-  expect_is(osmar_attrs_to_tags(home$relations$attrs, "version"), "data.frame")
-  expect_is(osmar_attrs_to_tags(home$relations$attrs, "version"), "data.frame")
-  expect_is(osmar_attrs_to_tags(home$relations$attrs, "version"), "data.frame")
+  expect_is(melt_attrs(home$relations$attrs, "version"), "data.frame")
+  expect_is(melt_attrs(home$relations$attrs, "version"), "data.frame")
+  expect_is(melt_attrs(home$relations$attrs, "version"), "data.frame")
 
 
-  expect_that(osmar_attrs_to_tags(home$nodes$attrs, "version"), is_not_empty())
-  expect_that(osmar_attrs_to_tags(home$ways$attrs, "version"), is_not_empty())
-  expect_that(osmar_attrs_to_tags(home$relations$attrs, "version"), is_not_empty())
+  expect_that(melt_attrs(home$nodes$attrs, "version"), is_not_empty())
+  expect_that(melt_attrs(home$ways$attrs, "version"), is_not_empty())
+  expect_that(melt_attrs(home$relations$attrs, "version"), is_not_empty())
   
-  expect_that(osmar_attrs_to_tags(home$nodes$attrs, "version"), df_has_names(c("id", "variable", "value")))
-  expect_that(osmar_attrs_to_tags(home$nodes$attrs, "version"), df_has_names(c("id", "variable", "value")))
-  expect_that(osmar_attrs_to_tags(home$nodes$attrs, "version"), df_has_names(c("id", "variable", "value")))
+  expect_that(melt_attrs(home$nodes$attrs, "version"), df_has_names(c("id", "variable", "value")))
+  expect_that(melt_attrs(home$nodes$attrs, "version"), df_has_names(c("id", "variable", "value")))
+  expect_that(melt_attrs(home$nodes$attrs, "version"), df_has_names(c("id", "variable", "value")))
   
-  expect_that(osmar_attrs_to_tags(home$nodes$attrs, "xxxxxxx"), df_has_names(c("id", "variable", "value")))
-  expect_that(osmar_attrs_to_tags(home$nodes$attrs, "xxxxxxx"), df_has_names(c("id", "variable", "value")))
-  expect_that(osmar_attrs_to_tags(home$nodes$attrs, "xxxxxxx"), df_has_names(c("id", "variable", "value")))
+  expect_that(melt_attrs(home$nodes$attrs, "xxxxxxx"), df_has_names(c("id", "variable", "value")))
+  expect_that(melt_attrs(home$nodes$attrs, "xxxxxxx"), df_has_names(c("id", "variable", "value")))
+  expect_that(melt_attrs(home$nodes$attrs, "xxxxxxx"), df_has_names(c("id", "variable", "value")))
   
-  expect_that(osmar_attrs_to_tags(home$nodes$attrs, "xxxxxxx"), is_empty())
-  expect_that(osmar_attrs_to_tags(home$nodes$attrs, "xxxxxxx"), is_empty())
-  expect_that(osmar_attrs_to_tags(home$nodes$attrs, "xxxxxxx"), is_empty())
+  expect_that(melt_attrs(home$nodes$attrs, "xxxxxxx"), is_empty())
+  expect_that(melt_attrs(home$nodes$attrs, "xxxxxxx"), is_empty())
+  expect_that(melt_attrs(home$nodes$attrs, "xxxxxxx"), is_empty())
 })
 
 
@@ -66,16 +66,16 @@ test_that("does osmar_attrs_to_tags work?",{
 
 
 
-test_that("does osmar_merge_attrs_and_tags work?",{
+test_that("does merge_attrs_tags work?",{
   # yes: variable exists, no: doesn't exist 
-  nodes_yes <- osmar_merge_attrs_and_tags(home$nodes, vars="uid")
-  nodes_no <- osmar_merge_attrs_and_tags(home$nodes, vars="xxx")
+  nodes_yes <- merge_attrs_tags(home$nodes, vars="uid")
+  nodes_no <- merge_attrs_tags(home$nodes, vars="xxx")
   
-  ways_yes <- osmar_merge_attrs_and_tags(home$ways, vars="version") 
-  ways_no <- osmar_merge_attrs_and_tags(home$ways, vars="")
+  ways_yes <- merge_attrs_tags(home$ways, vars="version") 
+  ways_no <- merge_attrs_tags(home$ways, vars="")
   
-  relations_yes <- osmar_merge_attrs_and_tags(home$relations, vars="timestamp")
-  relations_no <- osmar_merge_attrs_and_tags(home$relations, vars="katzenklo")
+  relations_yes <- merge_attrs_tags(home$relations, vars="timestamp")
+  relations_no <- merge_attrs_tags(home$relations, vars="katzenklo")
   
   
   expect_that(nodes_yes, is_not_empty())
@@ -94,9 +94,9 @@ test_that("does osmar_merge_attrs_and_tags work?",{
   expect_that(relations_no, df_has_names(namez))
 })
 
-test_that("does osmar_coords_nodes work?", {
+test_that("does get_coords_nodes work?", {
   namez <- c("lat", "lon", "node_id", "element_id", "geom", "order")
-  coords <- osmar_coords_nodes(home)
+  coords <- get_coords_nodes(home)
   expect_is(coords, "data.frame")
   expect_that(coords, is_not_empty())
   expect_that(coords, df_has_names(namez))
@@ -107,55 +107,55 @@ test_that("does osmar_coords_nodes work?", {
   # missing: make empty subset of home and try
 })
 
-test_that("does osmar_coords_ways work?", {
+test_that("does get_coords_ways work?", {
   namez <- c("lat", "lon", "node_id", "element_id", "geom", "order")
-  coords <- osmar_coords_ways(home)
+  coords <- get_coords_ways(home)
   expect_is(coords, "data.frame")
   expect_that(coords, is_not_empty())
   expect_that(coords, df_has_names(namez))
-  expect_that(unique(coords$geom), equals("path"))
+  expect_that(unique(coords$geom), equals(c("path", "polygon")))
   # missing: make empty subset of home and try
 })
 
-test_that("does osmar_coords_relations work?", {
+test_that("does get_coords_relations work?", {
 })
 
-test_that("does osmar_merge_coords_attrs work?", {
+test_that("does merge_coords_attrs work?", {
   namez <- c("element_id", "node_id", "variable", "value", "lon", "lat", "order")
   
 })
 
 
-test_that("does osmar_nodes_long work?", {
-  nodL <- osmar_relations_long(home, "version")
+test_that("does melt_nodes work?", {
+  nodL <- melt_relations(home, "version")
   namez <- c("lon", "lat", "variable", "value", "order", "geom", "element_id", "node_id")
   expect_that(nodL, is_not_empty())
   expect_that(nodL, df_has_names(namez))
 })
 
 
-test_that("does osmar_long_work?", {
+test_that("does fortify_osmar_work?", {
 })
 
 
-test_that("does osmar_relations_long work?", {
-  relL <- osmar_relations_long(home, "version")
+test_that("does melt_relations work?", {
+  relL <- melt_relations(home, "version")
   namez <- c("lon", "lat", "variable", "value", "order", "geom", "element_id", "node_id")
   expect_that(relL, is_not_empty())
   expect_that(relL, df_has_names(namez))
 })
 
 
-test_that("does osmar_ways_long work?", {
-  waysL <- osmar_ways_long(home, "version")
+test_that("does melt_ways work?", {
+  waysL <- melt_ways(home, "version", "version")
   namez <- c("lon", "lat", "variable", "value", "order", "geom", "element_id", "node_id")
   expect_that(waysL, is_not_empty())
   expect_that(waysL, df_has_names(namez))
 })
 
-test_that("does osmar_ways2Polygons work?",{
-  ways <- osmar_ways_long(home, "version")
-  waysP <- osmar_ways2Polygons(ways)
+test_that("does change_ways2polygons work?",{
+  ways <- melt_ways(home, "version","version")
+  waysP <- change_ways2polygons(ways)
   test_that(dim(waysP), equals(dim(ways)))
-  test_that(unique(waysP$geom), equals(c("line", "polygon")))
+  test_that(unique(waysP$geom), equals(c("path", "polygon")))
 })

@@ -10,24 +10,24 @@
 ##' @return TRUE if mapping is valid for element, else FALSE
 ##' @author chris
 checkMapping <- function(element, mapping){
-  valid_for_all <- c("colour", "toolTip", "alpha")
-  valid_mapp <- switch(element,
+  valid_all<- c("colour", "toolTip", "alpha")
+  valid_special <- switch(element,
                        line=c("shape", "size"),
                        point=c("shape", "size"),
                        polygon=c("linetype", "size"),
                        grid=c("fill", "linetype", "size")
                        )
-  valid_mapp <- c(valid_mapp, valid_for_all)
+  valid_mapp <- c(valid_all, valid_special)
   mapping %in% valid_mapp
 }
 
 
 
-getData <- function(object, points, lines, polygons, grid){
+get_data <- function(object, points, lines, polygons, grid){
   if(osmar:::is_osmar(object)){
-    data <- osmar_long(object, node.vars=points, way.vars=c(lines, polygons)) # and relations????
+    data <- fortify_osmar(object, vars_node=points, vars_path=lines, vars_poly= polygons) # and relations????
   } else if(attributes(class(object)) == "sp"){
-                                        # HOW SHOULD THE VARS BE TREATED???
+    ## HOW SHOULD THE VARS BE TREATED???
     data <- sp_long(object, p=points, l=lines, poly=polygons, g=grid)
   } else if(class(object) == "list"){
     # ADD THE VARIABLES 
@@ -52,21 +52,20 @@ svgmap <- function(object,
   
   # bring variables list in a convenient form
   # MISSING
-  points.vars <- unlist(points)
-  lines.vars <- unlist(lines)
-  polygons.vars <- unlist(polygons)
-  grid.vars <- unlist(grid)
+  vars_points <- unlist(points)
+  vars_lines <- unlist(lines)
+  vars_polygons <- unlist(polygons)
+  vars_grid <- unlist(grid)
   
   # check mapping
-  df <- getData(object, points.vars, lines.vars, polygons.vars, grid.vars)
+
+  # get data out of object in long format
+  df <- get_data(object, vars_points, vars_lines, vars_polygons, vars_grid)
+  
+  # convert to wide format
   df <- cast(df, ...~variable)
   df <- df[order(df$element_id, df$order),]
-  # get dataframe out of objects
-  # MISSSING result: df
   
-
-  ## cast the datafram
-
   # produce layers
   layers <- dlply(df, .(geom),
                   .fun=function(X){
