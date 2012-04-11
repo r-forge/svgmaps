@@ -1,20 +1,17 @@
 ToDo: 
 
 - relations: make more then depth one possible
-- implement spatialPolygonsDataFrame with fortify
 - make a test for spDataTransform.R
 - what to do with holes in polygons? maybe as extra variable, when hole=TRUE
 - geo referenzsysteme ??
-- replace merge with join?
 - think about behaviour if list for nodes/ways/relations is empty
-- change the functions in osmarDataTransform so that you don't allways pass the whole osmar object
 - give aliases for svgmap() - arguments
 - geom_density?
 - problem: if for example the user wants the colour for the version of nodes and relations there is a conflict,
   because a node can have two version then. and what should be done?
 - throw errors if variable is not in dataset
-- because of the mixup from lines and polygons in ways, lines will be kept and plotted even if you just wanted the polygons; has to be fixed
 - drop node id?
 - allow the usage of a normal dataframe? why not... some things have to be given like geom, lon, lat, variable and value
 - should it be allowed to pass more the one sp-object instead of a list of sp_objects?
-- cleanly split polygons and lines in osmar ways
+- problem: path drawn with polylines so only one meta possible; one solution: make a for loop 
+	to draw every path extra - UPDATE: there is an id in a polylinesgrob; maybe this could be used

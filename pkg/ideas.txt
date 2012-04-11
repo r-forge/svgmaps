@@ -7,56 +7,27 @@
 
 - Tooltips for the labels (x and y); could be an extra option; something like svg_map(..., xlab.hov="xlab description", ylab.hov="ylab description")
 
-- maybe linking two plots
-
 - make an own CSS Stylesheet for the appearance of the tooltips
 
 - add more than one tooltip per point and choose between them with checkboxes
-
-- use low-level functions of SVGAnnotation to get specific plot points (e.g. streets, rivers, signals, ...); instead of getPlotPoints() getRivers(), getStreets()
 
 - animation for time series. -> every osmar object has a time stamp
 
 - checkboxes for adding and removing layers. a layer could be for example streets or buildings. 
   layers could also be points like shops
 
-- types of stats: 
-    - nodes: - plot nodes and annotate them depending on one variable (+ color)
-             - count nodes in a rectengular and color the rect
-	     - count nodes in a way and color way (or make the line thicker)
-    - ways:  - count ways in a rectangular and color it (count)
-             - plot ways and annotate them, depending on one variable (+ color)
-    - rels: 
-
-- before casting merging and all that stuff, filter the data; just keep the information which is going to be plotted
-
-- different units: 
-  - nodes: makes stats only on single notes osm_obj$nodes$attrs$id
-  - ways: make stats for ways (e.g. how many shops does a street have?) osm_obj$ways$attrs$id
-    	  make stats for areas, which is a special way (maybe with subset?)
-  - rects: make stats for rects like in thomas ba thesis (example with signals) make a grid and aggregate points
-  - rels: one stat per rel osm_obj$relations$attrs$id
-
-- one function for drawing + wrapper for this function for specific purposes
 
 - automatically open browser and update plot
 
-- use the OpenStreetMap package for background? this would be very cool!
+- use the OpenStreetMap package for background? this would be great!
 
 - option to produce graphics in an other format than SVG (without interactivity of course)
 
 - legend with color key; maybe interactive. when you click on a unit an arrow points to the value on the key.
   second click: alpha = 0.5 for the old click and new click gets an arrow
 
-- minor problem: what to do with sp-objects?  there is less data in them. 
-  units can be the same: points, lines, polygons and grid. 
-  but what to do with the stats? maybe i could add an option for additional data. 
-  depending on the units, the ids have to match
-
 - maybe use gridSVG instead of SVGAnnotation
 
 - what to do with multipolygons (osmar)? http://wiki.openstreetmap.org/wiki/Relation:multipolygon
 
 - package ggmap: take a closer look at this package!
-
-- there is a SpatialGridDataFrame-object in sp

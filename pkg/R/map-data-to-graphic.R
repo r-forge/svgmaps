@@ -4,7 +4,7 @@
 ##' This function returns TRUE, if the mapping method is
 ##' valid for the element. What is allowed is mainly dictated by the
 ##' aesthetics options for the fitting geom from ggplot2
-##' @title 
+##' @title check Mapping
 ##' @param element Graphical Element, e.g. lines, points, ...
 ##' @param mapping Graphical Attributes, e.g. colour, toolTip, ..
 ##' @return TRUE if mapping is valid for element, else FALSE

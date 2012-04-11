@@ -1,0 +1,12 @@
+Package: svgmaps
+Type: Package
+Title: Automatic Generation of Interactive SVG maps
+Version: 0.1-0
+Date: 2012-03-21
+Author: Christoph Molnar and Manuel Eugster
+Maintainer: Christoph Molnar <christoph.molnar@googlemail.com>
+Depends: R, ggplot2
+Suggests: osmar, sp
+Description: More about what it does (maybe more than one line)
+License: What license is it under?
+Built: R 2.12.1; ; 2012-04-04 10:02:21 UTC; unix

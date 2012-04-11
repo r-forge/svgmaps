@@ -7,30 +7,9 @@ context("osmar data transformation")
 
 load("../data/home.rda")
 source("../R/osmar-transform.R")
+source("conditions.R")
+require(reshape)
 
-
-# some test functions 
-
-# dataframe shall not be empty
-is_not_empty <- function() {
-  function(x) {
-    expectation(nrow(x) > 0, "empty dataframe")
-  }
-}
-
-# dataframe shall be empty
-is_empty <- function(){
-  function(x){
-    expectation(nrow(x) == 0, "dataframe is not empty, but should be")
-  }
-}
-
-# dataframe shall have namez
-df_has_names <- function(namez){
-  function(x){
-    expectation(all(names(x) %in% namez) & length(namez) == length(names(x)), "Names of do not fit")
-  }
-}
 
 test_that("does melt_attrs work?",{
 
@@ -48,13 +27,13 @@ test_that("does melt_attrs work?",{
   expect_that(melt_attrs(home$ways$attrs, "version"), is_not_empty())
   expect_that(melt_attrs(home$relations$attrs, "version"), is_not_empty())
   
-  expect_that(melt_attrs(home$nodes$attrs, "version"), df_has_names(c("id", "variable", "value")))
-  expect_that(melt_attrs(home$nodes$attrs, "version"), df_has_names(c("id", "variable", "value")))
-  expect_that(melt_attrs(home$nodes$attrs, "version"), df_has_names(c("id", "variable", "value")))
+  expect_that(melt_attrs(home$nodes$attrs, "version"), has_names(c("id", "variable", "value")))
+  expect_that(melt_attrs(home$nodes$attrs, "version"), has_names(c("id", "variable", "value")))
+  expect_that(melt_attrs(home$nodes$attrs, "version"), has_names(c("id", "variable", "value")))
   
-  expect_that(melt_attrs(home$nodes$attrs, "xxxxxxx"), df_has_names(c("id", "variable", "value")))
-  expect_that(melt_attrs(home$nodes$attrs, "xxxxxxx"), df_has_names(c("id", "variable", "value")))
-  expect_that(melt_attrs(home$nodes$attrs, "xxxxxxx"), df_has_names(c("id", "variable", "value")))
+  expect_that(melt_attrs(home$nodes$attrs, "xxxxxxx"), has_names(c("id", "variable", "value")))
+  expect_that(melt_attrs(home$nodes$attrs, "xxxxxxx"), has_names(c("id", "variable", "value")))
+  expect_that(melt_attrs(home$nodes$attrs, "xxxxxxx"), has_names(c("id", "variable", "value")))
   
   expect_that(melt_attrs(home$nodes$attrs, "xxxxxxx"), is_empty())
   expect_that(melt_attrs(home$nodes$attrs, "xxxxxxx"), is_empty())
@@ -86,12 +65,12 @@ test_that("does merge_attrs_tags work?",{
   expect_that(relations_no, is_not_empty())
   
   namez <- c("id", "variable", "value")
-  expect_that(nodes_yes, df_has_names(namez))
-  expect_that(nodes_no, df_has_names(namez))
-  expect_that(ways_yes, df_has_names(namez))
-  expect_that(ways_no, df_has_names(namez))
-  expect_that(relations_yes, df_has_names(namez))
-  expect_that(relations_no, df_has_names(namez))
+  expect_that(nodes_yes, has_names(namez))
+  expect_that(nodes_no, has_names(namez))
+  expect_that(ways_yes, has_names(namez))
+  expect_that(ways_no, has_names(namez))
+  expect_that(relations_yes, has_names(namez))
+  expect_that(relations_no, has_names(namez))
 })
 
 test_that("does get_coords_nodes work?", {
@@ -99,7 +78,7 @@ test_that("does get_coords_nodes work?", {
   coords <- get_coords_nodes(home)
   expect_is(coords, "data.frame")
   expect_that(coords, is_not_empty())
-  expect_that(coords, df_has_names(namez))
+  expect_that(coords, has_names(namez))
   expect_that(unique(coords$geom), equals("point"))
   expect_that(unique(coords$order), equals(1))
   expect_that(nrow(coords), equals(length(unique(coords$node_id))))
@@ -112,7 +91,7 @@ test_that("does get_coords_ways work?", {
   coords <- get_coords_ways(home)
   expect_is(coords, "data.frame")
   expect_that(coords, is_not_empty())
-  expect_that(coords, df_has_names(namez))
+  expect_that(coords, has_names(namez))
   expect_that(unique(coords$geom), equals(c("path", "polygon")))
   # missing: make empty subset of home and try
 })
@@ -130,7 +109,7 @@ test_that("does melt_nodes work?", {
   nodL <- melt_relations(home, "version")
   namez <- c("lon", "lat", "variable", "value", "order", "geom", "element_id", "node_id")
   expect_that(nodL, is_not_empty())
-  expect_that(nodL, df_has_names(namez))
+  expect_that(nodL, has_names(namez))
 })
 
 
@@ -142,7 +121,7 @@ test_that("does melt_relations work?", {
   relL <- melt_relations(home, "version")
   namez <- c("lon", "lat", "variable", "value", "order", "geom", "element_id", "node_id")
   expect_that(relL, is_not_empty())
-  expect_that(relL, df_has_names(namez))
+  expect_that(relL, has_names(namez))
 })
 
 
@@ -150,7 +129,7 @@ test_that("does melt_ways work?", {
   waysL <- melt_ways(home, "version", "version")
   namez <- c("lon", "lat", "variable", "value", "order", "geom", "element_id", "node_id")
   expect_that(waysL, is_not_empty())
-  expect_that(waysL, df_has_names(namez))
+  expect_that(waysL, has_names(namez))
 })
 
 test_that("does change_ways2polygons work?",{

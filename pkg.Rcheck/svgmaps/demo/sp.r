@@ -2,18 +2,14 @@
 
 #################   test SpatialPointsDataFrame
 library(sp)
-library(reshape)
-library(ggplot2)
 data(meuse)
 meuse2 <- meuse
 coordinates(meuse2) <- c("x","y")
 class(meuse2)
+spplot(meuse2)
 
-test <- melt_points(meuse2, c("elev", "cadmium"))
+test <- spatialPointsDataFrame_long(meuse2, c("elev", "cadmium"))
 head(test)
-
-class(meuse)
-ggplot() + geom_map(map=meuse2, aes(colour="cadmium"))
 
 
 ################  test SpatialLinesDataFrame
@@ -35,7 +31,6 @@ df = data.frame(z = c(1,2,3), row.names=sapply(slot(Sl, "lines"), function(x) sl
 Sldf = SpatialLinesDataFrame(Sl, data = df)
 summary(Sldf)
 
-ggplot() + geom_map(map=Sldf)
 # coordinates
 coordinates(Sldf)
 
@@ -45,7 +40,7 @@ library(maptools)
 install.packages("rgeos")
 library(rgeos)
 library(ggplot2)
-system.time(d <- melt_lines(Sldf, "z"))
+system.time(d <- spatialLinesDataFrame_long(Sldf, "z"))
 (d)
 d2 <- fortify(Sldf)
 d2
@@ -64,8 +59,7 @@ z <- 1.4 + 0.1*x + 0.2*y + 0.002*x*x
 polyDat <- SpatialPolygonsDataFrame(polys, data=data.frame(x=x, y=y, z=z, row.names=row.names(polys)))
 polyDat
 
-gpclibPermit()
-test <- melt_polygons(polyDat, "z")
+test <- spatialPolygonsDataFrame_long(polyDat, "z")
 con <- url("http://www.filefactory.com/file/c2a3543/n/DEU_adm3.RData")
 print(load(con))
 close(con)
@@ -74,7 +68,7 @@ fortify(polyDat)
 library('maptools')
 gpclibPermit()
 system.time(g2 <- fortify(gadm))
-system.time(gadm_long <- melt_polygons(gadm, vars="NAME_3"))
+system.time(gadm_long <- spatialPolygonsDataFrame_long(gadm, vars="NAME_3"))
 names(gadm_long)
 ggplot(gadm_long) + geom_polygon(aes(x=lon, y=lat, group=element_id, fill=value), gadm_long) + coord_map()
 

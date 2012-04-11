@@ -16,15 +16,15 @@ melt_attrs <- function(attrs, vars){
   columns <- c("id", vars)
   # discard other
   columns <- columns[columns %in% names(attrs)]
-  if (length(columns) == 1) return(data.frame(id=numeric(0), variable=character(0), value=character(0)))
-  tmp <- melt(attrs[columns],id.vars=c("id"), variable_name="variable", na.rm=TRUE)
+  if ( length(columns) == 1 ) return(data.frame(id = numeric(0), variable = character(0), value = character(0)))
+  tmp <- melt(attrs[columns], id.vars = c("id"), variable_name = "variable", na.rm=TRUE)
   tmp
 }
 
 ##' Function merges attrs and tags of an osmar-element with a subset for var
 ##'
 ##' 
-##' @title 
+##' @title Merge Attributes and Tags
 ##' @param osmar_elem 
 ##' @param var 
 ##' @return dataframe containing attrs and tags in key-value form
@@ -37,7 +37,7 @@ merge_attrs_tags <- function(osmar_elem, vars){
   
   # tags
   tags <- osmar_elem$tags
-  tags <- rename(tags, c(k="variable", v="value"))
+  tags <- rename(tags, c(k = "variable", v = "value"))
 
   # bind together
   rbind(attrs_melted, tags)
@@ -50,18 +50,18 @@ merge_attrs_tags <- function(osmar_elem, vars){
 ##' It then merges both dataframes by the id of the element.
 ##' It also makes a subset, i.e. also the rows with key=vars will be kept.
 ##' A geom column will be added. This can be one of line or point.
-##' @title 
+##' @title Merge coordinates and attributes
 ##' @param coords dataframe with id and coordinates
 ##' @param attrs dataframe with id and attributes in key-value form
 ##' @param vars keys to keep 
-##' @return dataframe with coordinates and attributes in key-value form 
+##' @return data.frame with coordinates and attributes in key-value form 
 ##' @author chris
 merge_coords_attrs <- function(coords, attrs, vars){
   # discard other keys
-  attrs_sub <- subset(attrs, subset=(variable %in% vars), drop=TRUE)
-  attrs_sub <- rename(attrs_sub, c(id="element_id"))
+  attrs_sub <- subset(attrs, subset = ( variable %in% vars ), drop=TRUE)
+  attrs_sub <- rename(attrs_sub, c(id = "element_id"))
   # merge coords and attributes
-  all <- merge(coords, attrs_sub, all.x=FALSE, sort=FALSE)
+  all <- merge(coords, attrs_sub, all.x = FALSE, sort = FALSE)
   #all <- join(coords, attrs_sub,by="element_id", type="inner")
   all
 }
@@ -74,7 +74,7 @@ merge_coords_attrs <- function(coords, attrs, vars){
 ##' You put in a object of class osmar. This function takes the id_element, id_node, lat and lon columns
 ##' from nodes$attrs
 ##' 
-##' @title 
+##' @title Coordinates of nodes
 ##' @param osmar_obj An osmar object
 ##' @return a data.frame with columns id, lat, lon, geom
 ##' @author chris
@@ -89,7 +89,7 @@ get_coords_nodes <- function(osmar_obj){
   coords$geom <- geom
   coords$order <- order
   
-  coords <- rename(coords, c(id="node_id"))
+  coords <- rename(coords, c(id = "node_id"))
   coords
 }
 
@@ -99,7 +99,7 @@ get_coords_nodes <- function(osmar_obj){
 ##' This function greps the information of lon and lat from a given
 ##' osmar object. Therefor it merges the ways$refs with the nodes$attrs
 ##' 
-##' @title 
+##' @title Coordinates of ways
 ##' @param osmar_obj An osmar object
 ##' @return An data.frame containing id_element, id_node, lat, lon, geom
 ##' @author chris
@@ -113,11 +113,11 @@ get_coords_ways <- function(osmar_obj){
   refs <- ways[["refs"]]
   ## to be able to sort it later in the right way;
   refs$order <- seq_len(nrow(refs))
-  refs <- rename(refs, c(ref="node_id"))
+  refs <- rename(refs, c(ref = "node_id"))
   ways_coords <- merge(refs, coords, by="node_id")
   geom <- ifelse(nrow(ways_coords) > 0, "path", character(0))
   ways_coords$geom <- geom
-  ways_coords <- rename(ways_coords, c(ref="node_id", id="element_id"))
+  ways_coords <- rename(ways_coords, c(ref = "node_id", id = "element_id"))
   # overwrite line with polygon in geom, if first and last coordinate fit
   ways_coords <- change_ways2polygons(ways_coords)
   ways_coords
@@ -148,7 +148,7 @@ get_coords_relations <- function(osmar_obj){
 ##' the key variable. 
 ##'
 ##' content
-##' @title 
+##' @title Melt nodes
 ##' @param osmar_obj an osmar object
 ##' @param var the subset will be made with this variable
 ##' @return dataframe containing coordinates and attributes
@@ -158,7 +158,7 @@ melt_nodes<- function(osmar_obj, vars){
   # merge attrs and tags
   tags  <- merge_attrs_tags(nodes, vars)
   coords <- get_coords_nodes(osmar_obj)
-  merge_coords_attrs(coords, tags, vars=vars)
+  merge_coords_attrs(coords, tags, vars = vars)
 }
 
 
@@ -167,7 +167,7 @@ melt_nodes<- function(osmar_obj, vars){
 ##' Merges attributes and coordinates of ways. 
 ##'
 ##' .. content for \details{} ..
-##' @title 
+##' @title Melt ways
 ##' @param osmar_obj an osmar object
 ##' @param var string with the name of the keys to keep
 ##' @return a dataframe with coordinates and attributes
@@ -179,8 +179,8 @@ melt_ways <- function(osmar_obj, vars_poly, vars_path){
   attrs <- merge_attrs_tags(ways, c(vars_path, vars_poly))
   ways2 <- merge_coords_attrs(coords, attrs, c(vars_path, vars_poly))
   ## delete all rows were geom and vars do not fit together
-  ways2[which(((ways2$geom == "path") &  (ways2$variable %in% vars_path)) |
-              ((ways2$geom == "polygon") & (ways2$variable %in% vars_poly))),]
+  ways2[which((( ways2$geom == "path" ) &  ( ways2$variable %in% vars_path ) ) |
+               (( ways2$geom == "polygon") & ( ways2$variable %in% vars_poly ) )),]
 }
 
 
@@ -190,19 +190,19 @@ melt_ways <- function(osmar_obj, vars_poly, vars_path){
 ##' A relation consists possibly of nodes, ways and relations.
 ##' The relations will get resolved recursevily. The information for the nodes and ways
 ##' will be fetched with the nodes and ways- specific functions.
-##' @title 
+##' @title Melt relations
 ##' @param osmar_obj an osmar object
 ##' @param var a string with the name of the keys to keep
-##' @return 
+##' @return data.frame with ways and nodes of relation
 ##' @author chris
 melt_relations <- function(osmar_obj, vars){
   relations <-  osmar_obj[["relations"]]
   attrs <- merge_attrs_tags(relations, vars)
   coords <- get_coords_relations(osmar_obj)
   refs <- relations$refs[,c("id", "ref")]
-  refs <- rename(refs, c(ref="element_id"))
-  refs_with_infos <- merge(attrs, refs, by="id")
-  refs_with_infos <- subset(refs_with_infos, subset=(refs_with_infos$variable==vars))
+  refs <- rename(refs, c(ref = "element_id"))
+  refs_with_infos <- merge(attrs, refs, by = "id")
+  refs_with_infos <- subset(refs_with_infos, subset = ( refs_with_infos$variable == vars ))
   res <- merge(refs_with_infos, coords)
   res$id <- NULL
   res
@@ -213,7 +213,7 @@ melt_relations <- function(osmar_obj, vars){
 ##' Converts an osmar object into a data.frame long format for plotting
 ##'
 ##' .. content for \details{} ..
-##' @title 
+##' @title Melt osmar
 ##' @param osmar_obj an osmar object
 ##' @param node.vars A character vector containing the desired node variable names
 ##' @param way.vars A character vector containing the desired way variable names
@@ -221,13 +221,13 @@ melt_relations <- function(osmar_obj, vars){
 ##' @return data.frame in long format containing element_id, node_id, key, value, lat, lon, geom
 ##' @author chris
 fortify_osmar <- function(osmar_obj, vars_node=NA, vars_path=NA, vars_poly=NA, vars_relations=NA){
-  nodes <- melt_nodes(osmar_obj, var=vars_node)
-  ways <- melt_ways(osmar_obj, vars_path=vars_path, vars_poly=vars_poly)
+  nodes <- melt_nodes(osmar_obj, var = vars_node)
+  ways <- melt_ways(osmar_obj, vars_path = vars_path, vars_poly = vars_poly)
   # for performance issues this could take place at an earlier time
-  relations  <- melt_relations(osmar_obj, var=vars_relations)
+  relations  <- melt_relations(osmar_obj, vars = vars_relations)
   res <- rbind(nodes, ways, relations)
   # do this at another place
-  res <- res[which(!is.na(res$variable)),]
+  res <- res[which(!is.na(res$variable)), ]
   # Do this at another place? if i use join from Had.Whick. maybe not necessary.
   #res <- res[order(res$element_id, res$order),]
   res
@@ -244,10 +244,10 @@ change_ways2polygons <- function(ways_long){
   ddply(ways_long,
         .(element_id),
         function(x){
-          first <- x[x$order==min(x$order), c("lon", "lat")]
+          first <- x[x$order == min(x$order), c("lon", "lat")]
           last <- x[x$order == max(x$order), c("lon", "lat")]
            geom <- unique(x$geom)
-          if(all(first == last) & geom == "path"){
+          if (all(first == last) & geom == "path"){
             x$geom <- "polygon"
           }
           x

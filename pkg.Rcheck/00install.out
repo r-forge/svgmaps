@@ -1,0 +1,25 @@
+Warnung: nutzlose Abhängigkeit von 'R' ohne Versionsangabe ignoriert
+* installing *source* package ‘svgmaps’ ...
+** R
+** data
+** demo
+** inst
+** preparing package for lazy loading
+Loading required package: reshape
+Loading required package: plyr
+
+Attaching package: 'reshape'
+
+The following object(s) are masked from 'package:plyr':
+
+    rename, round_any
+
+Loading required package: grid
+Loading required package: proto
+** help
+No man pages found in package  ‘svgmaps’ 
+*** installing help indices
+** building package indices ...
+** testing if installed package can be loaded
+
+* DONE (svgmaps)
