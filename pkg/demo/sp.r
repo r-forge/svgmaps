@@ -84,11 +84,6 @@ svgmap(gadm, polygon=list(fill="ENGTYPE_3"))
 
 ############## SpatialPixelsDataFrame
 library(sp)
-data(meuse)
-coordinates(meuse) <- c("x", "y")
-class(meuse)
-
-gridded(meuse) <- TRUE
 
 plot(meuse)
 ggplot() + geom_tile(aes(x=x, y=y, fill=dist), as.data.frame(meuse.grid))+ scale_fill_gradientn("My variable",
