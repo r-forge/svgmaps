@@ -1,17 +1,20 @@
 ToDo: 
 
-- relations: make more then depth one possible
 - make a test for spDataTransform.R
-- what to do with holes in polygons? maybe as extra variable, when hole=TRUE
 - geo referenzsysteme ??
-- think about behaviour if list for nodes/ways/relations is empty
-- give aliases for svgmap() - arguments
-- geom_density?
-- problem: if for example the user wants the colour for the version of nodes and relations there is a conflict,
-  because a node can have two version then. and what should be done?
-- throw errors if variable is not in dataset
 - drop node id?
-- allow the usage of a normal dataframe? why not... some things have to be given like geom, lon, lat, variable and value
-- should it be allowed to pass more the one sp-object instead of a list of sp_objects?
-- problem: path drawn with polylines so only one meta possible; one solution: make a for loop 
-	to draw every path extra - UPDATE: there is an id in a polylinesgrob; maybe this could be used
+- add geom_imap
+- write sp_munch
+- think of possible examples besides the signal example
+- implement highlighting (main part: find/write highlight-function with javascript)
+- implement link
+- suppress GUI device in ggplot2SVG
+- make it possible to set specific values for interactivity (i.e. set tooltip outside aes())
+- rename geoms
+- SpatialGridDataFrame has two storage modes, make sure both work 
+- write as_svgmaps
+- write is_svgmaps
+- overwrite fortify in ggplot() und in den geoms
+- rename geoms to igeoms
+- 
+

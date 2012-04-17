@@ -7,12 +7,12 @@ library(gridSVG)
 
 ### Test geom_ipoint
 test <- data.frame(x=c(1,9,9,2,3,2,3,9,9,8), y=10:1, group=rep(c("es funktioniert", "yeeehaaaa"), times=5))
-p < - ggplot(mapping = aes(x = x, y = y)) + geom_ipoint(aes(tooltip = group), test)
+p <-  ggplot(mapping = aes(x = x, y = y)) + geom_ipoint(aes(tooltip = group), test)
 p
 
 test <- nodL
 svgmaps() + geom_point2(aes(x = lon, y = lat, colour = value, tooltip = as.character(value)), nodL)
-grid.script(filename="../demo/tooltip2.js")
+grid.script(filename="../inst/javascript/tooltip2.js")
 gridToSVG("test.svg")
 
 

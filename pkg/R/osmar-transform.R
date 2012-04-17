@@ -89,7 +89,7 @@ get_coords_nodes <- function(osmar_obj){
   coords$geom <- geom
   coords$order <- order
   
-  coords <- rename(coords, c(id = "node_id"))
+  coords <- rename(coords, c(id = "point_id"))
   coords
 }
 
@@ -107,17 +107,17 @@ get_coords_ways <- function(osmar_obj){
   ways <- osmar_obj$ways
 
   # get the coords from all nodes
-  coords <- get_coords_nodes(osmar_obj)[c("node_id", "lat", "lon")]
+  coords <- get_coords_nodes(osmar_obj)[c("point_id", "lat", "lon")]
   coords$element_id <- NULL
   # and the references 
   refs <- ways[["refs"]]
   ## to be able to sort it later in the right way;
   refs$order <- seq_len(nrow(refs))
-  refs <- rename(refs, c(ref = "node_id"))
-  ways_coords <- merge(refs, coords, by="node_id")
+  refs <- rename(refs, c(ref = "point_id"))
+  ways_coords <- merge(refs, coords, by="point_id")
   geom <- ifelse(nrow(ways_coords) > 0, "path", character(0))
   ways_coords$geom <- geom
-  ways_coords <- rename(ways_coords, c(ref = "node_id", id = "element_id"))
+  ways_coords <- rename(ways_coords, c(ref = "point_id", id = "element_id"))
   # overwrite line with polygon in geom, if first and last coordinate fit
   ways_coords <- change_ways2polygons(ways_coords)
   ways_coords
@@ -220,12 +220,11 @@ melt_relations <- function(osmar_obj, vars){
 ##' @param relation.vars A character vector containing the desired relation variable names
 ##' @return data.frame in long format containing element_id, node_id, key, value, lat, lon, geom
 ##' @author chris
-fortify_osmar <- function(osmar_obj, vars_node=NA, vars_path=NA, vars_poly=NA, vars_relations=NA){
+as_svgmaps.osmar <- function(osmar_obj, vars_node=NA, vars_path=NA, vars_poly=NA, vars_relations=NA){
   nodes <- melt_nodes(osmar_obj, var = vars_node)
   ways <- melt_ways(osmar_obj, vars_path = vars_path, vars_poly = vars_poly)
-  # for performance issues this could take place at an earlier time
-  relations  <- melt_relations(osmar_obj, vars = vars_relations)
-  res <- rbind(nodes, ways, relations)
+  # relations  <- melt_relations(osmar_obj, vars = vars_relations)
+  res <- rbind(nodes, ways)
   # do this at another place
   res <- res[which(!is.na(res$variable)), ]
   # Do this at another place? if i use join from Had.Whick. maybe not necessary.

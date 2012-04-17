@@ -1,7 +1,7 @@
 
 
 
-melt_points <- function(sp_points_df, vars){
+as_svgmaps.SpatialPointsDataFrame <- function(sp_points_df, vars){
   df <- cbind(sp_points_df@data, coordinates(sp_points_df))
   df_sub <- df[c("x", "y", vars)]
   df_sub <- rename(df_sub, c(x="lon", y="lat"))
@@ -14,7 +14,7 @@ melt_points <- function(sp_points_df, vars){
 }
 
 
-melt_lines <- function(sp_lines_df, vars){
+as_svgmaps.SpatialLinesDataFrame <- function(sp_lines_df, vars){
   # data is in data slot
   dat <- sp_lines_df@data
   # some columns are not needed
@@ -40,7 +40,7 @@ melt_lines <- function(sp_lines_df, vars){
 
 ## perhaps it is better not to rely on gpclib
 ## assumes that rownames() of data is the id
-melt_polygons <- function(sp_polygons_df, vars){
+as_svgmaps.SpatialPolygonsDataFrame <- function(sp_polygons_df, vars){
   # extract the data
   sp_polygons_df@data$id <- rownames(sp_polygons_df@data)
   dat <- sp_polygons_df@data
@@ -57,7 +57,7 @@ melt_polygons <- function(sp_polygons_df, vars){
   df_m
 }
 
-melt_pixels <- function(sp_pixels_df, vars){
+as_svgmaps.SpatialPixelsDataFrame <- function(sp_pixels_df, vars){
   df <- as.data.frame(sp_pixels_df)
   df <- df[,c("x","y",vars)]
   df$geom <- "tile"
@@ -69,17 +69,7 @@ melt_pixels <- function(sp_pixels_df, vars){
 }
 
 
-melt_grid <- function(sp_grid_df, vars){
+as_svgmaps.SpatialGridDataFrame <- function(sp_grid_df, vars){
   melt_pixels(sp_grid_df, vars)
 }
 
-sp_long <- function(sp_object, p, l, poly, g){
-  todo <- switch(class(sp_object),
-                 "SpatialPointsDataFrame"= list(fun=melt_points, vars=p),
-                 "SpatialLinesDataFrame"=list(fun=melt_lines, vars=l),
-                 "SpatialPolygonsDataFrame"=list(fun=melt_polygons, vars=poly),
-                 "SpatialPixelsDataFrame"=list(fun=melt_pixels, vars=g),
-                 "SpatialGridDataFrame"=list(fun=melt_grid, vars=g)
-                 )
-  do.call(todo$fun, args=list(sp_object, vars=todo$vars))
-}
