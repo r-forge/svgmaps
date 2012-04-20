@@ -36,7 +36,7 @@ igeom_point <- function (mapping = NULL,
                          stat = "identity",
                          position = "identity",
                          na.rm = FALSE, ...) {
-  #if (!is.null(data)) data <- as_svgmaps(data, ...)
+  data <- as_svgmaps(data, ...)
   IGeomPoint$new(mapping = mapping,
                  data = data,
                  stat = stat,
@@ -48,7 +48,6 @@ IGeomPoint <- proto(ggplot2:::GeomPoint, {
   objname <- "ipoint"
   draw <- function(.,  data, scales, coordinates, ...){
     ## make a subset
-    browser()
     data <- subset(data, subset = data$geom == "point")
     gs <- ggplot2:::GeomPoint$draw(data, scales, coordinates, ...)
     add_interactivity(gs, data)

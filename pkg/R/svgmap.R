@@ -21,6 +21,10 @@ as_svgmaps.default <- function (object, ...) {
   stop(paste("as_svgmaps does not support objects of class", class(object), "\n For supported classes type: showMethods(as_svgmaps)"))
 }
 
+as_svgmaps.NULL <- function (object, ...) {
+  return(NULL)
+}
+
 as_svgmaps.data.frame <- function (object){
   if (!is_svgmaps(object)) stop("The data.frame is not in the svgmaps format")
   return(object)

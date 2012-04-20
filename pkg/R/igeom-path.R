@@ -8,12 +8,9 @@ lineend = "butt", linejoin = "round", linemitre = 1, na.rm = FALSE, arrow = NULL
 IGeomPath <- proto(ggplot2:::GeomPolygon, {
   objname <- "ipath"
   draw <- function(.,  data, scales, coordinates, ...){
-    ## make a subset
-    # data <- subset(data, subset = data$geom == "point")
-    # melt data 
+    if(unique(data$geom) != "path") return(ggplot2:::zeroGrob())
     gs <- ggplot2:::GeomPath$draw(data, scales, coordinates, ...)
-    gs2 <- garnishGrob(gs, tooltip = data$tooltip[1], onmouseover = "showTooltip(evt)", group = TRUE)
-    gs2
+    add_interactivity(gs, data)
   }
   default_aes <- function(.) aes(colour="black", size=0.5, linetype=1, alpha = 1)
   guide_geom <- function(.) "path"

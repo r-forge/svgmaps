@@ -1,10 +1,18 @@
 
 
-
+##' Transfroms SpatialPointsDataFrame into svgmaps data frame
+##'
+##' This function merges the coordinates and the data of a SpatialPointsDataFrame.
+##' The function assumes, that coordinates are called x and y or lon and lat.
+##' @title as_svgmaps.SpatialPointsDataFrame
+##' @param sp_points_df A SpatialPointsDataFrame object
+##' @param vars Variables to be kept
+##' @return Data frame in svgmaps format
+##' @author chris
 as_svgmaps.SpatialPointsDataFrame <- function(sp_points_df, vars){
   df <- cbind(sp_points_df@data, coordinates(sp_points_df))
   df_sub <- df[c("x", "y", vars)]
-  df_sub <- rename(df_sub, c(x="lon", y="lat"))
+  df_sub <- rename(df_sub, c(x = "lon", y = "lat"))
   df_melted <- melt(df_sub, id.vars=c("lon", "lat"))
   df_melted$order <- 1
   df_melted$geom <- "point"
@@ -13,7 +21,15 @@ as_svgmaps.SpatialPointsDataFrame <- function(sp_points_df, vars){
   df_melted
 }
 
-
+##' Transforms SpatialLinesDataFrame into svgmaps data frame
+##'
+##' This function merges the coordinates and the data of a
+##' SpatialLinesDataFrame
+##' @title as_svgmaps.SpatialLinesDatFrame
+##' @param sp_lines_df A SpatialLinesDataFrame object
+##' @param vars Variables to be kept
+##' @return Data frame in svgmaps format
+##' @author chris
 as_svgmaps.SpatialLinesDataFrame <- function(sp_lines_df, vars){
   # data is in data slot
   dat <- sp_lines_df@data
@@ -38,8 +54,17 @@ as_svgmaps.SpatialLinesDataFrame <- function(sp_lines_df, vars){
   df_m
 }
 
-## perhaps it is better not to rely on gpclib
-## assumes that rownames() of data is the id
+
+##' Transforms SpatialPolygonsDataFrame into svgmaps data frame
+##'
+##' The coordinates are transformed using ggplot's fortify function
+##' The data is merged than with the coordinates. This function assumes
+##' that the rownames of the data frame are the ids of the polygons.
+##' @title as_svgmaps.SpatialPolygonsDataFrame
+##' @param sp_polygons_df A SpatialPolygonsDataFrame object
+##' @param vars Variables to be kept
+##' @return Data frame in svgmaps format
+##' @author chris
 as_svgmaps.SpatialPolygonsDataFrame <- function(sp_polygons_df, vars){
   # extract the data
   sp_polygons_df@data$id <- rownames(sp_polygons_df@data)
@@ -56,7 +81,14 @@ as_svgmaps.SpatialPolygonsDataFrame <- function(sp_polygons_df, vars){
   df_m <- melt(df, measure.vars=vars)
   df_m
 }
-
+##' Transforms SpatialPixelsDataFrame into svgmaps data frame
+##'
+##' 
+##' @title as_svgmaps.SpatialPixelsDataFrame
+##' @param sp_pixels_df A SpatialPixelsDataFrame object
+##' @param vars Variables to be kept
+##' @return Data frame in svgmaps format
+##' @author chris
 as_svgmaps.SpatialPixelsDataFrame <- function(sp_pixels_df, vars){
   df <- as.data.frame(sp_pixels_df)
   df <- df[,c("x","y",vars)]
@@ -68,7 +100,14 @@ as_svgmaps.SpatialPixelsDataFrame <- function(sp_pixels_df, vars){
   melt(df, measure.vars=vars)
 }
 
-
+##' Transforms SpatialGridDataFrame into svgmaps data frame
+##'
+##' This function internally uses the as_svgmaps.SpatialPixelsDataFrame function
+##' @title as_svgmaps.SpatialGridDataFrame
+##' @param sp_grid_df A SpatialGridDataFrame object
+##' @param vars Variables to be kept
+##' @return Data Frame in svgmaps format
+##' @author chris
 as_svgmaps.SpatialGridDataFrame <- function(sp_grid_df, vars){
   melt_pixels(sp_grid_df, vars)
 }

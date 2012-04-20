@@ -16,10 +16,9 @@ igeom_polygon <- function (mapping = NULL,
 IGeomPolygon <- proto(ggplot2:::GeomPolygon, {
   objname <- "ipolygon"
   draw <- function(.,  data, scales, coordinates, ...){
-    ## make a subset
-    # data <- subset(data, subset = data$geom == "point")
-    gs <- ggplot2:::GeomPolygon$draw(data, scales, coordinates, ...)
-    gs2 <- garnishGrob(gs, tooltip = data$tooltip[1], onmouseover = "showTooltip(evt)", group = FALSE)
+    if (unique(data$geom) != "polygon") return(zeroGrob())
+    gr <- ggplot2:::GeomPolygon$draw(data, scales, coordinates, ...)
+    add_interactivity(gr, data)
   }
   # default_aes <- function(.) aes(colour="grey20", size=2, shape = 16,  alpha = 1, fill = NA)
 }
