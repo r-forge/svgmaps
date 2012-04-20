@@ -104,6 +104,7 @@ get_coords_nodes <- function(osmar_obj){
 ##' @return An data.frame containing id_element, id_node, lat, lon, geom
 ##' @author chris
 get_coords_ways <- function(osmar_obj){
+  # browser()
   ways <- osmar_obj$ways
 
   # get the coords from all nodes
@@ -115,7 +116,8 @@ get_coords_ways <- function(osmar_obj){
   refs$order <- seq_len(nrow(refs))
   refs <- rename(refs, c(ref = "point_id"))
   ways_coords <- merge(refs, coords, by="point_id")
-  geom <- ifelse(nrow(ways_coords) > 0, "path", character(0))
+  geom <- "path"
+  if(nrow(ways_coords) ==  0) geom <- character(0)
   ways_coords$geom <- geom
   ways_coords <- rename(ways_coords, c(ref = "point_id", id = "element_id"))
   # overwrite line with polygon in geom, if first and last coordinate fit
@@ -227,6 +229,7 @@ as_svgmaps.osmar <- function(osmar_obj, vars_node=NA, vars_path=NA, vars_poly=NA
   res <- rbind(nodes, ways)
   # do this at another place
   res <- res[which(!is.na(res$variable)), ]
+  res <- res[order(res$element_id, res$order), ]
   # Do this at another place? if i use join from Had.Whick. maybe not necessary.
   #res <- res[order(res$element_id, res$order),]
   res

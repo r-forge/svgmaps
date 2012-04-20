@@ -1,9 +1,11 @@
 
 
 ## maybe add possibility to give a boundary-box
-svgmap <- function (data = NULL, ...) {
-  data <- as_svgmaps(data, ...)
-  ggplot(data, mapping = aes_string(x = "lon", y = "lat", group = "element_id", geom = "geom")) + coord_map()
+svgmaps <- function (data = NULL, ...) {
+  if (!is.null(data)) {data <- as_svgmaps(data, ...)}
+  p <- ggplot(data, mapping = aes_string(x = "lon", y = "lat", group = "element_id", geom = "geom")) + coord_map()
+  class(p) <- c("svgmaps", class(p))
+  p
 }
 
 
@@ -36,7 +38,7 @@ is_svgmaps <- function (df) {
 }
 
 ## TODO: suppress the GUI-Device
-save_svgmaps <- function (object, filename = "RPlot.svg") {
+save_svg <- function (object, filename = "RPlot.svg") {
   gr <- ggplotGrob(object)
   igr <- addGrob(gr, scriptGrob(filename = "../inst/javascript/tooltip2.js"))
   ## Open a new SVG-Device
@@ -47,6 +49,11 @@ save_svgmaps <- function (object, filename = "RPlot.svg") {
   gridSVG:::devClose(svgdev)
 }
 
-show_svgmaps <- function () {
-  
+view_svg <- function (p) {
+  tmpfile <- "tmp.svg"
+  save_svg(p, tmpfile)
+  path <- paste(getwd(), tmpfile, sep = "/")
+  ## Open Browser
+  browseURL(path)
+  #unlink(path)
 }

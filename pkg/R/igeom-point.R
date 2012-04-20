@@ -36,6 +36,7 @@ igeom_point <- function (mapping = NULL,
                          stat = "identity",
                          position = "identity",
                          na.rm = FALSE, ...) {
+  #if (!is.null(data)) data <- as_svgmaps(data, ...)
   IGeomPoint$new(mapping = mapping,
                  data = data,
                  stat = stat,
@@ -47,18 +48,11 @@ IGeomPoint <- proto(ggplot2:::GeomPoint, {
   objname <- "ipoint"
   draw <- function(.,  data, scales, coordinates, ...){
     ## make a subset
+    browser()
     data <- subset(data, subset = data$geom == "point")
     gs <- ggplot2:::GeomPoint$draw(data, scales, coordinates, ...)
-    args <- list(x = gs, group = FALSE)
-    if ("tooltip" %in% names(data)){
-      args <- c(args, list(tooltip = data$tooltip, onmouseover = rep("showTooltip(evt)", nrow(data))))
-    }
-    if ("highlight" %in% names(data)){
-      args <- c(args, list(highlight = TRUE))
-    }
-    browser()
-    do.call(garnishGrob, args)
+    add_interactivity(gs, data)
   }
-  default_aes <- function(.) aes(colour="grey20", size=2, shape = 16,  alpha = 1, fill = NA)
+  default_aes <- function(.) GeomPoint$default_aes()
 })
 
