@@ -14,7 +14,7 @@ require(reshape)
 test_that("does melt_attrs work?",{
 
   # does attribute to tags work fine?
-  expect_is(melt_attrs(home$lines$attrs, "shop"), "data.frame")
+  expect_is(melt_attrs(home$ways$attrs), "data.frame")
   expect_is(melt_attrs(home$nodes$attrs, "shop"), "data.frame")
   expect_is(melt_attrs(home$relations$attrs, "shop"), "data.frame")
 
@@ -73,21 +73,22 @@ test_that("does merge_attrs_tags work?",{
   expect_that(relations_no, has_names(namez))
 })
 
+
+namez <- c("lat", "lon", "point_id", "element_id", "geom", "order")
+
 test_that("does get_coords_nodes work?", {
-  namez <- c("lat", "lon", "node_id", "element_id", "geom", "order")
   coords <- get_coords_nodes(home)
   expect_is(coords, "data.frame")
   expect_that(coords, is_not_empty())
   expect_that(coords, has_names(namez))
   expect_that(unique(coords$geom), equals("point"))
   expect_that(unique(coords$order), equals(1))
-  expect_that(nrow(coords), equals(length(unique(coords$node_id))))
-  expect_that(coords$node_id, equals(coords$element_id))
+  expect_that(nrow(coords), equals(length(unique(coords$point_id))))
+  expect_that(coords$point_id, equals(coords$element_id))
   # missing: make empty subset of home and try
 })
 
 test_that("does get_coords_ways work?", {
-  namez <- c("lat", "lon", "node_id", "element_id", "geom", "order")
   coords <- get_coords_ways(home)
   expect_is(coords, "data.frame")
   expect_that(coords, is_not_empty())
@@ -100,26 +101,24 @@ test_that("does get_coords_relations work?", {
 })
 
 test_that("does merge_coords_attrs work?", {
-  namez <- c("element_id", "node_id", "variable", "value", "lon", "lat", "order")
   
 })
+namez <- c("lat", "lon", "point_id", "element_id", "geom", "order", "variable", "value")
 
 
 test_that("does melt_nodes work?", {
   nodL <- melt_relations(home, "version")
-  namez <- c("lon", "lat", "variable", "value", "order", "geom", "element_id", "node_id")
   expect_that(nodL, is_not_empty())
   expect_that(nodL, has_names(namez))
 })
 
 
-test_that("does fortify_osmar_work?", {
+test_that("does svgmaps.osmar work?", {
 })
 
 
 test_that("does melt_relations work?", {
   relL <- melt_relations(home, "version")
-  namez <- c("lon", "lat", "variable", "value", "order", "geom", "element_id", "node_id")
   expect_that(relL, is_not_empty())
   expect_that(relL, has_names(namez))
 })
@@ -127,7 +126,6 @@ test_that("does melt_relations work?", {
 
 test_that("does melt_ways work?", {
   waysL <- melt_ways(home, "version", "version")
-  namez <- c("lon", "lat", "variable", "value", "order", "geom", "element_id", "node_id")
   expect_that(waysL, is_not_empty())
   expect_that(waysL, has_names(namez))
 })

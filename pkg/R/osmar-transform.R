@@ -2,6 +2,7 @@
 ## Transform osmar objects to plotDataFrame
 #########################################################
 
+# OLD
 ##' ##' This function takes the attributes of an osmar object and converts them into
 ##' the key-value form, the osmar tags are saved in for later binding together with them.
 ##'
@@ -12,6 +13,7 @@
 ##' @return Merged and melted data.frame in the form: id, key, value
 ##' @author chris
 melt_attrs <- function(attrs, vars){
+  # DEPRECIATED
   # columns to keep
   columns <- c("id", vars)
   # discard other
@@ -21,6 +23,8 @@ melt_attrs <- function(attrs, vars){
   tmp
 }
 
+
+# OLD
 ##' Function merges attrs and tags of an osmar-element with a subset for var
 ##'
 ##' 
@@ -30,6 +34,7 @@ melt_attrs <- function(attrs, vars){
 ##' @return dataframe containing attrs and tags in key-value form
 ##' @author chris
 merge_attrs_tags <- function(osmar_elem, vars){
+  # DEPRECIATED
   attrs <- osmar_elem$attrs
   attrs_melted <- melt_attrs(attrs, vars)
   # other formats than character (e.g. posixT) can throw errors
@@ -56,12 +61,10 @@ merge_attrs_tags <- function(osmar_elem, vars){
 ##' @param vars keys to keep 
 ##' @return data.frame with coordinates and attributes in key-value form 
 ##' @author chris
-merge_coords_attrs <- function(coords, attrs, vars){
-  # discard other keys
-  attrs_sub <- subset(attrs, subset = ( variable %in% vars ), drop=TRUE)
-  attrs_sub <- rename(attrs_sub, c(id = "element_id"))
+merge_coords_attrs <- function(coords, attrs){
+  attrs <- rename(attrs_sub, c(id = "element_id"))
   # merge coords and attributes
-  all <- merge(coords, attrs_sub, all.x = FALSE, sort = FALSE)
+  all <- merge(coords, attrs_sub, all.x = TRUE, sort = FALSE)
   #all <- join(coords, attrs_sub,by="element_id", type="inner")
   all
 }
@@ -155,12 +158,12 @@ get_coords_relations <- function(osmar_obj){
 ##' @param var the subset will be made with this variable
 ##' @return dataframe containing coordinates and attributes
 ##' @author chris
-melt_nodes<- function(osmar_obj, vars){
+melt_nodes<- function(osmar_obj){
   nodes <- osmar_obj$nodes
   # merge attrs and tags
-  tags  <- merge_attrs_tags(nodes, vars)
+  attrs  <- rename(nodes$attrs, c(id = "element_id"))
   coords <- get_coords_nodes(osmar_obj)
-  merge_coords_attrs(coords, tags, vars = vars)
+  merge(coords, attrs, by = c("lon", "lat", "element_id"))
 }
 
 
@@ -174,15 +177,14 @@ melt_nodes<- function(osmar_obj, vars){
 ##' @param var string with the name of the keys to keep
 ##' @return a dataframe with coordinates and attributes
 ##' @author chris
-melt_ways <- function(osmar_obj, vars_poly, vars_path){
+melt_ways <- function(osmar_obj){
   ways <- osmar_obj[["ways"]]
   ## merge attrs and tags in long format for lines
   coords <- get_coords_ways(osmar_obj)
-  attrs <- merge_attrs_tags(ways, c(vars_path, vars_poly))
-  ways2 <- merge_coords_attrs(coords, attrs, c(vars_path, vars_poly))
-  ## delete all rows were geom and vars do not fit together
-  ways2[which((( ways2$geom == "path" ) &  ( ways2$variable %in% vars_path ) ) |
-               (( ways2$geom == "polygon") & ( ways2$variable %in% vars_poly ) )),]
+  attrs <- rename(ways$attrs, c(id = "element_id"))
+  #browser()
+  ways2 <- merge(coords, attrs, by = "element_id")
+  ways2
 }
 
 
@@ -222,16 +224,13 @@ melt_relations <- function(osmar_obj, vars){
 ##' @param relation.vars A character vector containing the desired relation variable names
 ##' @return data.frame in long format containing element_id, node_id, key, value, lat, lon, geom
 ##' @author chris
-as_svgmaps.osmar <- function(osmar_obj, vars_node=NA, vars_path=NA, vars_poly=NA, vars_relations=NA){
-  nodes <- melt_nodes(osmar_obj, var = vars_node)
-  ways <- melt_ways(osmar_obj, vars_path = vars_path, vars_poly = vars_poly)
+as_svgmaps.osmar <- function(osmar_obj){
+  nodes <- melt_nodes(osmar_obj)
+  ways <- melt_ways(osmar_obj)
   # relations  <- melt_relations(osmar_obj, vars = vars_relations)
+  browser()
   res <- rbind(nodes, ways)
-  # do this at another place
-  res <- res[which(!is.na(res$variable)), ]
   res <- res[order(res$element_id, res$order), ]
-  # Do this at another place? if i use join from Had.Whick. maybe not necessary.
-  #res <- res[order(res$element_id, res$order),]
   res
 }
 

@@ -14,5 +14,3 @@ fortify.SpatialGridDataFrame <- function (model, data, id, ...) {
 fortify.SpatialPixelsDataFrame <- function(model, data, id, ...) {
   fortify.SpatialGridDataFrame(model = model, data = data, id = id, ...)
 }
-
-head(fortify(meuse.grid))

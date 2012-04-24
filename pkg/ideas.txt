@@ -9,25 +9,10 @@
 
 - make an own CSS Stylesheet for the appearance of the tooltips
 
-- add more than one tooltip per point and choose between them with checkboxes
-
 - animation for time series. -> every osmar object has a time stamp
 
 - checkboxes for adding and removing layers. a layer could be for example streets or buildings. 
   layers could also be points like shops
 
+- use the ggmap package for background? 
 
-- automatically open browser and update plot
-
-- use the OpenStreetMap package for background? this would be great!
-
-- option to produce graphics in an other format than SVG (without interactivity of course)
-
-- legend with color key; maybe interactive. when you click on a unit an arrow points to the value on the key.
-  second click: alpha = 0.5 for the old click and new click gets an arrow
-
-- maybe use gridSVG instead of SVGAnnotation
-
-- what to do with multipolygons (osmar)? http://wiki.openstreetmap.org/wiki/Relation:multipolygon
-
-- package ggmap: take a closer look at this package!

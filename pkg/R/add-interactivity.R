@@ -47,27 +47,8 @@ add_interactivity.polyline <- function (gr, data, ...) {
   do.call(garnishGrob, args)
 }
 
-add_interactivity.polygon <- function (gr, data, ...) {
-  add_interactivity.polyline(gr, data, ...)
-}
 
-
-add_interactivity.gTree <- function (gr, data, ...) {
-  args <- list(x = gr, group = FALSE)
-  for (interact in inter) {
-    arg <- switch(interact,
-                  "tooltip" = list(tooltip = data$tooltip[1],
-                    onmouseover = "showTooltip(evt)",
-                    onmouseout = "hideTooltip(evt)"),
-                  "link" = list(onclick = paste("window.open('", data$link[1], "', '_blank', ''); return false;", sep = "")),
-                  "highlight" = list(onmouseover = "highlight(evt)", onmouseout = "downlight(evt)")
-                  )
-    args <- c(args, arg)
-  }
-  do.call(garnishGrob, args)
-}
-
-add_interactivity.gTree <- add_interacticity.polyline
+add_interactivity.gTree <- add_interactivity.polyline
 
 add_interactivity.rect <- function (gr, data) {
     

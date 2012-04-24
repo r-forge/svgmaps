@@ -9,16 +9,14 @@
 ##' @param vars Variables to be kept
 ##' @return Data frame in svgmaps format
 ##' @author chris
-as_svgmaps.SpatialPointsDataFrame <- function(sp_points_df, vars){
+as_svgmaps.SpatialPointsDataFrame <- function(sp_points_df){
   df <- cbind(sp_points_df@data, coordinates(sp_points_df))
-  df_sub <- df[c("x", "y", vars)]
   df_sub <- rename(df_sub, c(x = "lon", y = "lat"))
-  df_melted <- melt(df_sub, id.vars=c("lon", "lat"))
-  df_melted$order <- 1
-  df_melted$geom <- "point"
-  df_melted$element_id <- seq_len(nrow(df_melted))
-  df_melted$point_id <- df_melted$element_id
-  df_melted
+  df$order <- 1
+  df$geom <- "point"
+  df$element_id <- seq_len(nrow(df))
+  df$point_id <- df$element_id
+  df
 }
 
 ##' Transforms SpatialLinesDataFrame into svgmaps data frame
@@ -30,11 +28,9 @@ as_svgmaps.SpatialPointsDataFrame <- function(sp_points_df, vars){
 ##' @param vars Variables to be kept
 ##' @return Data frame in svgmaps format
 ##' @author chris
-as_svgmaps.SpatialLinesDataFrame <- function(sp_lines_df, vars){
+as_svgmaps.SpatialLinesDataFrame <- function(sp_lines_df){
   # data is in data slot
   dat <- sp_lines_df@data
-  # some columns are not needed
-  dat <- dat[,vars, drop=FALSE]
   # rownames are always treated as id
   dat$id <- rownames(dat)
   coords <- fortify(sp_lines_df)
@@ -49,9 +45,8 @@ as_svgmaps.SpatialLinesDataFrame <- function(sp_lines_df, vars){
   # add point_id and geom
   df$point_id <- seq_len(nrow(df))
 
-  df_m <- melt(df, id.vars=c("element_id", "lon", "lat", "point_id", "order"))
-  df_m$geom <- "path"
-  df_m
+  df$geom <- "path"
+  df
 }
 
 
@@ -65,11 +60,10 @@ as_svgmaps.SpatialLinesDataFrame <- function(sp_lines_df, vars){
 ##' @param vars Variables to be kept
 ##' @return Data frame in svgmaps format
 ##' @author chris
-as_svgmaps.SpatialPolygonsDataFrame <- function(sp_polygons_df, vars){
+as_svgmaps.SpatialPolygonsDataFrame <- function(sp_polygons_df){
   # extract the data
   sp_polygons_df@data$id <- rownames(sp_polygons_df@data)
   dat <- sp_polygons_df@data
-  dat <- dat[,c("id", vars),drop=FALSE]
   coords <- fortify(sp_polygons_df, region="id")
   # coords$id <- factor(as.character(coords$id), labels=seq_len(nrow(dat)))
   df <- join(dat, coords, by="id")
@@ -78,8 +72,7 @@ as_svgmaps.SpatialPolygonsDataFrame <- function(sp_polygons_df, vars){
   df$id <- NULL
   df$point_id <- seq_len(nrow(df))
   df$geom <- "polygon"
-  df_m <- melt(df, measure.vars=vars)
-  df_m
+  df
 }
 ##' Transforms SpatialPixelsDataFrame into svgmaps data frame
 ##'
@@ -89,15 +82,14 @@ as_svgmaps.SpatialPolygonsDataFrame <- function(sp_polygons_df, vars){
 ##' @param vars Variables to be kept
 ##' @return Data frame in svgmaps format
 ##' @author chris
-as_svgmaps.SpatialPixelsDataFrame <- function(sp_pixels_df, vars){
+as_svgmaps.SpatialPixelsDataFrame <- function(sp_pixels_df){
   df <- as.data.frame(sp_pixels_df)
-  df <- df[,c("x","y",vars)]
   df$geom <- "tile"
   df$order <- 1
   df <- rename(df, c(x="lon", y="lat"))
   df$element_id <- seq_len(nrow(df))
   df$node_id <- df$element_id
-  melt(df, measure.vars=vars)
+  df
 }
 
 ##' Transforms SpatialGridDataFrame into svgmaps data frame
@@ -108,7 +100,7 @@ as_svgmaps.SpatialPixelsDataFrame <- function(sp_pixels_df, vars){
 ##' @param vars Variables to be kept
 ##' @return Data Frame in svgmaps format
 ##' @author chris
-as_svgmaps.SpatialGridDataFrame <- function(sp_grid_df, vars){
-  melt_pixels(sp_grid_df, vars)
+as_svgmaps.SpatialGridDataFrame <- function(sp_grid_df){
+  melt_pixels(sp_grid_df)
 }
 

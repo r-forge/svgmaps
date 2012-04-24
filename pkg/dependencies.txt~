@@ -1,7 +1,0 @@
-needs packages:
-- ggplot2
-- plyr
-- reshape
-- rgeos?
-- maptools
-- osmar 

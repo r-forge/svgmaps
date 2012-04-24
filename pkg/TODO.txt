@@ -1,0 +1,25 @@
+ToDo: 
+
+major importance
+- think of possible examples besides the signal example
+- implement highlighting (main part: find/write highlight-function with javascript)
+- implement scale for var -> colour of highlighting (use SVG grids build in converter for colours)
+- implement link
+- SpatialGridDataFrame has two storage modes, make sure both work 
+- comment svgmaps.R @home
+- suppress GUI device in ggplot2SVG @home
+- make a test for sp-transform.R @home
+- either allow wide format for svgmaps data.frame or find a way to cast within gplot2
+  for this find out how the data is searched if the geom has no extra df; 
+  this is in plot-build.r 
+
+minor importance
+- little textparser which changes \n to <br /> for tooltip
+- geo referenzsysteme 
+- drop node id? u dont need it
+- add geom_imap
+- make it possible to set specific values for interactivity (i.e. set tooltip outside aes())
+- what is the problem with gridSVG and the ggplot background lines?
+- find out how a geom should be done (ggplot2 google group question)
+- improve/find better tooltip javascript
+- change lon to long

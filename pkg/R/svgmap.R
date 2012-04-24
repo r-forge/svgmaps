@@ -3,7 +3,7 @@
 ## maybe add possibility to give a boundary-box
 svgmaps <- function (data = NULL, ...) {
   if (!is.null(data)) {data <- as_svgmaps(data, ...)}
-  p <- ggplot(data, mapping = aes_string(x = "lon", y = "lat", group = "element_id", geom = "geom")) + coord_map()
+  p <- ggplot(data, mapping = aes_string(x = "lon", y = "lat", group = "element_id", geom = "geom")) + coord_equal()
   class(p) <- c("svgmaps", class(p))
   p
 }
@@ -34,7 +34,7 @@ as_svgmaps.data.frame <- function (object){
 ## Checks if the dataframe is what i want
 is_svgmaps <- function (df) {
   namez <- c("lon", "lat", "element_id", "point_id", "variable", "value", "geom", "order")
-  if(class(df) == "data.frame" & all(names(df) %in% namez)) {
+  if(class(df) == "data.frame" & all(namez %in% names(df))) {
     return(TRUE)
   } else {
     return(FALSE)
@@ -44,7 +44,8 @@ is_svgmaps <- function (df) {
 ## TODO: suppress the GUI-Device
 save_svg <- function (object, filename = "RPlot.svg") {
   gr <- ggplotGrob(object)
-  igr <- addGrob(gr, scriptGrob(filename = "../inst/javascript/tooltip2.js"))
+  script <- "../inst/javascript/tooltip2.js"
+  igr <- addGrob(gr, scriptGrob(filename = script))
   ## Open a new SVG-Device
   svgdev <- gridSVG:::openSVGDev(filename, width=par("din")[1], height=par("din")[2])
   ## Translate grid object, write
