@@ -9,9 +9,10 @@ Depends:
     ggplot2
 Imports:
     proto,
-    reshape,
+    reshape2,
     plyr,
-    gridSVG
+    gridSVG,
+    grid
 Suggests:
     osmar,
     sp
