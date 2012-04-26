@@ -1,0 +1,33 @@
+load("../data/muc.RData")
+
+
+library(svgmaps)
+
+## for later plotting add keys to attrs dataframe
+muc <- add_keys(muc, c("shop", "name", "highway", "building"))
+
+## escape & for xml; has to be moved to  add-interactivity
+muc$nodes$attrs$name <- as.character(muc$nodes$attrs$name)
+muc$nodes$attrs$name <- gsub("&", "&amp;", muc$nodes$attrs$name)
+
+## drop all rows wich are not interesting
+muc_sub <- as_svgmaps(muc)
+muc_sub <- muc_sub[-which(is.na(muc_sub$name) & is.na(muc_sub$building)), ]
+
+
+## build the plot
+p <- svgmaps(muc_sub) +
+  igeom_polygon(aes(fill = building, tooltip = building), alpha = 0.5, muc) +
+  igeom_point(aes(colour = shop, tooltip = name), size = 1.5) +
+  igeom_path(aes(tooltip = highway), colour = "grey") +
+  opts(legend.position = "none") +
+  xlim(11.573, 11.578) +
+  ylim(48.136, 48.139)
+       
+
+## view plot in device
+print(p)
+
+## view plot in browser
+view_svg(p)
+

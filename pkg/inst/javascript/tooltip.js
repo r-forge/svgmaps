@@ -9,6 +9,9 @@ function showTooltip(evt) {
     
     // Create new text node, rect and text for the tooltip
     var content = evt.currentTarget.getAttribute("tooltip");
+    if(content == "") {
+	return;
+    }
     var contentStr = content+'';
     var myText = document.createTextNode(contentStr);
     

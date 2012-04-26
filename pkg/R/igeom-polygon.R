@@ -4,7 +4,7 @@ igeom_polygon <- function (mapping = NULL,
                            stat = "identity",
                            position = "identity",
                            na.rm = FALSE, ...) {
-  if (!is.null(data)) data <- as_svgmaps(data, ...)
+  if (!is.null(data)) data <- as_svgmaps(data)
   IGeomPolygon$new(mapping = mapping,
                  data = data,
                  stat = stat,
@@ -20,6 +20,6 @@ IGeomPolygon <- proto(ggplot2:::GeomPolygon, {
     gr <- ggplot2:::GeomPolygon$draw(data, scales, coordinates, ...)
     add_interactivity(gr, data)
   }
-  # default_aes <- function(.) aes(colour="grey20", size=2, shape = 16,  alpha = 1, fill = NA)
+  default_aes <- function(.) c(aes(tooltip = ""), GeomPolygon$default_aes())
 }
                     )

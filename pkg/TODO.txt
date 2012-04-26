@@ -6,15 +6,17 @@ major importance
 - implement scale for var -> colour of highlighting (use SVG grids build in converter for colours)
 - implement link
 - SpatialGridDataFrame has two storage modes, make sure both work 
+- Convertion of SpatialGrid to SpatialPixels in as_svgmaps.SpatialGridDataFrame
 - comment svgmaps.R @home
 - suppress GUI device in ggplot2SVG @home
 - make a test for sp-transform.R @home
-- either allow wide format for svgmaps data.frame or find a way to cast within gplot2
-  for this find out how the data is searched if the geom has no extra df; 
-  this is in plot-build.r 
+- set default aesthetics
+- change view_svg to save the svg in the temporary folder (linux/windows/mac)	
+
 
 minor importance
 - little textparser which changes \n to <br /> for tooltip
+- or better: a generice r2Html- function (.lm, .data.frame, ...) which converts it into html
 - geo referenzsysteme 
 - drop node id? u dont need it
 - add geom_imap
@@ -23,3 +25,5 @@ minor importance
 - find out how a geom should be done (ggplot2 google group question)
 - improve/find better tooltip javascript
 - change lon to long
+- write function add_relation: input osmar and var; adds var to attrs data frame of ways and nodes; relation.var
+- 
