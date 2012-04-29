@@ -4,14 +4,12 @@ major importance
 - think of possible examples besides the signal example
 - implement highlighting (main part: find/write highlight-function with javascript)
 - implement scale for var -> colour of highlighting (use SVG grids build in converter for colours)
-- implement link
 - SpatialGridDataFrame has two storage modes, make sure both work 
 - Convertion of SpatialGrid to SpatialPixels in as_svgmaps.SpatialGridDataFrame
 - comment svgmaps.R @home
 - suppress GUI device in ggplot2SVG @home
 - make a test for sp-transform.R @home
 - set default aesthetics
-- change view_svg to save the svg in the temporary folder (linux/windows/mac)	
 
 
 minor importance
@@ -26,4 +24,4 @@ minor importance
 - improve/find better tooltip javascript
 - change lon to long
 - write function add_relation: input osmar and var; adds var to attrs data frame of ways and nodes; relation.var
-- 
+- improve link

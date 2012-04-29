@@ -278,7 +278,7 @@ add_keys <- function(osmar, keys) {
   for (type in c("nodes", "ways", "relations")){
     df <- osmar[[type]]
     tags <- subset(osmar[[type]]$tags, subset = k %in% keys)
-    tags <- cast(tags, id ~ k, value = "v")
+    tags <- dcast(tags, id ~ k, value.var = "v")
     if (any(names(tags) %in% "NA")){
       tags <- tags[, -which(names(tags) == "NA"), drop= FALSE]
     }

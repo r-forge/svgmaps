@@ -32,7 +32,7 @@ add_interactivity.points <- function (gr, data){
                   "tooltip" = list(tooltip = data$tooltip, 
                     onmouseover = rep("showTooltip(evt)", nrow(data)),
                     onmouseout = rep("hideTooltip(evt)", nrow(data))), 
-                  "link" = list(onclick = paste("window.open('", data$link, "', '_blank', ''); return false;", sep = "")),
+                  "link" = list(link = data$link),
                   "highlight" = list(onmouseover = "highlight(evt)", onmouseout = "downlight(evt)")  ## to be implemented
                   )
     args <- c(args, arg)
@@ -47,7 +47,7 @@ add_interactivity.polyline <- function (gr, data, ...) {
                   "tooltip" = list(tooltip = data$tooltip[1],
                     onmouseover = "showTooltip(evt)",
                     onmouseout = "hideTooltip(evt)"),
-                  "link" = list(onclick = paste("window.open('", data$link[1], "', '_blank', ''); return false;", sep = "")),
+                  "link" = list(link = data$link[1]),
                   "highlight" = list(onmouseover = "highlight(evt)", onmouseout = "downlight(evt)")
                   )
     args <- c(args, arg)
