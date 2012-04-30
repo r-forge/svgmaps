@@ -1,10 +1,10 @@
-load("../data/muc.RData")
 
+library("svgmaps")
+library("reshape2")
+library("grid")
 
-library(svgmaps)
+data("muc", package = "svgmaps")
 
-library(reshape2)
-library(grid)
 
 ## for later plotting add keys to attrs dataframe
 muc <- add_keys(muc, c("shop", "name", "highway", "building"))
@@ -41,7 +41,7 @@ p <- svgmaps(muc_sub) +
   opts(legend.position = "none") +
   xlim(11.573, 11.578) +
   ylim(48.136, 48.139)
-       
+
 
 ## view plot in device
 print(p2)

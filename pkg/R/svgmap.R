@@ -43,11 +43,19 @@ is_svgmaps <- function (df) {
 
 ## TODO: suppress the GUI-Device
 save_svg <- function (object, filename = "RPlot.svg") {
+
+  js_dir <- system.file("javascript", package = "svgmaps")
+
   gr <- ggplotGrob(object)
-  script <- "../inst/javascript/tooltip.js"
+
+  #script <- "../inst/javascript/tooltip.js"
+  script <- file.path(js_dir, "tooltip.js")
   igr <- grid::addGrob(gr, gridSVG:::scriptGrob(filename = script, inline = TRUE))
-  script <- "../inst/javascript/add-events.js"
+
+  #script <- "../inst/javascript/add-events.js"
+  script <- file.path(js_dir, "add-events.js")
   igr <- grid::addGrob(igr, gridSVG:::scriptGrob(filename = script, inline = TRUE))
+
   ## Open a new SVG-Device
   svgdev <- gridSVG:::openSVGDev(filename, width=par("din")[1], height=par("din")[2])
   ## Translate grid object, write
