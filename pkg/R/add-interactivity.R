@@ -29,9 +29,7 @@ add_interactivity.points <- function (gr, data){
   args <- list(x = gr, group = FALSE)
   for (interact in inter) {
     arg <- switch(interact,
-                  "tooltip" = list(tooltip = data$tooltip, 
-                    onmouseover = rep("showTooltip(evt)", nrow(data)),
-                    onmouseout = rep("hideTooltip(evt)", nrow(data))), 
+                  "tooltip" = list(tooltip = data$tooltip),
                   "link" = list(link = data$link),
                   "highlight" = list(onmouseover = "highlight(evt)", onmouseout = "downlight(evt)")  ## to be implemented
                   )
@@ -44,9 +42,7 @@ add_interactivity.polyline <- function (gr, data, ...) {
   args <- list(x = gr, group = TRUE)
   for (interact in inter) {
     arg <- switch(interact,
-                  "tooltip" = list(tooltip = data$tooltip[1],
-                    onmouseover = "showTooltip(evt)",
-                    onmouseout = "hideTooltip(evt)"),
+                  "tooltip" = list(tooltip = data$tooltip[1]),
                   "link" = list(link = data$link[1]),
                   "highlight" = list(onmouseover = "highlight(evt)", onmouseout = "downlight(evt)")
                   )

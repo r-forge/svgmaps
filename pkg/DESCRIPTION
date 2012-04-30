@@ -28,5 +28,5 @@ Collate:
     'igeom-tile.R'
     'osmar-transform.R'
     'sp-transform.R'
-    'svgmap.R'
+    'svgmaps.R'
     'svgmaps-internal.R'
