@@ -4,7 +4,7 @@ igeom_polygon <- function (mapping = NULL,
                            stat = "identity",
                            position = "identity",
                            na.rm = FALSE, ...) {
-  if (!is.null(data)) data <- as_svgmaps(data)
+  if (!is.null(data)) data <- as_svgmap(data)
   IGeomPolygon$new(mapping = mapping,
                  data = data,
                  stat = stat,

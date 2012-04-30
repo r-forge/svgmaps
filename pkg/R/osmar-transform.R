@@ -227,8 +227,8 @@ melt_relations <- function(osmar_obj, vars){
 ##' @param relation.vars A character vector containing the desired relation variable names
 ##' @return data.frame in long format containing element_id, node_id, key, value, lat, lon, geom
 ##' @author chris
-as_svgmap.osmar <- function(object, keys, ...){
-  object <- add_keys(keys, object)
+as_svgmap.osmar <- function(object, keys = NULL, ...){
+  object <- add_keys(object, keys)
   nodes <- melt_nodes(object, ...)
   ways <- melt_ways(object, ...)
   # relations  <- melt_relations(osmar_obj, vars = vars_relations)
@@ -275,7 +275,7 @@ change_ways2polygons <- function(ways_long){
 ##' @author chris
 add_keys <- function(osmar, keys) {
   stopifnot(osmar:::is_osmar(osmar))
-  stopifnot(is.character(keys))
+  if (is.null(keys)) return(osmar)
   for (type in c("nodes", "ways", "relations")){
     df <- osmar[[type]]
     tags <- subset(osmar[[type]]$tags, subset = k %in% keys)

@@ -6,10 +6,10 @@ Author: Christoph Molnar and Manuel J. A. Eugster
 Maintainer: Christoph Molnar <christoph.molnar@googlemail.com>
 Depends:
     R (>= 2.15),
-    ggplot2
+    ggplot2, 
+    reshape2
 Imports:
     proto,
-    reshape2,
     plyr,
     gridSVG,
     grid

@@ -1,38 +1,34 @@
-
-data("muc", package = "svgmaps")
-
+library(svgmaps)
 data("muc")
 
 library(reshape2)
 library(grid)
 
-## for later plotting add keys to attrs dataframe
-muc <- add_keys(muc, c("shop", "name", "highway", "building", "website"))
 
 ## escape & for xml; has to be moved to  add-interactivity
-muc$nodes$attrs$name <- as.character(muc$nodes$attrs$name)
-muc$nodes$attrs$name <- gsub("&", "&amp;", muc$nodes$attrs$name)
+muc$nodes$tags$v <- as.character(muc$nodes$tags$v)
+muc$nodes$tags$v <- gsub("&", "&amp;", muc$nodes$tags$v)
 
 ## simple examples without interactivity
-
-svgmaps(muc) + igeom_point()
-svgmaps(muc) + igeom_path()
-svgmaps(muc) + igeom_polygon()
+svgmap(muc) + igeom_point()
+svgmap(muc) + igeom_path()
+svgmap(muc) + igeom_polygon()
 
 
 ## drop all rows wich are not interesting
-muc_sub <- as_svgmaps(muc)
+muc_sub <- as_svgmap(muc, c("shop", "name", "highway", "building", "website"))
 muc_sub <- muc_sub[-which(is.na(muc_sub$name) & is.na(muc_sub$building)), ]
 
 ## example for tooltip
-tool <- svgmaps(muc) + igeom_polygon(aes(fill = building, tooltip = name), alpa = 0.1)
-view_svg(tool)
+tool <- svgmap(muc, keys = c("name", "building")) +
+  igeom_polygon(aes(fill = building, tooltip = name), alpa = 0.1)
+view_svgmap(tool)
 
 
 
 # build a more complex plot
-p2 <- svgmaps(muc_sub) +
-  igeom_polygon(aes(fill = building, tooltip = building), alpha = 0.5, muc) +
+p2 <- svgmap(muc_sub) +
+  igeom_polygon(aes(fill = building, tooltip = building), alpha = 0.5, muc_sub) +
   igeom_point(aes(colour = shop, tooltip = name, link = website), size = 1.5) +
   igeom_path(aes(tooltip = highway), colour = "grey") +
   opts(legend.position = "none") +
@@ -44,6 +40,5 @@ p2 <- svgmaps(muc_sub) +
 print(p2)
 
 ## view plot in browser
-view_svg(p2)
+view_svgmap(p2)
 
-muc$nodes$tags[muc$nodes$tags$k == "website", ]

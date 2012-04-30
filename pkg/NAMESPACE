@@ -1,5 +1,5 @@
-export(svgmaps)
-export(as_svgmaps)
+export(svgmap)
+export(as_svgmap)
 export(igeom_point)
 export(igeom_path)
 export(igeom_polygon)

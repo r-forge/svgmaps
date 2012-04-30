@@ -3,7 +3,7 @@ igeom_point <- function (mapping = NULL,
                          stat = "identity",
                          position = "identity",
                          na.rm = FALSE, ...) {
-  data <- as_svgmaps(data)
+  data <- as_svgmap(data)
   IGeomPoint$new(mapping = mapping,
                  data = data,
                  stat = stat,

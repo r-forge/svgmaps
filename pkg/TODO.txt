@@ -10,6 +10,7 @@ major importance
 - suppress GUI device in ggplot2SVG @home
 - make a test for sp-transform.R @home
 - set default aesthetics
+- fix empty link bug
 
 
 minor importance
