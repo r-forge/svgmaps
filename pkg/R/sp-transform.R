@@ -9,7 +9,7 @@
 ##' @param vars Variables to be kept
 ##' @return Data frame in svgmaps format
 ##' @author chris
-as_svgmaps.SpatialPointsDataFrame <- function(object, ...){
+as_svgmap.SpatialPointsDataFrame <- function(object, ...){
   df <- cbind(object@data, coordinates(object))
   df_sub <- rename(df_sub, c(x = "lon", y = "lat"))
   df$order <- 1
@@ -28,7 +28,7 @@ as_svgmaps.SpatialPointsDataFrame <- function(object, ...){
 ##' @param vars Variables to be kept
 ##' @return Data frame in svgmaps format
 ##' @author chris
-as_svgmaps.SpatialLinesDataFrame <- function(object, ...){
+as_svgmap.SpatialLinesDataFrame <- function(object, ...){
   # data is in data slot
   dat <- object@data
   # rownames are always treated as id
@@ -60,7 +60,7 @@ as_svgmaps.SpatialLinesDataFrame <- function(object, ...){
 ##' @param vars Variables to be kept
 ##' @return Data frame in svgmaps format
 ##' @author chris
-as_svgmaps.SpatialPolygonsDataFrame <- function(object, ...){
+as_svgmap.SpatialPolygonsDataFrame <- function(object, ...){
   # extract the data
   object@data$id <- rownames(object@data)
   dat <- sp_polygons_df@data
@@ -82,7 +82,7 @@ as_svgmaps.SpatialPolygonsDataFrame <- function(object, ...){
 ##' @param vars Variables to be kept
 ##' @return Data frame in svgmaps format
 ##' @author chris
-as_svgmaps.SpatialPixelsDataFrame <- function(object, ...){
+as_svgmap.SpatialPixelsDataFrame <- function(object, ...){
   df <- as.data.frame(object)
   df$geom <- "tile"
   df$order <- 1
@@ -100,8 +100,8 @@ as_svgmaps.SpatialPixelsDataFrame <- function(object, ...){
 ##' @param vars Variables to be kept
 ##' @return Data Frame in svgmaps format
 ##' @author chris
-as_svgmaps.SpatialGridDataFrame <- function(object, ...){
+as_svgmap.SpatialGridDataFrame <- function(object, ...){
   # transform object to SpatialPixelsDataFrame
-  NextMethod("as_svgmaps")
+  NextMethod("as_svgmap")
 }
 

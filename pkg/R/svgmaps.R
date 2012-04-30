@@ -1,10 +1,10 @@
 
 
 ## maybe add possibility to give a boundary-box
-svgmaps <- function (data = NULL, ...) {
-  if (!is.null(data)) {data <- as_svgmaps(data, ...)}
+svgmap <- function (data = NULL, ...) {
+  if (!is.null(data)) {data <- as_svgmap(data, ...)}
   p <- ggplot(data, mapping = aes_string(x = "lon", y = "lat", group = "element_id", geom = "geom")) + coord_equal()
-  class(p) <- c("svgmaps", class(p))
+  class(p) <- c("svgmap", class(p))
   p
 }
 
@@ -12,27 +12,27 @@ svgmaps <- function (data = NULL, ...) {
 
 
 
-## like fortify, but specialized for svgmaps
-as_svgmaps <- function(object, ...){
-  UseMethod("as_svgmaps")
+## like fortify, but specialized for svgmap
+as_svgmap <- function(object, ...){
+  UseMethod("as_svgmap")
 }
 
-as_svgmaps.default <- function (object, ...) {
-  stop(paste("as_svgmaps does not support objects of class", class(object), "\n For supported classes type: showMethods(as_svgmaps)"))
+as_svgmap.default <- function (object, ...) {
+  stop(paste("as_svgmap does not support objects of class", class(object), "\n For supported classes type: showMethods(as_svgmap)"))
 }
 
-as_svgmaps.NULL <- function (object, ...) {
+as_svgmap.NULL <- function (object, ...) {
   return(NULL)
 }
 
-as_svgmaps.data.frame <- function (object, ...){
-  if (!is_svgmaps(object)) stop("The data.frame is not in the svgmaps format")
+as_svgmap.data.frame <- function (object, ...){
+  if (!is_svgmap(object)) stop("The data.frame is not in the svgmap format")
   return(object)
 }
 
 
 ## Checks if the dataframe is what i want
-is_svgmaps <- function (df) {
+is_svgmap <- function (df) {
   namez <- c("lon", "lat", "element_id", "point_id", "geom", "order")
   if(class(df) == "data.frame" & all(namez %in% names(df))) {
     return(TRUE)
@@ -42,11 +42,14 @@ is_svgmaps <- function (df) {
 }
 
 ## TODO: suppress the GUI-Device
-save_svg <- function (object, filename = "RPlot.svg") {
+save_svgmap <- function (object, filename = "RPlot.svg") {
   gr <- ggplotGrob(object)
-  script <- system.file("./javascript/tooltip.js", package = "svgmaps")
+  
+  js_dir <- system.file("javascript", package = "svgmaps")
+  script <- file.path(js_dir, "tooltip.js")
+  
   igr <- grid::addGrob(gr, gridSVG::scriptGrob(filename = script, inline = TRUE))
-  script <- system.file("./javascript/add-events.js", package = "svgmaps")
+  script <- system.file(js_dir, "add-events.js")
   igr <- grid::addGrob(igr, gridSVG::scriptGrob(filename = script, inline = TRUE))
   ## Open a new SVG-Device
   svgdev <- gridSVG:::openSVGDev(filename, width=par("din")[1], height=par("din")[2])
@@ -56,7 +59,7 @@ save_svg <- function (object, filename = "RPlot.svg") {
   gridSVG:::devClose(svgdev)
 }
 
-view_svg <- function (p) {
+view_svgmap <- function (p) {
   tmpfile <- tempfile()
   save_svg(p, tmpfile)
   ## Open Browser

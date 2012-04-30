@@ -227,7 +227,8 @@ melt_relations <- function(osmar_obj, vars){
 ##' @param relation.vars A character vector containing the desired relation variable names
 ##' @return data.frame in long format containing element_id, node_id, key, value, lat, lon, geom
 ##' @author chris
-as_svgmaps.osmar <- function(object, ...){
+as_svgmap.osmar <- function(object, keys, ...){
+  object <- add_keys(keys, object)
   nodes <- melt_nodes(object, ...)
   ways <- melt_ways(object, ...)
   # relations  <- melt_relations(osmar_obj, vars = vars_relations)
