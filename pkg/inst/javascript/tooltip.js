@@ -2,7 +2,6 @@ function showTooltip(evt) {
   
     // Getting rid of any existing tooltips
     hideTooltip();
-    //alert(evt.currentTarget.getAttribute("meta"));
     var svgNS = "http://www.w3.org/2000/svg";
     var target = evt.currentTarget;
 
