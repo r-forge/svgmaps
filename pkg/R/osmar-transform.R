@@ -2,52 +2,6 @@
 ## Transform osmar objects to plotDataFrame
 #########################################################
 
-# OLD
-##' ##' This function takes the attributes of an osmar object and converts them into
-##' the key-value form, the osmar tags are saved in for later binding together with them.
-##'
-##' .. content for \details{} ..
-##' @title Converts osmar attrs to tags
-##' @param osmar_obj_attrs Attribute data.frame from an element of an osmar object (node, way or relation)
-##' @param var # Variable which is wanted for later plotting
-##' @return Merged and melted data.frame in the form: id, key, value
-##' @author chris
-melt_attrs <- function(attrs, vars){
-  # DEPRECIATED
-  # columns to keep
-  columns <- c("id", vars)
-  # discard other
-  columns <- columns[columns %in% names(attrs)]
-  if ( length(columns) == 1 ) return(data.frame(id = numeric(0), variable = character(0), value = character(0)))
-  tmp <- melt(attrs[columns], id.vars = c("id"), variable_name = "variable", na.rm=TRUE)
-  tmp
-}
-
-
-# OLD
-##' Function merges attrs and tags of an osmar-element with a subset for var
-##'
-##' 
-##' @title Merge Attributes and Tags
-##' @param osmar_elem 
-##' @param var 
-##' @return dataframe containing attrs and tags in key-value form
-##' @author chris
-merge_attrs_tags <- function(osmar_elem, vars){
-  # DEPRECIATED
-  attrs <- osmar_elem$attrs
-  attrs_melted <- melt_attrs(attrs, vars)
-  # other formats than character (e.g. posixT) can throw errors
-  attrs_melted$value <- as.character(attrs_melted$value)
-  
-  # tags
-  tags <- osmar_elem$tags
-  tags <- rename(tags, c(k = "variable", v = "value"))
-
-  # bind together
-  rbind(attrs_melted, tags)
-}
-
 
 ##' Merge the coordinates and attributes of nodes or ways
 ##'
@@ -221,11 +175,12 @@ melt_relations <- function(osmar_obj, vars){
 ##' It is done for nodes, ways (which will be splitted into paths and polygons), but not
 ##' for relations as they are to complex.
 ##' @title Melt osmar
-##' @param osmar_obj an osmar object
+##' @param osmar_obj An osmar object
 ##' @param node.vars A character vector containing the desired node variable names
 ##' @param way.vars A character vector containing the desired way variable names
 ##' @param relation.vars A character vector containing the desired relation variable names
 ##' @return data.frame in long format containing element_id, node_id, key, value, lat, lon, geom
+##' @S3method as_svgmap osmar
 ##' @author chris
 as_svgmap.osmar <- function(object, keys = NULL, ...){
   object <- add_keys(object, keys)
@@ -234,6 +189,7 @@ as_svgmap.osmar <- function(object, keys = NULL, ...){
   # relations  <- melt_relations(osmar_obj, vars = vars_relations)
   res <- rbind(nodes, ways)
   res <- res[order(res$element_id, res$order), ]
+  class(res) <- c("svgmap_df", class(res))
   res
 }
 
@@ -261,6 +217,7 @@ change_ways2polygons <- function(ways_long){
 }
 
 
+# to fix: there is a problem if none of the keys in keys is in data frame (could be in nodes/ways/relations)
 
 ##' Add keys to an the attributes from an osmar object
 ##'
@@ -288,5 +245,6 @@ add_keys <- function(osmar, keys) {
   }
   osmar
 }
+
 
 
