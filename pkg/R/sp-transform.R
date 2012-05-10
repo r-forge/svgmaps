@@ -11,11 +11,12 @@
 ##' @author chris
 as_svgmap.SpatialPointsDataFrame <- function(object, ...){
   df <- cbind(object@data, coordinates(object))
-  df_sub <- rename(df_sub, c(x = "lon", y = "lat"))
+  df <- rename(df, c(x = "lon", y = "lat"))
   df$order <- 1
   df$geom <- "point"
   df$element_id <- seq_len(nrow(df))
   df$point_id <- df$element_id
+  class(df) <- c("svgmap_df", class(df))
   df
 }
 
@@ -46,6 +47,7 @@ as_svgmap.SpatialLinesDataFrame <- function(object, ...){
   df$point_id <- seq_len(nrow(df))
 
   df$geom <- "path"
+  class(df) <- c("svgmap_df", class(df))
   df
 }
 
@@ -72,6 +74,7 @@ as_svgmap.SpatialPolygonsDataFrame <- function(object, ...){
   df$id <- NULL
   df$point_id <- seq_len(nrow(df))
   df$geom <- "polygon"
+  class(df) <- c("svgmap_df", class(df))
   df
 }
 ##' Transforms SpatialPixelsDataFrame into svgmaps data frame
@@ -89,6 +92,7 @@ as_svgmap.SpatialPixelsDataFrame <- function(object, ...){
   df <- rename(df, c(x="lon", y="lat"))
   df$element_id <- seq_len(nrow(df))
   df$node_id <- df$element_id
+  class(df) <- c("svgmap_df", class(df))
   df
 }
 
