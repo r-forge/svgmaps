@@ -17,7 +17,7 @@
 ##' @author chris
 add_interactivity <- function (gr, data){
   ## is interactivity specified at all?
-  inter <- intersect(c("tooltip", "highlight", "link"), names(data))
+  inter <- intersect(c("tooltip", "highlight", "link", "show"), names(data))
   if(length(inter) == 0) {
     return(gr)
   }
@@ -43,11 +43,13 @@ add_interactivity.points <- function (gr, data){
     arg <- switch(interact,
                   "tooltip" = list(tooltip = data$tooltip),
                   "link" = list(link = data$link),
-                  "highlight" = list(highlight = data$highlight)
+                  "highlight" = list(highlight = data$highlight),
+                  "show" = list(show = data$show)
                   )
     args <- c(args, arg)
   }
-  do.call(gridSVG::garnishGrob, args)
+  igr <- do.call(gridSVG::garnishGrob, args)
+  igr
 }
 
 
@@ -58,7 +60,8 @@ add_interactivity.grob <- function (gr, data) {
     arg <- switch(interact,
                   "tooltip" = list(tooltip = data$tooltip[1]),
                   "link" = list(link = data$link[1]),
-                  "highlight" = list(highlight = data$highlight[1])
+                  "highlight" = list(highlight = data$highlight[1]),
+                  "show" = list(show = data$show[1])
                   )
     args <- c(args, arg)
   }
