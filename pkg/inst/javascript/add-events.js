@@ -2,10 +2,10 @@ window.addEventListener("load", function(){
 	
 	var objects = document.getElementsByTagName('*');
     for(var i = 0; i < objects.length; i++){
-	obj = objects[i]
+	obj = objects[i];
 	
 	// Link implementation
-	// maybe better 	if (obj.getAttributeNS(null, "link") & obj.getAttributeNS(null, "link") != ""){
+	if (obj.getAttributeNS(null, "link") & obj.getAttributeNS(null, "link").length != 0){
 	if (obj.getAttributeNS(null, "link")){
 	    // Link-like cursor
 	    obj.setAttributeNS(null, "style", "cursor:pointer");
