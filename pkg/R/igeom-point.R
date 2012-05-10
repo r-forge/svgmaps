@@ -1,3 +1,11 @@
+##' Interactive Points
+##'
+##' The point igeom is used to create interactive spatial points.
+##'
+##' For further documentation see ?ggplot2::geom_point. 
+##' @inheritParams ggplot2::geom_point
+##' @export
+##' @author chris
 igeom_point <- function (mapping = NULL,
                          data = NULL,
                          stat = "identity",

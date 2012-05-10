@@ -1,3 +1,9 @@
+##' Interactive Paths
+##'
+##' The path igeom is used to create interactive spatial paths
+##' @inheritParams ggplot2::geom_path
+##' @export
+##' @author chris
 igeom_path <- function (mapping = NULL, data = NULL, stat = "identity", position = "identity",
 lineend = "butt", linejoin = "round", linemitre = 1, na.rm = FALSE, arrow = NULL, ...) {
   if (!is.null(data)) data <- as_svgmap(data)
