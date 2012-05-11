@@ -17,5 +17,6 @@ IGeomTile <- proto(ggplot2:::GeomTile, {
     gs <- GeomTile$draw_groups(data,scales, coordinates, ...)
     garnishGrob(gs, tooltip = data$tooltip, onmouseover = rep("showTooltip(evt)", nrow(data)), group = FALSE)
   }
-    default_aes <- function(.) c(aes(tooltip = "", show = 0), GeomTile$default_aes())
+  def_iaes <- aes(tooltip = "", link = NA, show = 0)
+  default_aes <- function(.) c(def_iaes, GeomTile$default_aes())
 })

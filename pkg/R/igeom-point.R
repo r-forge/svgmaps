@@ -1,3 +1,5 @@
+
+
 ##' Interactive Points
 ##'
 ##' The point igeom is used to create interactive spatial points.
@@ -31,6 +33,7 @@ IGeomPoint <- proto(ggplot2:::GeomPoint, {
     gs <- ggplot2:::GeomPoint$draw(data, scales, coordinates, ...)
     add_interactivity(gs, data)
   }
-  default_aes <- function(.) c(aes(tooltip = "", link = "", show = 0), GeomPoint$default_aes())
+  def_iaes <- aes(tooltip = "", link = NA, show = 0)
+  default_aes <- function(.) c(def_iaes, GeomPoint$default_aes())
 })
 

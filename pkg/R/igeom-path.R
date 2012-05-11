@@ -18,7 +18,7 @@ IGeomPath <- proto(ggplot2:::GeomPolygon, {
     gs <- ggplot2:::GeomPath$draw(data, scales, coordinates, ...)
     add_interactivity(gs, data)
   }
-  default_aes <- function(.) c(aes(tooltip = "", show = "0"), GeomPath$default_aes())
+  def_iaes <- aes(tooltip = "", link = NA, show = 0)
+  default_aes <- function(.) c(def_iaes, GeomPath$default_aes())
   guide_geom <- function(.) "path"
-}
-                    )
+})

@@ -27,6 +27,7 @@ IGeomPolygon <- proto(ggplot2:::GeomPolygon, {
     gr <- ggplot2:::GeomPolygon$draw(data, scales, coordinates, ...)
     add_interactivity(gr, data)
   }
-  default_aes <- function(.) c(aes(tooltip = "", show = 0), GeomPolygon$default_aes())
+  def_iaes <- aes(tooltip = "", link = NA, show = 0)
+  default_aes <- function(.) c(def_iaes, GeomPolygon$default_aes())
 }
                     )
