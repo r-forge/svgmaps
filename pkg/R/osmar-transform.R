@@ -103,6 +103,69 @@ get_coords_relations <- function(osmar_obj){
 }
 
 
+##' Merges the attributes and tags of nodes with a subset of
+##' the key variable. 
+##'
+##' content
+##' @title Melt nodes
+##' @param osmar_obj an osmar object
+##' @param var the subset will be made with this variable
+##' @return dataframe containing coordinates and attributes
+##' @author chris
+melt_nodes<- function(osmar_obj){
+  nodes <- osmar_obj$nodes
+  # merge attrs and tags
+  attrs  <- rename(nodes$attrs, c(id = "element_id"))
+  coords <- get_coords_nodes(osmar_obj)
+  merge(coords, attrs, by = c("lon", "lat", "element_id"))
+}
+
+
+
+# possible improvements: only take subset for ways_coords
+##' Merges attributes and coordinates of ways. 
+##'
+##' This merges the coords and data of ways.
+##' Ways are split up into paths and polygons.
+##' @title Melt ways
+##' @param osmar_obj an osmar object
+##' @param var string with the name of the keys to keep
+##' @return a dataframe with coordinates and attributes
+##' @author chris
+melt_ways <- function(osmar_obj){
+  ways <- osmar_obj[["ways"]]
+  ## merge attrs and tags in long format for lines
+  coords <- get_coords_ways(osmar_obj)
+  attrs <- rename(ways$attrs, c(id = "element_id"))
+  #browser()
+  ways2 <- merge(coords, attrs, by = "element_id")
+  ways2
+}
+
+
+# merges attrs and tags of relations and resolves location through ways, relations and nodes
+##' Merges coordinates and attributes for relations
+##'
+##' A relation consists possibly of nodes, ways and relations.
+##' The relations will get resolved recursevily. The information for the nodes and ways
+##' will be fetched with the nodes and ways- specific functions.
+##' @title Melt relations
+##' @param osmar_obj an osmar object
+##' @param var a string with the name of the keys to keep
+##' @return data.frame with ways and nodes of relation
+##' @author chris
+melt_relations <- function(osmar_obj, vars){
+  relations <-  osmar_obj[["relations"]]
+  attrs <- merge_attrs_tags(relations, vars)
+  coords <- get_coords_relations(osmar_obj)
+  refs <- relations$refs[,c("id", "ref")]
+  refs <- rename(refs, c(ref = "element_id"))
+  refs_with_infos <- merge(attrs, refs, by = "id")
+  refs_with_infos <- subset(refs_with_infos, subset = ( refs_with_infos$variable == vars ))
+  res <- merge(refs_with_infos, coords)
+  res$id <- NULL
+  res
+}
 
 ##' Converts an osmar object into a data.frame long format for plotting
 ##'
@@ -177,7 +240,6 @@ add_keys <- function(osmar, keys) {
     if (any(names(tags) %in% "NA")){
       tags <- tags[, -which(names(tags) == "NA"), drop= FALSE]
     }
-     browser()
     # add missing columns with NA
     if (nrow(tags) == 0) {
       for (k in setdiff(keys, names(tags))){
