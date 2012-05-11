@@ -28,7 +28,7 @@ svgmap <- function (data = NULL, ...) {
   }
   p <- ggplot(data, mapping = aes_string(x = "lon", y = "lat", geom = "geom", group = "element_id")) + coord_equal()
   # set interactive options
-  p$ioptions <- list(hcolour = "yellow")
+  p$ioptions <- list(hcolour = "yellow", hsize = 1)
   class(p) <- c("svgmap", class(p))
   p
 }
@@ -84,6 +84,47 @@ is_svgmap <- function (df) {
   }
 }
 
+
+##' Add javascript files to the plot
+##'
+##' add_javascript
+##' This function adds scriptGrobs to a given grob.
+##' The javascript files to be added are those which are necessary for adding interactivity to a plot
+##' @param grob A garnished Grob
+##' @return Garnished Grob with additional scriptGrob children
+add_javascript <- function (grob) {
+  js_dir <- system.file("javascript", package = "svgmaps")
+  
+  scripts <- c("jquery-1.7.2.min.js",
+               "add-events.js",
+               "tooltip.js",
+               "highlight.js",
+               "brushing.js"
+               )
+  add_script <- function (script_str) {
+    script <- file.path(js_dir, script_str)
+    gridSVG::scriptGrob(filename = script, inline = TRUE)
+  }
+  script_list <- llply(.data = scripts, .fun = function (x) { add_script(x)})
+  script_grobs <- do.call(gList, script_list)
+  igr <- setChildren(grob, gList(grob$children, script_grobs))
+  igr
+}
+
+
+opts_to_js <- function(iopts) {
+  iopts$hcolour <- paste("rgb(", paste(col2rgb(iopts$hcolour), collapse = ",", sep = ""), ")", sep = "")
+  paste("var ", names(iopts), " = \'", iopts, "\'", collapse = "\n", sep = "")
+}
+
+
+
+add_javascript_vars <- function (grob, iopts) {
+  script <- opts_to_js(iopts)
+  script_grob <- scriptGrob(script = script, inline = TRUE, name = "vars")
+  addGrob(grob, script_grob)
+}
+
 ## TODO: suppress the GUI-Device
 ##' Save svgmap
 ##' 
@@ -95,21 +136,11 @@ is_svgmap <- function (df) {
 ##' @export
 ##' @author chris
 save_svgmap <- function (object, filename = "RPlot.svg") {
+  iopts <- object$ioptions
   gr <- ggplotGrob(object)
   ## insert here: function to add variable from ioptions to javascript
-  #--------
-  ## better solution here: define scripts; make gList of all scriptGrobs; use setChildren(gr, scriptGrobList)
-  js_dir <- system.file("javascript", package = "svgmaps")
-  script <- "http://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js"
-  igr <- grid::addGrob(gr, gridSVG::scriptGrob(filename = script, inline = TRUE))
-  script <- file.path(js_dir, "add-events.js")
-  igr <- grid::addGrob(igr, gridSVG::scriptGrob(filename = script, inline = TRUE))
-  script <- file.path(js_dir, "tooltip.js")
-  igr <- grid::addGrob(igr, gridSVG::scriptGrob(filename = script, inline = TRUE))
-  script <- file.path(js_dir, "highlight.js")
-  igr <- grid::addGrob(igr, gridSVG::scriptGrob(filename = script, inline = TRUE))
-  
-
+  igr <- add_javascript_vars(gr, iopts)
+  igr <- add_javascript(igr)
   ## Open a new SVG-Device
   svgdev <- gridSVG:::openSVGDev(filename, width=par("din")[1], height=par("din")[2])
   ## Translate grid object, write
@@ -129,13 +160,29 @@ view_svgmap <- function (p) {
 }
 
 
-
+##' Set interactive properties
+##'
+##' s.o. 
+##' @title iopts
+##' @param ... 
+##' @return options
+##' @export
+##' @author chris
 iopts <- function (...) 
 {
     structure(list(...), class = "ioptions")
 }
 
-
+##' "+".svgmap
+##'
+##' Same as in ggplot2 but for svgmap()
+##' @title "+".svgmap
+##' @param p 
+##' @param object
+##' @return thing
+##' @export
+##' @S3method "+" svgmap
+##' @author chris
 "+.svgmap" <- function(p, object) {
   if (inherits(object, "ioptions")){
     object$labels <- defaults(object$labels, p$ioptions$labels)
