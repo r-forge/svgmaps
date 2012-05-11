@@ -2,29 +2,22 @@ ToDo:
 
 major importance
 - signal example: take Stadtteil-polygons and count signals in it with sp_over
-- implement scale for var -> colour of highlight_colour (use SVG grids build in converter for colours)
 - SpatialGridDataFrame has two storage modes, make sure both work 
 - Convertion of SpatialGrid to SpatialPixels in as_svgmaps.SpatialGridDataFrame
-- comment svgmaps.R @home
-- suppress GUI device in ggplot2SVG @home
 - make a test for sp-transform.R @home
-- set default aesthetics
-- fix empty link bug
-- fix problem in add_keys
-- add-interactivity: escape all unallowed sequences
-- write hopts; should be easy: write hopts which does the same as opts; write +.svgmaps which writes out javascript vars from hopts and then calls ggplot(); set default hopts; if no hopts specified also defaults; (hsize, hcolour, hborder, ttcolour, link_type
+- add to iopts: hsize, hborder, ttcolour, link_type
+- add rects to highlighting
 - rewrite link and tooltip js with jQuery
-- rewrite save_svgmap (kinda ugly right now)
 - fix view_svgmap (does not always work)
+- comment everything
 
 
 minor importance
+- suppress GUI device in ggplot2SVG @home
 - implement dynamic aesthetic or something like that
 - little textparser which changes \n to <br /> for tooltip
-- or better: a generice r2Html- function (.lm, .data.frame, ...) which converts it into html
+  or better: a generice r2Html- function (.lm, .data.frame, ...) which converts it into html
 - geo referenzsysteme 
 - drop node id? u dont need it
 - what is the problem with gridSVG and the ggplot background lines?
-- change lon to long
 - write function add_relation: input osmar and var; adds var to attrs data frame of ways and nodes; relation.var
-- improve link
