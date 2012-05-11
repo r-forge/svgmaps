@@ -1,4 +1,20 @@
 ### adding interactivity to a grob ############################################
+def_iaes <- aes(tooltip = "", link = NA, show = 0)
+
+
+
+escape_xml <- function (string) {
+  dic <- c( "&" = "&amp;", 
+            "<" = "&lt;", 
+            ">" = "&gt;",
+            '\"' = "&quot;", 
+            "\'" = "&apos;")
+  for (d in seq_along(dic)){
+    string <- gsub(names(dic)[d], dic[d], string)
+  }
+  string
+}
+
 
 
 ##' Adds interactivity to a grob
@@ -18,6 +34,7 @@
 add_interactivity <- function (gr, data){
   ## is interactivity specified at all?
   inter <- intersect(c("tooltip", "highlight", "link", "show"), names(data))
+  data[inter] <- apply(data[inter], 2, escape_xml)
   if(length(inter) == 0) {
     return(gr)
   }
@@ -38,6 +55,7 @@ add_interactivity.zeroGrob <- function (gr, data) {
 ##' @S3method add_interactivity points
 ##' @author chris
 add_interactivity.points <- function (gr, data){
+  data[inter] <- apply(data[inter], 2, escape_xml)
   args <- list(x = gr, group = FALSE)
   for (interact in inter) {
     arg <- switch(interact,
@@ -55,7 +73,8 @@ add_interactivity.points <- function (gr, data){
 
 
 add_interactivity.grob <- function (gr, data) {
-    args <- list(x = gr, group = FALSE)
+  data[inter] <- apply(data[inter], 2, escape_xml)
+  args <- list(x = gr, group = FALSE)
   for (interact in inter) {
     arg <- switch(interact,
                   "tooltip" = list(tooltip = data$tooltip[1]),
@@ -67,21 +86,3 @@ add_interactivity.grob <- function (gr, data) {
   }
   do.call(gridSVG::garnishGrob, args)
 }
-
-## add_interactivity.polyline <- function (gr, data, ...) {
-##   args <- list(x = gr, group = FALSE)
-##   for (interact in inter) {
-##     arg <- switch(interact,
-##                   "tooltip" = list(tooltip = data$tooltip[1]),
-##                   "link" = list(link = data$link[1]),
-##                   "highlight" = list(highlight = data$highlight[1])
-##                   )
-##     args <- c(args, arg)
-##   }
-##   do.call(gridSVG::garnishGrob, args)
-## }
-
-## add_interactivity.gTree <- add_interactivity.polyline
-## add_interactivity.rect <- add_interactivity.polyline
-
-
