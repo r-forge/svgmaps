@@ -95,12 +95,14 @@ is_svgmap <- function (df) {
 add_javascript <- function (grob) {
   js_dir <- system.file("javascript", package = "svgmaps")
   
-  scripts <- c("jquery-1.7.2.min.js",
-               "add-events.js",
+  scripts <- c("jquery-1.7.2.min.js", # exchange with latest version
+               # "jquery.qtip-1.0.0-rc3.js",
+               "link.js",
                "tooltip.js",
                "highlight.js",
                "brushing.js"
                )
+  
   add_script <- function (script_str) {
     script <- file.path(js_dir, script_str)
     gridSVG::scriptGrob(filename = script, inline = TRUE)
@@ -122,7 +124,7 @@ opts_to_js <- function(iopts) {
 add_javascript_vars <- function (grob, iopts) {
   script <- opts_to_js(iopts)
   script_grob <- scriptGrob(script = script, inline = TRUE, name = "vars")
-  addGrob(grob, script_grob)
+  igrob <- addGrob(grob, script_grob)
 }
 
 ## TODO: suppress the GUI-Device
