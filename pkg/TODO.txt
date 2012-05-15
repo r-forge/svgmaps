@@ -1,15 +1,15 @@
 ToDo: 
 
 major importance
-- signal example: take Stadtteil-polygons and count signals in it with sp_over
 - SpatialGridDataFrame has two storage modes, make sure both work 
 - Convertion of SpatialGrid to SpatialPixels in as_svgmaps.SpatialGridDataFrame
 - make a test for sp-transform.R @home
 - add to iopts: hsize, hborder, ttcolour, link_type
 - add rects to highlighting
-- rewrite link and tooltip js with jQuery
+- rewrite tooltip js with jQuery: problem solving: reduce svg to minimal example (tooltip.js, jquery.full, qtip.full, and one element)
 - fix view_svgmap (does not always work)
 - comment everything
+- interface in JSON and not ugly javascript code generation
 
 
 minor importance
