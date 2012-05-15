@@ -1,5 +1,25 @@
+window.addEventListener("load", function(){
+    
+    var objects = document.getElementsByTagName('*');
+    for(var i = 0; i < objects.length; i++){
+	obj = objects[i];
+	
+	// set event listener for tooltips
+	if(obj.getAttributeNS(null, "tooltip")){
+	    obj.addEventListener("mouseover", function(evt){
+		showTooltip(evt);
+	    });
+	    obj.addEventListener("mouseout", function(evt){
+		hideTooltip();
+	    });
+	}
+	
+    }
+    
+});
+
+
 function showTooltip(evt) {
-  
     // Getting rid of any existing tooltips
     hideTooltip();
     var svgNS = "http://www.w3.org/2000/svg";
@@ -74,3 +94,11 @@ function hideTooltip() {
   }
 }
 
+//var with_tooltip = $('[tooltip]').filter('[tooltip != ""]');
+
+// with_tooltip.mouseover(function() {
+// 	showTooltip($(this));
+//     });
+// with_tooltip.mouseout( function () {
+// 	hideTooltip();
+//     });

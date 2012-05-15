@@ -28,7 +28,7 @@ $('polyline[highlight]').mouseover(function() {
     bros.attr('stroke', hcolour);
     bros.attr('stroke-width_old', bros.attr('stroke-width'));
     bros.attr('stroke-width', +hsize*bros.attr('stroke-width'));
-    add(+hsize*bros.attr('stroke-width'));
+    //add(+hsize*bros.attr('stroke-width'));
     }
 );
 
