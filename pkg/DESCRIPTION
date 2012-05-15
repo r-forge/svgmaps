@@ -26,7 +26,6 @@ Collate:
     'igeom-point.R'
     'igeom-polygon.R'
     'igeom-tile.R'
-    'igeom-rect.R'
     'osmar-transform.R'
     'sp-transform.R'
     'svgmaps.R'
