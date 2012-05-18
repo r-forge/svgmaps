@@ -95,12 +95,12 @@ is_svgmap <- function (df) {
 add_javascript <- function (grob) {
   js_dir <- system.file("javascript", package = "svgmaps")
   
-  scripts <- c("jquery-1.7.2.min.js", # exchange with latest version
-               # "jquery.qtip-1.0.0-rc3.js",
+  scripts <- c("jquery-1.7.2.min.js",
+               # "jquery.qtip.js",
                "link.js",
                "tooltip.js",
                "highlight.js",
-               "brushing.js"
+               "view.js"
                )
   
   add_script <- function (script_str) {
@@ -140,7 +140,7 @@ add_javascript_vars <- function (grob, iopts) {
 save_svgmap <- function (object, filename = "RPlot.svg") {
   iopts <- object$ioptions
   gr <- ggplotGrob(object)
-  ## insert here: function to add variable from ioptions to javascript
+  ## function to add variable from ioptions to javascript
   igr <- add_javascript_vars(gr, iopts)
   igr <- add_javascript(igr)
   ## Open a new SVG-Device
