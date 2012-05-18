@@ -1,5 +1,5 @@
 ### adding interactivity to a grob ############################################
-def_iaes <- aes(tooltip = "", link = NA, show = 0)
+def_iaes <- aes(tooltip = "", link = NA, view = 0)
 
 
 
@@ -33,10 +33,13 @@ escape_xml <- function (string) {
 ##' @author chris
 add_interactivity <- function (gr, data){
   ## is interactivity specified at all?
-  inter <- intersect(c("tooltip", "highlight", "link", "show"), names(data))
+  inter <- intersect(c("tooltip", "highlight", "link", "view"), names(data))
   data[inter] <- apply(data[inter], 2, escape_xml)
   if(length(inter) == 0) {
     return(gr)
+  }
+  if (unique(data$geom) == "tile") {
+    class(gr) <- c("points", class(gr))
   }
   
   UseMethod("add_interactivity", object = gr)
@@ -62,7 +65,7 @@ add_interactivity.points <- function (gr, data){
                   "tooltip" = list(tooltip = data$tooltip),
                   "link" = list(link = data$link),
                   "highlight" = list(highlight = data$highlight),
-                  "show" = list(show = data$show)
+                  "view" = list(view = data$view)
                   )
     args <- c(args, arg)
   }
@@ -71,8 +74,8 @@ add_interactivity.points <- function (gr, data){
 }
 
 
-
 add_interactivity.grob <- function (gr, data) {
+  
   data[inter] <- apply(data[inter], 2, escape_xml)
   args <- list(x = gr, group = FALSE)
   for (interact in inter) {
@@ -80,7 +83,7 @@ add_interactivity.grob <- function (gr, data) {
                   "tooltip" = list(tooltip = data$tooltip[1]),
                   "link" = list(link = data$link[1]),
                   "highlight" = list(highlight = data$highlight[1]),
-                  "show" = list(show = data$show[1])
+                  "view" = list(view = data$view[1])
                   )
     args <- c(args, arg)
   }

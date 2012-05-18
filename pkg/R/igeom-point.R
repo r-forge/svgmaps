@@ -33,7 +33,7 @@ IGeomPoint <- proto(ggplot2:::GeomPoint, {
     gs <- ggplot2:::GeomPoint$draw(data, scales, coordinates, ...)
     add_interactivity(gs, data)
   }
-  def_iaes <- aes(tooltip = "", link = NA, show = 0)
+  def_iaes <- aes(tooltip = "", link = NA, view = 0)
   default_aes <- function(.) c(def_iaes, GeomPoint$default_aes())
 })
 

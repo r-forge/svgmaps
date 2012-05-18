@@ -15,8 +15,8 @@ IGeomTile <- proto(ggplot2:::GeomTile, {
     ## make a subset
     # data <- subset(data, subset = data$geom == "point")
     gs <- GeomTile$draw_groups(data,scales, coordinates, ...)
-    garnishGrob(gs, tooltip = data$tooltip, onmouseover = rep("showTooltip(evt)", nrow(data)), group = FALSE)
+    add_interactivity(gs, data)
   }
-  def_iaes <- aes(tooltip = "", link = NA, show = 0)
+  def_iaes <- aes(tooltip = "", link = NA, view = 0)
   default_aes <- function(.) c(def_iaes, GeomTile$default_aes())
 })
