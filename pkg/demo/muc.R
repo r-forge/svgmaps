@@ -21,8 +21,8 @@ muc_sub <- muc_sub[-which(is.na(muc_sub$name) & is.na(muc_sub$building)), ]
 
 ## example for tooltip
 tool <- svgmap(muc, keys = c("name", "building")) +
-  igeom_polygon(aes(fill = building, tooltip = name), alpa = 0.1) + iopts(hcolour = "mario", test = "nada")
-view_svgmap(tool)
+  igeom_polygon(aes(fill = building, tooltip = name), alpa = 0.1) + iopts(hcolour = "yellow")
+save_svgmap(tool, filename = "tooltip.svg")
 
 
 
@@ -30,15 +30,12 @@ view_svgmap(tool)
 p2 <- svgmap(muc_sub) +
   igeom_polygon(aes(fill = building, tooltip = building), alpha = 0.5, muc_sub) +
   igeom_point(aes(colour = shop, tooltip = name, link = website, highlight = shop), size = 1.5) +
-  igeom_path(aes(tooltip = highway), colour = "grey") +
-  opts(legend.position = "none") +
-  xlim(11.573, 11.578) +
-  ylim(48.136, 48.139)
+  igeom_path(aes(tooltip = highway), colour = "grey") 
 
 
 ## view plot in device
 print(p2)
 
 ## view plot in browser
-view_svgmap(p2)
+save_svgmap(p2, filename = "p2.svg")
 
