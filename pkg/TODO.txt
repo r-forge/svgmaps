@@ -1,15 +1,18 @@
 ToDo: 
 
+ba thesis:
+
 major importance
-- SpatialGridDataFrame has two storage modes, make sure both work 
 - Convertion of SpatialGrid to SpatialPixels in as_svgmaps.SpatialGridDataFrame
 - make a test for sp-transform.R @home
 - add to iopts: hsize, hborder, ttcolour, link_type
-- add rects to highlighting
 - rewrite tooltip js with jQuery: problem solving: reduce svg to minimal example (tooltip.js, jquery.full, qtip.full, and one element)
 - fix view_svgmap (does not always work)
 - comment everything
 - interface in JSON and not ugly javascript code generation
+- fix readLines bug in scriptGrob
+
+
 
 
 minor importance
@@ -21,3 +24,4 @@ minor importance
 - drop node id? u dont need it
 - what is the problem with gridSVG and the ggplot background lines?
 - write function add_relation: input osmar and var; adds var to attrs data frame of ways and nodes; relation.var
+- implement SpatialGridDataFrame
