@@ -1,5 +1,5 @@
 ###########################################################
-## Transform osmar objects to plotDataFrame
+## Transform osmar objects to svgmap_df
 #########################################################
 
 
