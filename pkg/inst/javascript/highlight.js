@@ -41,9 +41,9 @@ $('polyline[highlight]').mouseout(function() {
 );
 
 
+
 // polygon
 $('g[highlight]:has(polygon)').mouseover(function() {
-	//alert("hi");
 	var value = $(this).attr('highlight');
 	//search all elements with this value
 	var bros = $('g[highlight="' + value + '"]:has("polygon")');
@@ -62,3 +62,22 @@ $('g[highlight]:has(polygon)').mouseout(function() {
 );
 
 
+
+//rect 
+$('rect[highlight]').mouseover(function() {
+	var value = $(this).attr('highlight');
+	//search all elements with this value
+	var bros = $('rect[highlight="' + value + '"]');
+	bros.attr('old', bros.attr('fill'));
+	bros.attr('fill', hcolour);
+    }
+);
+
+
+$('rect[highlight]').mouseout(function() {
+	var value = $(this).attr('highlight');
+	// search all elements with this value
+	var bros = $('rect[highlight="' + value + '"]');
+	bros.attr('fill', bros.attr('old'));
+    }
+);
