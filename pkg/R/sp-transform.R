@@ -28,6 +28,7 @@ as_svgmap.SpatialPointsDataFrame <- function(object, ...){
 ##' @param sp_lines_df A SpatialLinesDataFrame object
 ##' @param vars Variables to be kept
 ##' @return Data frame in svgmaps format
+##' @export
 ##' @author chris
 as_svgmap.SpatialLinesDataFrame <- function(object, ...){
   # data is in data slot
@@ -61,11 +62,12 @@ as_svgmap.SpatialLinesDataFrame <- function(object, ...){
 ##' @param sp_polygons_df A SpatialPolygonsDataFrame object
 ##' @param vars Variables to be kept
 ##' @return Data frame in svgmaps format
+##' @export
 ##' @author chris
 as_svgmap.SpatialPolygonsDataFrame <- function(object, ...){
   # extract the data
   object@data$id <- rownames(object@data)
-  dat <- sp_polygons_df@data
+  dat <- object@data
   coords <- fortify(object, region="id")
   # coords$id <- factor(as.character(coords$id), labels=seq_len(nrow(dat)))
   df <- join(dat, coords, by="id")
@@ -84,14 +86,15 @@ as_svgmap.SpatialPolygonsDataFrame <- function(object, ...){
 ##' @param sp_pixels_df A SpatialPixelsDataFrame object
 ##' @param vars Variables to be kept
 ##' @return Data frame in svgmaps format
+##' @export
 ##' @author chris
 as_svgmap.SpatialPixelsDataFrame <- function(object, ...){
   df <- as.data.frame(object)
+  names(df)[(ncol(df) - 1):ncol(df)] <- c("lon", "lat")
   df$geom <- "tile"
   df$order <- 1
-  df <- rename(df, c(x="lon", y="lat"))
   df$element_id <- seq_len(nrow(df))
-  df$node_id <- df$element_id
+  df$point_id <- df$element_id
   class(df) <- c("svgmap_df", class(df))
   df
 }
@@ -103,9 +106,11 @@ as_svgmap.SpatialPixelsDataFrame <- function(object, ...){
 ##' @param sp_grid_df A SpatialGridDataFrame object
 ##' @param vars Variables to be kept
 ##' @return Data Frame in svgmaps format
+##' @export
 ##' @author chris
 as_svgmap.SpatialGridDataFrame <- function(object, ...){
   # transform object to SpatialPixelsDataFrame
-  NextMethod("as_svgmap")
+  as_svgmap.SpatialPixelsDataFrame(object, ...)
+##  NextMethod("as_svgmap")
 }
 
