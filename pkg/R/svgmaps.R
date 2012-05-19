@@ -16,8 +16,8 @@ NULL
 ##' This function can be used similiar to ggplot(). It is limited to input objects which can be handled by
 ##' as_svgmap. Currently these are objects with class SpatialXXXDataFrame, osmar and svgmap_df.
 ##' @title svgmap
-##' @param data 
-##' @param ...
+##' @param data The data, can currently be a SpatialXXXDataFrame or an osmar object
+##' @param ... Not in use
 ##' @return An object of with class svgmap and ggplot. Can be used like a normal ggplot2 object, but
 ##' also with the functions view_svgmap and save_svgmap.
 ##' @export
@@ -40,18 +40,23 @@ svgmap <- function (data = NULL, ...) {
 ##' Generic function which transforms spatial objects into the svgmap_df data frame format.
 ##'
 ##' Works like fortify
+##' This function takes spatial data (currently sp and osmar) and transforms it into a suitable way for
+##' the svgmaps package, which is a special data frame. For SpatialLinesDataFrame and SpatialPolygonsDataFrame
+##' it is assumed, that the ids are the rownames.
 ##' @title as_svgmap
 ##' @param object Spatial objects; Currently osmar and SpatialXXXDataFrame objects
 ##' @param ... Not yet in use
 ##' @return A svgmap_df data frame
-##' @export
 ##' @S3method as_svgmap default
 ##' @S3method as_svgmap NULL
 ##' @S3method as_svgmap data.frame
+##' @export
 ##' @author chris
 as_svgmap <- function(object, ...){
   UseMethod("as_svgmap")
 }
+
+
 
 as_svgmap.default <- function (object, ...) {
   stop(paste("as_svgmap does not support objects of class", class(object), "\n For supported classes type: showMethods(as_svgmap)"))
@@ -133,7 +138,7 @@ add_javascript_vars <- function (grob, iopts) {
 ##' Saves a svgmap object as SVG.
 ##'
 ##' This function adds the necessary scripts for interactivity and converts the plot into an SVG file.
-##' @param object svgmap object
+##' @param object  a svgmap object
 ##' @param filename the filename of the SVG file
 ##' @export
 ##' @author chris
@@ -164,10 +169,13 @@ view_svgmap <- function (p) {
 
 ##' Set interactive properties
 ##'
-##' s.o. 
+##' Set interactive options.
+##' Like the options in ggplot2, this can be used to control the plot appearance.
+##' This controls the interactive porperties. Currently only hcolour is implemented.
+##' Hcolour defines the colour in which the elements are highlighted. 
 ##' @title iopts
-##' @param ... 
-##' @return options
+##' @param ... The named options
+##' @return An ioptions object
 ##' @export
 ##' @author chris
 iopts <- function (...) 
@@ -175,15 +183,17 @@ iopts <- function (...)
     structure(list(...), class = "ioptions")
 }
 
-##' "+".svgmap
+##' Modify a plot by adding new layers
 ##'
 ##' Same as in ggplot2 but for svgmap()
-##' @title "+".svgmap
-##' @param p 
-##' @param object
-##' @return thing
+##' @title "+.svgmap"
+##' @param p plot object
+##' @param object A object which shall be added to the plot
+##' @return A svgmap object
 ##' @export
+##' @method + svgmap
 ##' @S3method "+" svgmap
+##' @rdname svgmap-add
 ##' @author chris
 "+.svgmap" <- function(p, object) {
   if (inherits(object, "ioptions")){
@@ -194,3 +204,4 @@ iopts <- function (...)
     NextMethod("+")
   }
 }
+

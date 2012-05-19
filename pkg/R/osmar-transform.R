@@ -3,25 +3,7 @@
 #########################################################
 
 
-##' Merge the coordinates and attributes of nodes or ways
-##'
-##' This function takes the tags dataframe, where the attributes dataframe is added.
-##' It then merges both dataframes by the id of the element.
-##' It also makes a subset, i.e. also the rows with key=vars will be kept.
-##' A geom column will be added. This can be one of line or point.
-##' @title Merge coordinates and attributes
-##' @param coords dataframe with id and coordinates
-##' @param attrs dataframe with id and attributes in key-value form
-##' @param vars keys to keep 
-##' @return data.frame with coordinates and attributes in key-value form 
-##' @author chris
-merge_coords_attrs <- function(coords, attrs){
-  attrs <- rename(attrs_sub, c(id = "element_id"))
-  # merge coords and attributes
-  all <- merge(coords, attrs_sub, all.x = TRUE, sort = FALSE)
-  #all <- join(coords, attrs_sub,by="element_id", type="inner")
-  all
-}
+
 
  
 
@@ -82,34 +64,12 @@ get_coords_ways <- function(osmar_obj){
   ways_coords
 }
 
-
-#' Gets the coordinates for relations
-## Only works for depth=1, refs on other relations will not be resolved
-#' missing: identifier for the relation
-get_coords_relations <- function(osmar_obj){
-  # get relations
-  relations <- osmar_obj$relation
-
-  # nodes coords of relations
-  rel_node_ids <-unique(relations$refs[relations$ref$type == "node",])$ref
-  nodes_coords <- get_coords_nodes(osmar_obj)
-  nodes_coords_rel <- subset(nodes_coords, subset=(nodes_coords$element_id %in% rel_node_ids))
-
-  # ways coords of relations
-  rel_way_ids <- unique(relations$refs[relations$refs$type == "way",])$ref
-  ways_coords <- get_coords_ways(osmar_obj)
-  ways_coords_rel <- subset(ways_coords, subset=(ways_coords$element_id %in% rel_way_ids))
-  rbind(nodes_coords_rel, ways_coords_rel)
-}
-
-
 ##' Merges the attributes and tags of nodes with a subset of
 ##' the key variable. 
 ##'
 ##' content
 ##' @title Melt nodes
 ##' @param osmar_obj an osmar object
-##' @param var the subset will be made with this variable
 ##' @return dataframe containing coordinates and attributes
 ##' @author chris
 melt_nodes<- function(osmar_obj){
@@ -129,7 +89,6 @@ melt_nodes<- function(osmar_obj){
 ##' Ways are split up into paths and polygons.
 ##' @title Melt ways
 ##' @param osmar_obj an osmar object
-##' @param var string with the name of the keys to keep
 ##' @return a dataframe with coordinates and attributes
 ##' @author chris
 melt_ways <- function(osmar_obj){
@@ -143,41 +102,17 @@ melt_ways <- function(osmar_obj){
 }
 
 
-# merges attrs and tags of relations and resolves location through ways, relations and nodes
-##' Merges coordinates and attributes for relations
-##'
-##' A relation consists possibly of nodes, ways and relations.
-##' The relations will get resolved recursevily. The information for the nodes and ways
-##' will be fetched with the nodes and ways- specific functions.
-##' @title Melt relations
-##' @param osmar_obj an osmar object
-##' @param var a string with the name of the keys to keep
-##' @return data.frame with ways and nodes of relation
-##' @author chris
-melt_relations <- function(osmar_obj, vars){
-  relations <-  osmar_obj[["relations"]]
-  attrs <- merge_attrs_tags(relations, vars)
-  coords <- get_coords_relations(osmar_obj)
-  refs <- relations$refs[,c("id", "ref")]
-  refs <- rename(refs, c(ref = "element_id"))
-  refs_with_infos <- merge(attrs, refs, by = "id")
-  refs_with_infos <- subset(refs_with_infos, subset = ( refs_with_infos$variable == vars ))
-  res <- merge(refs_with_infos, coords)
-  res$id <- NULL
-  res
-}
-
 ##' Converts an osmar object into a data.frame long format for plotting
 ##'
 ##' This function merges the coordinates with the data in an osmar object.
 ##' It is done for nodes, ways (which will be splitted into paths and polygons), but not
 ##' for relations as they are to complex.
 ##' @title Melt osmar
-##' @param osmar_obj An osmar object
-##' @param node.vars A character vector containing the desired node variable names
-##' @param way.vars A character vector containing the desired way variable names
-##' @param relation.vars A character vector containing the desired relation variable names
+##' @param object An osmar object
+##' @param keys Character string determining keys to keep
+##' @param ... Not in use
 ##' @return data.frame in long format containing element_id, node_id, key, value, lat, lon, geom
+##' @method as_svgmap osmar
 ##' @S3method as_svgmap osmar
 ##' @author chris
 as_svgmap.osmar <- function(object, keys = NULL, ...){
@@ -201,7 +136,7 @@ as_svgmap.osmar <- function(object, keys = NULL, ...){
 ##' @author chris
 change_ways2polygons <- function(ways_long){
   ddply(ways_long,
-        .(element_id),
+        .("element_id"),
         function(x){
           first <- x[x$order == min(x$order), c("lon", "lat")]
           last <- x[x$order == max(x$order), c("lon", "lat")]
@@ -255,3 +190,71 @@ add_keys <- function(osmar, keys) {
 
 
 
+## ##' Merge the coordinates and attributes of nodes or ways
+## ##'
+## ##' This function takes the tags dataframe, where the attributes dataframe is added.
+## ##' It then merges both dataframes by the id of the element.
+## ##' It also makes a subset, i.e. also the rows with key=vars will be kept.
+## ##' A geom column will be added. This can be one of line or point.
+## ##' @title Merge coordinates and attributes
+## ##' @param coords dataframe with id and coordinates
+## ##' @param attrs dataframe with id and attributes in key-value form
+## ##' @param vars keys to keep 
+## ##' @return data.frame with coordinates and attributes in key-value form 
+## ##' @author chris
+## merge_coords_attrs <- function(coords, attrs){
+##   attrs <- rename(attrs_sub, c(id = "element_id"))
+##   # merge coords and attributes
+##   all <- merge(coords, attrs_sub, all.x = TRUE, sort = FALSE)
+##   #all <- join(coords, attrs_sub,by="element_id", type="inner")
+##   all
+## }
+
+
+
+
+
+## #' Gets the coordinates for relations
+## ## Only works for depth=1, refs on other relations will not be resolved
+## #' missing: identifier for the relation
+## get_coords_relations <- function(osmar_obj){
+##   # get relations
+##   relations <- osmar_obj$relation
+
+##   # nodes coords of relations
+##   rel_node_ids <-unique(relations$refs[relations$ref$type == "node",])$ref
+##   nodes_coords <- get_coords_nodes(osmar_obj)
+##   nodes_coords_rel <- subset(nodes_coords, subset=(nodes_coords$element_id %in% rel_node_ids))
+
+##   # ways coords of relations
+##   rel_way_ids <- unique(relations$refs[relations$refs$type == "way",])$ref
+##   ways_coords <- get_coords_ways(osmar_obj)
+##   ways_coords_rel <- subset(ways_coords, subset=(ways_coords$element_id %in% rel_way_ids))
+##   rbind(nodes_coords_rel, ways_coords_rel)
+## }
+
+
+
+## # merges attrs and tags of relations and resolves location through ways, relations and nodes
+## ##' Merges coordinates and attributes for relations
+## ##'
+## ##' A relation consists possibly of nodes, ways and relations.
+## ##' The relations will get resolved recursevily. The information for the nodes and ways
+## ##' will be fetched with the nodes and ways- specific functions.
+## ##' @title Melt relations
+## ##' @param osmar_obj an osmar object
+## ##' @param var a string with the name of the keys to keep
+## ##' @return data.frame with ways and nodes of relation
+## ##' @author chris
+## melt_relations <- function(osmar_obj, vars){
+##   relations <-  osmar_obj[["relations"]]
+##   attrs <- merge_attrs_tags(relations, vars)
+##   coords <- get_coords_relations(osmar_obj)
+##   refs <- relations$refs[,c("id", "ref")]
+##   refs <- rename(refs, c(ref = "element_id"))
+##   refs_with_infos <- merge(attrs, refs, by = "id")
+##   refs_with_infos <- subset(refs_with_infos, subset = ( refs_with_infos$variable == vars ))
+##   res <- merge(refs_with_infos, coords)
+##   res$id <- NULL
+##   res
+## }

@@ -4,6 +4,7 @@
 ##'
 ##' For further documentation see ?ggplot2::geom_point
 ##' @inheritParams ggplot2::geom_polygon
+##' @param na.rm TRUE or FALSE
 ##' @export
 ##' @author chris
 igeom_polygon <- function (mapping = NULL,
@@ -16,7 +17,7 @@ igeom_polygon <- function (mapping = NULL,
                  data = data,
                  stat = stat,
                  position = position,
-                 na.rm = FALSE, ...)
+                 na.rm = na.rm, ...)
 }
 
 

@@ -55,6 +55,7 @@ add_interactivity.zeroGrob <- function (gr, data) {
 ##' @param gr A points grob
 ##' @param data The data containing interactivity values
 ##' @return A garnished points grob
+##' @method add_interactivity points
 ##' @S3method add_interactivity points
 ##' @author chris
 add_interactivity.points <- function (gr, data){

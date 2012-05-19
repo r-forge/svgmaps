@@ -5,8 +5,10 @@
 ##' This function merges the coordinates and the data of a SpatialPointsDataFrame.
 ##' The function assumes, that coordinates are called x and y or lon and lat.
 ##' @title as_svgmaps.SpatialPointsDataFrame
-##' @param sp_points_df A SpatialPointsDataFrame object
-##' @param vars Variables to be kept
+##' @S3method as_svgmap SpatialPointsDataFrame
+##' @method as_svgmap SpatialPointsDataFrame
+##' @param object A SpatialPointsDataFrame object
+##' @param ... Not in use
 ##' @return Data frame in svgmaps format
 ##' @author chris
 as_svgmap.SpatialPointsDataFrame <- function(object, ...){
@@ -24,11 +26,12 @@ as_svgmap.SpatialPointsDataFrame <- function(object, ...){
 ##'
 ##' This function merges the coordinates and the data of a
 ##' SpatialLinesDataFrame
-##' @title as_svgmaps.SpatialLinesDatFrame
-##' @param sp_lines_df A SpatialLinesDataFrame object
-##' @param vars Variables to be kept
+##' @title as_svgmaps.SpatialLinesDataFrame
+##' @S3method as_svgmap SpatialLinesDataFrame
+##' @method as_svgmap SpatialLinesDataFrame
+##' @param object A SpatialLinesDataFrame object
+##' @param ... Not in use
 ##' @return Data frame in svgmaps format
-##' @export
 ##' @author chris
 as_svgmap.SpatialLinesDataFrame <- function(object, ...){
   # data is in data slot
@@ -58,11 +61,12 @@ as_svgmap.SpatialLinesDataFrame <- function(object, ...){
 ##' The coordinates are transformed using ggplot's fortify function
 ##' The data is merged than with the coordinates. This function assumes
 ##' that the rownames of the data frame are the ids of the polygons.
-##' @title as_svgmaps.SpatialPolygonsDataFrame
-##' @param sp_polygons_df A SpatialPolygonsDataFrame object
-##' @param vars Variables to be kept
+##' @title as_svgmap.SpatialPolygonsDataFrame
+##' @S3method as_svgmap SpatialPolygonsDataFrame
+##' @method as_svgmap SpatialPolygonsDataFrame
+##' @param object A SpatialPolygonsDataFrame object
+##' @param ... Not in use
 ##' @return Data frame in svgmaps format
-##' @export
 ##' @author chris
 as_svgmap.SpatialPolygonsDataFrame <- function(object, ...){
   # extract the data
@@ -83,10 +87,11 @@ as_svgmap.SpatialPolygonsDataFrame <- function(object, ...){
 ##'
 ##' 
 ##' @title as_svgmaps.SpatialPixelsDataFrame
-##' @param sp_pixels_df A SpatialPixelsDataFrame object
-##' @param vars Variables to be kept
+##' @S3method as_svgmap SpatialPixelsDataFrame
+##' @method as_svgmap SpatialPixelsDataFrame
+##' @param object A SpatialPixelsDataFrame object
+##' @param ... Not in use
 ##' @return Data frame in svgmaps format
-##' @export
 ##' @author chris
 as_svgmap.SpatialPixelsDataFrame <- function(object, ...){
   df <- as.data.frame(object)
@@ -103,10 +108,11 @@ as_svgmap.SpatialPixelsDataFrame <- function(object, ...){
 ##'
 ##' This function internally uses the as_svgmaps.SpatialPixelsDataFrame function
 ##' @title as_svgmaps.SpatialGridDataFrame
-##' @param sp_grid_df A SpatialGridDataFrame object
-##' @param vars Variables to be kept
+##' @S3method as_svgmap SpatialGridDataFrame
+##' @method as_svgmap SpatialGridDataFrame
+##' @param object A SpatialGridDataFrame object
+##' @param ... Not in use
 ##' @return Data Frame in svgmaps format
-##' @export
 ##' @author chris
 as_svgmap.SpatialGridDataFrame <- function(object, ...){
   # transform object to SpatialPixelsDataFrame
