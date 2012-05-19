@@ -5,9 +5,10 @@
   svgmap(data = NULL, ...)
 }
 \arguments{
-  \item{data}{}
+  \item{data}{The data, can currently be a
+  SpatialXXXDataFrame or an osmar object}
 
-  \item{...}{}
+  \item{...}{Not in use}
 }
 \value{
   An object of with class svgmap and ggplot. Can be used

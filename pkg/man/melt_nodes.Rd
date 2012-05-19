@@ -6,8 +6,6 @@
 }
 \arguments{
   \item{osmar_obj}{an osmar object}
-
-  \item{var}{the subset will be made with this variable}
 }
 \value{
   dataframe containing coordinates and attributes

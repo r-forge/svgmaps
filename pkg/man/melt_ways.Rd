@@ -6,8 +6,6 @@
 }
 \arguments{
   \item{osmar_obj}{an osmar object}
-
-  \item{var}{string with the name of the keys to keep}
 }
 \value{
   a dataframe with coordinates and attributes

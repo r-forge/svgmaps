@@ -7,14 +7,8 @@
 \arguments{
   \item{osmar_obj}{An osmar object}
 
-  \item{node.vars}{A character vector containing the
-  desired node variable names}
-
-  \item{way.vars}{A character vector containing the desired
-  way variable names}
-
-  \item{relation.vars}{A character vector containing the
-  desired relation variable names}
+  \item{keys}{Character string with the keys which shall be
+  included in the svgmap_df}
 }
 \value{
   data.frame in long format containing element_id, node_id,

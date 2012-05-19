@@ -1,13 +1,13 @@
 \name{as_svgmap.SpatialLinesDataFrame}
 \alias{as_svgmap.SpatialLinesDataFrame}
-\title{as_svgmaps.SpatialLinesDatFrame}
+\title{as_svgmaps.SpatialLinesDataFrame}
 \usage{
   as_svgmap.SpatialLinesDataFrame(object, ...)
 }
 \arguments{
-  \item{sp_lines_df}{A SpatialLinesDataFrame object}
+  \item{object}{A SpatialLinesDataFrame object}
 
-  \item{vars}{Variables to be kept}
+  \item{...}{Not in use}
 }
 \value{
   Data frame in svgmaps format

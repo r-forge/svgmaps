@@ -18,7 +18,12 @@
   the svgmap_df data frame format.
 }
 \details{
-  Works like fortify
+  Works like fortify This function takes spatial data
+  (currently sp and osmar) and transforms it into a
+  suitable way for the svgmaps package, which is a special
+  data frame. For SpatialLinesDataFrame and
+  SpatialPolygonsDataFrame it is assumed, that the ids are
+  the rownames.
 }
 \author{
   chris

@@ -7,7 +7,7 @@
 \arguments{
   \item{osmar_obj}{an osmar object}
 
-  \item{var}{a string with the name of the keys to keep}
+  \item{vars}{a string with the name of the keys to keep}
 }
 \value{
   data.frame with ways and nodes of relation

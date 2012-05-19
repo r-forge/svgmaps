@@ -5,7 +5,7 @@
   save_svgmap(object, filename = "RPlot.svg")
 }
 \arguments{
-  \item{object}{svgmap object}
+  \item{object}{a svgmap object}
 
   \item{filename}{the filename of the SVG file}
 }

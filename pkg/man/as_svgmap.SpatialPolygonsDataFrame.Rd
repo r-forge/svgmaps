@@ -1,13 +1,13 @@
 \name{as_svgmap.SpatialPolygonsDataFrame}
 \alias{as_svgmap.SpatialPolygonsDataFrame}
-\title{as_svgmaps.SpatialPolygonsDataFrame}
+\title{as_svgmap.SpatialPolygonsDataFrame}
 \usage{
   as_svgmap.SpatialPolygonsDataFrame(object, ...)
 }
 \arguments{
-  \item{sp_polygons_df}{A SpatialPolygonsDataFrame object}
+  \item{object}{A SpatialPolygonsDataFrame object}
 
-  \item{vars}{Variables to be kept}
+  \item{...}{Not in use}
 }
 \value{
   Data frame in svgmaps format

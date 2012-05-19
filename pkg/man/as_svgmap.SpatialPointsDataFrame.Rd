@@ -5,9 +5,9 @@
   as_svgmap.SpatialPointsDataFrame(object, ...)
 }
 \arguments{
-  \item{sp_points_df}{A SpatialPointsDataFrame object}
+  \item{object}{A SpatialPointsDataFrame object}
 
-  \item{vars}{Variables to be kept}
+  \item{...}{Not in use}
 }
 \value{
   Data frame in svgmaps format

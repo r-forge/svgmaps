@@ -5,9 +5,9 @@
   as_svgmap.SpatialPixelsDataFrame(object, ...)
 }
 \arguments{
-  \item{sp_pixels_df}{A SpatialPixelsDataFrame object}
+  \item{object}{A SpatialPixelsDataFrame object}
 
-  \item{vars}{Variables to be kept}
+  \item{...}{Not in use}
 }
 \value{
   Data frame in svgmaps format

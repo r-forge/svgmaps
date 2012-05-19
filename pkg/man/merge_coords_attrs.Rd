@@ -9,8 +9,6 @@
 
   \item{attrs}{dataframe with id and attributes in
   key-value form}
-
-  \item{vars}{keys to keep}
 }
 \value{
   data.frame with coordinates and attributes in key-value

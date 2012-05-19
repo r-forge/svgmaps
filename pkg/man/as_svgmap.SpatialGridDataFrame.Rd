@@ -5,9 +5,9 @@
   as_svgmap.SpatialGridDataFrame(object, ...)
 }
 \arguments{
-  \item{sp_grid_df}{A SpatialGridDataFrame object}
+  \item{object}{A SpatialGridDataFrame object}
 
-  \item{vars}{Variables to be kept}
+  \item{...}{Not in use}
 }
 \value{
   Data Frame in svgmaps format
