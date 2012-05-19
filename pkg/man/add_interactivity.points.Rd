@@ -2,7 +2,7 @@
 \alias{add_interactivity.points}
 \title{Add interactivity to points grob}
 \usage{
-  add_interactivity.points(gr, data)
+  \method{add_interactivity}{points} (gr, data)
 }
 \arguments{
   \item{gr}{A points grob}

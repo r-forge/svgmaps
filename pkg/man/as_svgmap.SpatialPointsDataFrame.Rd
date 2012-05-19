@@ -2,7 +2,7 @@
 \alias{as_svgmap.SpatialPointsDataFrame}
 \title{as_svgmaps.SpatialPointsDataFrame}
 \usage{
-  as_svgmap.SpatialPointsDataFrame(object, ...)
+  \method{as_svgmap}{SpatialPointsDataFrame} (object, ...)
 }
 \arguments{
   \item{object}{A SpatialPointsDataFrame object}

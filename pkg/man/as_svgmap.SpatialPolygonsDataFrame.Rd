@@ -2,7 +2,8 @@
 \alias{as_svgmap.SpatialPolygonsDataFrame}
 \title{as_svgmap.SpatialPolygonsDataFrame}
 \usage{
-  as_svgmap.SpatialPolygonsDataFrame(object, ...)
+  \method{as_svgmap}{SpatialPolygonsDataFrame} (object,
+    ...)
 }
 \arguments{
   \item{object}{A SpatialPolygonsDataFrame object}

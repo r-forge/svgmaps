@@ -2,7 +2,7 @@
 \alias{as_svgmap.SpatialLinesDataFrame}
 \title{as_svgmaps.SpatialLinesDataFrame}
 \usage{
-  as_svgmap.SpatialLinesDataFrame(object, ...)
+  \method{as_svgmap}{SpatialLinesDataFrame} (object, ...)
 }
 \arguments{
   \item{object}{A SpatialLinesDataFrame object}

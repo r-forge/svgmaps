@@ -2,13 +2,14 @@
 \alias{as_svgmap.osmar}
 \title{Melt osmar}
 \usage{
-  as_svgmap.osmar(object, keys = NULL, ...)
+  \method{as_svgmap}{osmar} (object, keys = NULL, ...)
 }
 \arguments{
-  \item{osmar_obj}{An osmar object}
+  \item{object}{An osmar object}
 
-  \item{keys}{Character string with the keys which shall be
-  included in the svgmap_df}
+  \item{keys}{Character string determining keys to keep}
+
+  \item{...}{Not in use}
 }
 \value{
   data.frame in long format containing element_id, node_id,

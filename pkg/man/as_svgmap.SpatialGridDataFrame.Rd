@@ -2,7 +2,7 @@
 \alias{as_svgmap.SpatialGridDataFrame}
 \title{as_svgmaps.SpatialGridDataFrame}
 \usage{
-  as_svgmap.SpatialGridDataFrame(object, ...)
+  \method{as_svgmap}{SpatialGridDataFrame} (object, ...)
 }
 \arguments{
   \item{object}{A SpatialGridDataFrame object}
