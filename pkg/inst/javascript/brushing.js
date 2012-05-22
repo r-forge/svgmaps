@@ -53,3 +53,4 @@ $('svg').click(function() {
 	// make all objects[show = curShow] visible
 	$('[show=' + curShow + ']').attr('visibility', 'visible');
 })
+

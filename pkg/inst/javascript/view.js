@@ -54,4 +54,5 @@ $('svg').click(function() {
 	    index += 1
 		}
 	curView = allView[index];
-})
+});
+
