@@ -67,8 +67,15 @@ as_svgmap.NULL <- function (object, ...) {
 }
 
 as_svgmap.data.frame <- function (object, ...){
-  if (!is_svgmap(object)) stop("The data.frame is not in the svgmap format")
-  return(object)
+  namez <- c("lon", "lat", "element_id", "point_id", "geom", "order")
+  if (is_svgmap(object)) {
+    return(object)
+  } else if (all(namez %in% names(object))) {
+    class(object) <- c("svgmap_df", class(object))
+    return(object)
+  } else {
+   stop("Not in svgmaps format")
+  }
 }
 
 
