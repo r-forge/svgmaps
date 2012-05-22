@@ -74,7 +74,7 @@ as_svgmap.SpatialPolygonsDataFrame <- function(object, ...){
   dat <- object@data
   coords <- fortify(object, region="id")
   # coords$id <- factor(as.character(coords$id), labels=seq_len(nrow(dat)))
-  df <- join(dat, coords, by="id")
+  df <- join(coords, dat, by="id")
   df <- rename(df, c(group="element_id", long="lon"))
   ## Id is not needed any more, so drop it
   df$id <- NULL
