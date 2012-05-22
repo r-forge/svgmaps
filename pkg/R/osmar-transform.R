@@ -136,7 +136,7 @@ as_svgmap.osmar <- function(object, keys = NULL, ...){
 ##' @author chris
 change_ways2polygons <- function(ways_long){
   ddply(ways_long,
-        .("element_id"),
+        .(element_id),
         function(x){
           first <- x[x$order == min(x$order), c("lon", "lat")]
           last <- x[x$order == max(x$order), c("lon", "lat")]
