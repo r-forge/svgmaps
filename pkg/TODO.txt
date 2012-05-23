@@ -1,8 +1,5 @@
 ToDo: 
 
-ba thesis:
-
-major importance
 - Convertion of SpatialGrid to SpatialPixels in as_svgmaps.SpatialGridDataFrame
 - make a test for sp-transform.R @home
 - add to iopts: hsize, hborder, ttcolour, link_type
@@ -10,12 +7,6 @@ major importance
 - fix view_svgmap (does not always work)
 - comment everything
 - interface in JSON and not ugly javascript code generation
-- fix readLines bug in scriptGrob
-
-
-
-
-minor importance
 - suppress GUI device in ggplot2SVG @home
 - implement dynamic aesthetic or something like that
 - little textparser which changes \n to <br /> for tooltip
