@@ -15,8 +15,8 @@ Imports:
     plyr
 Suggests:
     osmar,
-    sp, 
-  mapproj
+    sp,
+    mapproj
 Description: This package allows the user to create interactive SVG maps. It is
     based on the ggplot2 package for statistical graphics.
 License: GPL-2
@@ -31,3 +31,4 @@ Collate:
     'sp-transform.R'
     'svgmaps.R'
     'data.R'
+    'theme.R'
