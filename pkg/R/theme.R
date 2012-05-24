@@ -12,9 +12,7 @@
 #'@export
 #'@examples 
 #'data (muc)
-#'svgmaps(muc) + igeom_polygon() + theme_map()
-
-
+#'svgmap(muc) + igeom_polygon() + theme_map()
 theme_map = function(base_size=11, base_family="")
 {
   require(grid)
