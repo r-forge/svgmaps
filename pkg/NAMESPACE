@@ -1,4 +1,5 @@
 export(add_interactivity)
+export(as_svgmap)
 export(igeom_path)
 export(igeom_point)
 export(igeom_polygon)

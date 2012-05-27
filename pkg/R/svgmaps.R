@@ -50,7 +50,6 @@ svgmap <- function (data = NULL, ...) {
 ##' @S3method as_svgmap default
 ##' @S3method as_svgmap NULL
 ##' @S3method as_svgmap data.frame
-##' @method as_svgmap map
 ##' @S3method as_svgmap map
 ##' @export
 ##' @author chris
