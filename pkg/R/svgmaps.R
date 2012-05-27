@@ -50,6 +50,8 @@ svgmap <- function (data = NULL, ...) {
 ##' @S3method as_svgmap default
 ##' @S3method as_svgmap NULL
 ##' @S3method as_svgmap data.frame
+##' @method as_svgmap map
+##' @S3method as_svgmap map
 ##' @export
 ##' @author chris
 as_svgmap <- function(object, ...){
@@ -76,6 +78,16 @@ as_svgmap.data.frame <- function (object, ...){
   } else {
    stop("Not in svgmaps format")
   }
+}
+
+
+as_svgmap.map <- function (object, ...) {
+  df <- fortify(object)
+  df <- rename(df, c(long = "lon", region =  "element_id"))
+  df$point_id <- rownames(df)
+  df$geom <- "polygon"
+  class(df) <- c("svgmap_df", class(df))
+  df
 }
 
 

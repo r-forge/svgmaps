@@ -2,7 +2,7 @@
 \alias{as_svgmap}
 \title{as_svgmap}
 \usage{
-  as_svgmap(object, ...)
+  \method{as_svgmap}{map} (object, ...)
 }
 \arguments{
   \item{object}{Spatial objects; Currently osmar and
