@@ -82,7 +82,7 @@ as_svgmap.data.frame <- function (object, ...){
 
 as_svgmap.map <- function (object, ...) {
   df <- fortify(object)
-  df <- rename(df, c(long = "lon", region =  "element_id"))
+  df <- rename(df, c(long = "lon", group =  "element_id"))
   df$point_id <- rownames(df)
   df$geom <- "polygon"
   class(df) <- c("svgmap_df", class(df))
