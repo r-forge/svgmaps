@@ -1,1 +1,4 @@
-svgmaps-muc Simple examples. 
+svgmaps-basics Simple examples. 
+svgmaps-arrests Interactive Choropleth map with USArrests data set
+svgmaps-traffic-signals Interactive map of traffic signal density in munich
+
