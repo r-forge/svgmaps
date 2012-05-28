@@ -1,4 +1,3 @@
-basics Simple examples. 
-arrests Interactive Choropleth map with USArrests data set
-traffic-signals Interactive map of traffic signal density in munich
-
+basics	 Simple examples. 
+arrests	  Interactive Choropleth map with USArrests data set.
+traffic-signals	  Interactive map of traffic signal density in munich.
