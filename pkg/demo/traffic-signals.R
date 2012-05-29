@@ -1,10 +1,10 @@
 
 ## @knitr build-traffic-signals
-library(sp)
-library(osmar)
-library(svgmaps)
-library(plyr)
-data(signals)
+library("sp")
+library("osmar")
+library("svgmaps")
+library("plyr")
+data("signals", package = "svgmaps")
 ## to sp-object
 class(signals) <- "data.frame"
 coordinates(signals) <- c("lon", "lat")
@@ -32,25 +32,23 @@ signals_grid<- signals_grid
 
 
 ## @knitr traffic-signals
-library(svgmaps)
-library(sp)
-library(osmar)
-data(signals)
+library("svgmaps")
+library("sp")
+library("osmar")
+data("signals", package = "svgmaps")
 dim(signals)
 svgmap(signals) + igeom_point(size = 0.7)
 
 
 ## @knitr traffic-signals-1
-data(signals_grid)
+data("signals_grid", package = "svgmaps")
 summary(signals_grid)
 svgmap(signals_grid) + igeom_tile(aes(fill = count))
 
 
 ## @knitr traffic-signals-2
-data(muc_border)
-class(muc_border)
-data(isar)
-class(isar)
+data("muc_border", package = "svgmaps")
+data("isar", package = "svgmaps")
 
 ## boundary box of the grid
 bb <- slot(signals_grid, "bbox")

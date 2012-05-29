@@ -1,7 +1,7 @@
 
 ## @knitr simple-examples
-library(svgmaps)
-data(muc)
+library("svgmaps")
+data("muc")
 svgmap(muc) + igeom_point()
 svgmap(muc) + igeom_path()
 svgmap(muc) + igeom_polygon()
@@ -9,7 +9,8 @@ svgmap(muc) + igeom_polygon()
 
 ## @knitr static-examples
 muc_sub <- as_svgmap(muc, c("shop", "name", "highway", "website", "building"))
-muc_sub <- muc_sub[-which(is.na(muc_sub$name) & is.na(muc_sub$building)), ]
+muc_sub <- muc_sub[-which(is.na(muc_sub$name) & 
+                          is.na(muc_sub$building)), ]
 with(muc_sub, table(shop[geom == "point"], useNA = "always"))
 muc_inner <- svgmap(muc_sub) + 
   igeom_path(alpha = 0.1) + 
