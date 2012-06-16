@@ -1,7 +1,7 @@
 
 ## @knitr simple-examples
 library("svgmaps")
-data("muc")
+data("muc", package = "svgmaps")
 svgmap(muc) + igeom_point()
 svgmap(muc) + igeom_path()
 svgmap(muc) + igeom_polygon()
@@ -29,7 +29,8 @@ direct.label(shops, extreme.grid)
 
 ## @knitr interactive-examples
 muc_sub$tip <- paste(muc_sub$name, " (shop: ", muc_sub$shop, ")", sep = "")
-ishops<- muc_inner +  igeom_point(aes(tooltip = tip, col = shop), data = muc_sub) 
+ishops<- muc_inner +  
+  igeom_point(aes(tooltip = tip, col = shop), data = muc_sub) 
 save_svgmap(ishops, file = "muc_shops.svg")
 
 

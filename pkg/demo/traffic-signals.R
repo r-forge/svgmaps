@@ -61,15 +61,13 @@ p <- svgmap(signals_grid) +
   ## munich's border
   igeom_path(data = muc_border, col = "grey29", size = 1, view = 1) + 
   ## the isar (river)
-  igeom_path(data = isar, colour = "cyan", size = 0.9, view = 1, alpha = 0.5, tooltip = "I am the isar", link = "http://en.wikipedia.org/wiki/Isar") + 
+  igeom_path(data = isar, colour = "cyan", size = 0.9, view = 1, alpha = 0.5, tooltip = "I am the Isar", link = "http://en.wikipedia.org/wiki/Isar") + 
   ## further setting for the plot
   scale_fill_gradient(low = "gray8", high = "red") +
   xlim(bb[1, 1], bb[1, 2]) + 
   ylim(bb[2, 1], bb[2, 2]) +
   coord_map() + 
   theme_map() 
-
-p
 
 save_svgmap(p, file = "traffic-signals.svg")
 

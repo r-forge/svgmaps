@@ -12,7 +12,7 @@ svgmap(states) + igeom_polygon(fill = "white", colour = "black")
 
 ## @knitr arrests-merge
 ## Bringing together geographical and statistical data
-data("USArrests")
+data("USArrests", package = "datasets")
 arrests <- USArrests
 names(arrests) <- tolower(names(arrests))
 arrests$region <- tolower(rownames(arrests))
